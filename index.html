@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raga Clock — the right raga for right now</title>
+  <meta name="description" content="Plays the Hindustani classical raga traditionally associated with the current time of day, on YouTube (web) or NewPipe (Android)." />
+  <meta name="theme-color" content="#ff7241" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Raga Clock</div>
+      <h1>The right raga, for right now</h1>
+      <p>Inspired by <a href="https://ragya.com" style="color:inherit">Ragya</a>'s prahar system — 8 time-of-day segments, each paired with a raga.</p>
+    </header>
+
+    <main>
+      <div class="clock-card">
+        <div class="prahar-label" id="prahar-label">—</div>
+        <div class="time-range" id="time-range">—</div>
+        <div class="raga-name" id="raga-name">—</div>
+        <div class="artist" id="artist">—</div>
+        <p class="mood" id="mood">—</p>
+
+        <div class="actions" id="actions"></div>
+        <div class="player-shell" id="player-shell"></div>
+        <div class="follow-note" id="follow-note"></div>
+        <div class="live-clock" id="live-clock">--:--:--</div>
+      </div>
+
+      <section class="browse">
+        <h2>Browse all 8 praharas</h2>
+        <div class="grid" id="grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      On Android, "Open in NewPipe" launches the video directly in the NewPipe app<br />
+      (falls back to YouTube if NewPipe isn't installed). On other devices it plays inline via YouTube.
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
