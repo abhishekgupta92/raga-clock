@@ -6,6 +6,13 @@
   <title>Raga Clock — the right raga for right now</title>
   <meta name="description" content="Plays the Hindustani classical raga traditionally associated with the current time of day, on YouTube (web) or NewPipe (Android)." />
   <meta name="theme-color" content="#ff7241" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Raga Clock" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -38,7 +45,7 @@
 
     <footer>
       Each prahar draws a random piece from its pool every time you load the page or hit Shuffle.<br />
-      On Android, opening the app hands off straight to NewPipe (falls back to YouTube if not installed) — no tap needed.<br />
+      On Android, tap "Open in NewPipe" (falls back to YouTube if not installed) or share the pick on WhatsApp — and add Raga Clock to your home screen for one-tap access.<br />
       On other devices it autoplays inline, muted at first (browsers block sound before you interact) — tap Unmute to hear it.
     </footer>
   </div>

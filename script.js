@@ -18,12 +18,35 @@
   let selected = getCurrentPrahar();
   let currentPick = pickRandomOption(selected);
   let muted = true;
-  let androidAutoLaunched = false;
 
   // YouTube IFrame Player API state (desktop/web only — Android hands off to
   // NewPipe/YouTube instead of embedding a player).
   let ytPlayer = null;
   let apiReady = false;
+
+  // "Add to Home screen" support (Android/Chrome). The browser fires this
+  // event when the page meets install criteria (manifest + icons + a
+  // registered service worker); we stash it and show an Install button
+  // instead of the browser's own mini-infobar.
+  let deferredInstallPrompt = null;
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    render();
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredInstallPrompt = null;
+    render();
+  });
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {
+        // Non-fatal — the app still works fully without the service worker,
+        // it just won't be installable on that browser.
+      });
+    });
+  }
 
   if (!isAndroid) {
     const tag = document.createElement("script");
@@ -39,11 +62,32 @@
   };
 
   function onPlayerStateChange(event) {
+    if (window.YT && event.data === YT.PlayerState.PLAYING) {
+      // A video is actually playing — reset the broken-video guard.
+      consecutiveErrors = 0;
+    }
     if (window.YT && event.data === YT.PlayerState.ENDED) {
       // Autoplay: once a track finishes, automatically switch to the next one.
       currentPick = newPick(selected);
       render();
     }
+  }
+
+  // Some videos block embedding on other websites ("Playback on other
+  // websites has been disabled by the video owner") or have been taken
+  // down/made private since they were added to the pool. YouTube reports
+  // these as player errors (100/101/150 = not embeddable or unavailable,
+  // 2 = bad video id, 5 = HTML5 player error) rather than throwing in JS,
+  // so we listen for onError and quietly swap in another pick instead of
+  // leaving the listener staring at a broken embed. Capped so a genuinely
+  // bad run of luck doesn't loop forever — the "Open on YouTube.com" link
+  // is always there as a manual fallback.
+  let consecutiveErrors = 0;
+  function onPlayerError() {
+    consecutiveErrors++;
+    if (consecutiveErrors > 5) return;
+    currentPick = newPick(selected);
+    render();
   }
 
   // Creates the player on first use, or reuses it for later renders —
@@ -69,7 +113,8 @@
             if (muted) ytPlayer.mute();
             else ytPlayer.unMute();
           },
-          onStateChange: onPlayerStateChange
+          onStateChange: onPlayerStateChange,
+          onError: onPlayerError
         }
       });
     }
@@ -130,6 +175,34 @@
       ytBtn.target = "_blank";
       ytBtn.rel = "noopener";
       els.actions.appendChild(ytBtn);
+
+      const shareBtn = document.createElement("a");
+      shareBtn.className = "btn btn-whatsapp";
+      shareBtn.textContent = "Share on WhatsApp";
+      const shareText =
+        "Right now on Raga Clock: Raga " +
+        pick.raga +
+        " by " +
+        pick.artist +
+        " — https://abhishekgupta92.github.io/raga-clock/";
+      shareBtn.href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+      shareBtn.target = "_blank";
+      shareBtn.rel = "noopener";
+      els.actions.appendChild(shareBtn);
+
+      if (deferredInstallPrompt) {
+        const installBtn = document.createElement("button");
+        installBtn.className = "btn-install";
+        installBtn.textContent = "Add to Home Screen";
+        installBtn.onclick = function () {
+          deferredInstallPrompt.prompt();
+          deferredInstallPrompt.userChoice.finally(function () {
+            deferredInstallPrompt = null;
+            render();
+          });
+        };
+        els.actions.appendChild(installBtn);
+      }
     } else {
       const ytBtn = document.createElement("a");
       ytBtn.className = "btn btn-ghost";
@@ -236,16 +309,9 @@
 
   render();
 
-  // On Android, opening the app should immediately try to hand off to NewPipe
-  // (falling back to YouTube if NewPipe isn't installed) — no tap required.
-  // This fires once, right after the first render, so the on-screen buttons
-  // are still there as a manual fallback if the auto hand-off gets blocked.
-  if (isAndroid && !androidAutoLaunched) {
-    androidAutoLaunched = true;
-    setTimeout(function () {
-      window.location.href = newPipeIntentUrl(currentPick.videoId);
-    }, 150);
-  }
+  // On Android, we no longer auto-redirect to NewPipe on load — instead the
+  // "Open in NewPipe" / "Open in YouTube" buttons above just sit there as
+  // ordinary links the listener taps when ready.
 
   tick();
   setInterval(tick, 1000);
