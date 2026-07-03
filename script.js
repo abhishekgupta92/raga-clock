@@ -20,17 +20,63 @@
   let muted = true;
   let androidAutoLaunched = false;
 
-  function youtubeWatchUrl(videoId) {
-    return "https://www.youtube.com/watch?v=" + videoId;
+  // YouTube IFrame Player API state (desktop/web only — Android hands off to
+  // NewPipe/YouTube instead of embedding a player).
+  let ytPlayer = null;
+  let apiReady = false;
+
+  if (!isAndroid) {
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
 
-  function youtubeEmbedUrl(videoId, startMuted) {
-    return (
-      "https://www.youtube.com/embed/" +
-      videoId +
-      "?autoplay=1&rel=0&enablejsapi=1&mute=" +
-      (startMuted ? "1" : "0")
-    );
+  // Called automatically by the IFrame API once it has loaded.
+  window.onYouTubeIframeAPIReady = function () {
+    apiReady = true;
+    syncPlayer(true);
+  };
+
+  function onPlayerStateChange(event) {
+    if (window.YT && event.data === YT.PlayerState.ENDED) {
+      // Autoplay: once a track finishes, automatically switch to the next one.
+      currentPick = newPick(selected);
+      render();
+    }
+  }
+
+  // Creates the player on first use, or reuses it for later renders —
+  // only calling loadVideoById when the video actually needs to change,
+  // so muting/unmuting doesn't restart playback.
+  function syncPlayer(forceLoad) {
+    if (isAndroid || !apiReady) return;
+    const videoId = currentPick.videoId;
+    if (ytPlayer && typeof ytPlayer.loadVideoById === "function") {
+      if (forceLoad || ytPlayer.__currentVideoId !== videoId) {
+        ytPlayer.loadVideoById(videoId);
+        ytPlayer.__currentVideoId = videoId;
+      }
+      if (muted) ytPlayer.mute();
+      else ytPlayer.unMute();
+    } else {
+      ytPlayer = new YT.Player("yt-player-frame", {
+        videoId: videoId,
+        playerVars: { autoplay: 1, rel: 0, mute: muted ? 1 : 0 },
+        events: {
+          onReady: function () {
+            ytPlayer.__currentVideoId = videoId;
+            if (muted) ytPlayer.mute();
+            else ytPlayer.unMute();
+          },
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+  }
+
+  function youtubeWatchUrl(videoId) {
+    return "https://www.youtube.com/watch?v=" + videoId;
   }
 
   // Explicit Android intent that targets the NewPipe package directly.
@@ -98,12 +144,9 @@
       unmuteBtn.textContent = muted ? "Unmute" : "Mute";
       unmuteBtn.onclick = function () {
         muted = !muted;
-        const iframe = els.playerShell.querySelector("iframe");
-        if (iframe && iframe.contentWindow) {
-          iframe.contentWindow.postMessage(
-            JSON.stringify({ event: "command", func: muted ? "mute" : "unMute", args: [] }),
-            "*"
-          );
+        if (ytPlayer) {
+          if (muted) ytPlayer.mute();
+          else ytPlayer.unMute();
         }
         render();
       };
@@ -121,12 +164,10 @@
 
     if (!isAndroid) {
       els.playerShell.style.display = "block";
-      els.playerShell.innerHTML =
-        '<iframe src="' +
-        youtubeEmbedUrl(pick.videoId, muted) +
-        '" allow="autoplay; encrypted-media" allowfullscreen title="Raga ' +
-        pick.raga +
-        '"></iframe>';
+      if (!document.getElementById("yt-player-frame")) {
+        els.playerShell.innerHTML = '<div id="yt-player-frame"></div>';
+      }
+      syncPlayer();
     }
 
     renderGrid();
@@ -196,7 +237,7 @@
   render();
 
   // On Android, opening the app should immediately try to hand off to NewPipe
-  // (faling back to YouTube if NewPipe isn't installed) — no tap required.
+  // (falling back to YouTube if NewPipe isn't installed) — no tap required.
   // This fires once, right after the first render, so the on-screen buttons
   // are still there as a manual fallback if the auto hand-off gets blocked.
   if (isAndroid && !androidAutoLaunched) {

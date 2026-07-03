@@ -9,7 +9,8 @@ associated with the current time of day (the "prahar" system), inspired by
   you load the page, the prahar changes, or you hit **Shuffle**.
 - On desktop/web it autoplays inline via an embedded YouTube player, muted
   at first (browsers block sound before any user interaction) — tap
-  **Unmute** to hear it.
+  **Unmute** to hear it. When a track finishes, it automatically advances
+  to another random pick from the same prahar's pool.
 - On Android, just opening the app hands off straight to **NewPipe** with
   no tap required (falls back to YouTube if NewPipe isn't installed). The
   on-screen "Open in NewPipe" / "Open in YouTube" buttons stay as a manual
@@ -36,14 +37,16 @@ a pool of `options`, and one is picked at random each time:
 
 | Time slot | Raga family | Pool size |
 |---|---|---|
-| 4:00–7:00 AM | Bhairav | 9 |
-| 7:00–10:00 AM | Ahir Bhairav | 9 |
-| 10:00 AM–1:00 PM | Bilawal | 5 |
-| 1:00–4:00 PM | Bhimpalasi | 7 |
-| 4:00–7:00 PM | Puriya Dhanashri | 5 |
-| 7:00–10:00 PM | Yaman | 5 |
-| 10:00 PM–1:00 AM | Kedar | 4 |
-| 1:00–4:00 AM | Malkauns | 26 |
+| 4:00–7:00 AM | Bhairav | 17 |
+| 7:00–10:00 AM | Ahir Bhairav | 24 |
+| 10:00 AM–1:00 PM | Bilawal | 21 |
+| 1:00–4:00 PM | Bhimpalasi | 21 |
+| 4:00–7:00 PM | Puriya Dhanashri | 21 |
+| 7:00–10:00 PM | Yaman | 21 |
+| 10:00 PM–1:00 AM | Kedar | 21 |
+| 1:00–4:00 AM | Malkauns | 31 |
+
+**Total: 177 verified performances** across all 8 praharas.
 
 Pool sizes vary because not every raga family has that many distinct,
 verifiable, named-artist performances actually indexed on YouTube — every
