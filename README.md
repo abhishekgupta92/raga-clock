@@ -7,14 +7,15 @@ associated with the current time of day (the "prahar" system), inspired by
 - Every prahar has a pool of verified, named-artist performances (mostly
   female Hindustani classical musicians). A random one is picked whenever
   you load the page, the prahar changes, or you hit **Shuffle**.
-- On desktop/web it autoplays inline via an embedded YouTube player, muted
-  at first (browsers block sound before any user interaction) — tap
-  **Unmute** to hear it. When a track finishes, it automatically advances
-  to another random pick from the same prahar's pool.
-- On Android, just opening the app hands off straight to **NewPipe** with
-  no tap required (falls back to YouTube if NewPipe isn't installed). The
-  on-screen "Open in NewPipe" / "Open in YouTube" buttons stay as a manual
-  fallback.
+- On desktop/web it autoplays inline via an embedded YouTube player, with
+  sound on by default (some browsers block unmuted autoplay until you've
+  clicked anywhere on the page once). When a track finishes, or if a video
+  turns out to be unplayable (embedding disabled, taken down, etc.), it
+  automatically advances to another random pick from the same prahar's pool.
+- On Android, tap **Open in NewPipe** (falls back to YouTube if NewPipe
+  isn't installed), or **Share on WhatsApp** to send the current pick to
+  someone. You can also add Raga Clock to your home screen for one-tap
+  access, as an installable app.
 - You can also browse all 8 time slots manually.
 
 No build step, no dependencies, no backend — just `index.html`, `style.css`,

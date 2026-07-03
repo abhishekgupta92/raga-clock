@@ -17,7 +17,6 @@
   let following = true; // true = always show whatever prahar matches the clock
   let selected = getCurrentPrahar();
   let currentPick = pickRandomOption(selected);
-  let muted = true;
 
   // YouTube IFrame Player API state (desktop/web only — Android hands off to
   // NewPipe/YouTube instead of embedding a player).
@@ -90,9 +89,12 @@
     render();
   }
 
-  // Creates the player on first use, or reuses it for later renders —
-  // only calling loadVideoById when the video actually needs to change,
-  // so muting/unmuting doesn't restart playback.
+  // Creates the player on first use, or reuses it for later renders — only
+  // calling loadVideoById when the video actually needs to change. Always
+  // unmuted: most browsers only allow unmuted autoplay once the visitor has
+  // interacted with the site before, so on a cold first load some browsers
+  // may still start it muted or paused until the listener clicks anywhere
+  // on the page — there's no in-app mute toggle to work around that.
   function syncPlayer(forceLoad) {
     if (isAndroid || !apiReady) return;
     const videoId = currentPick.videoId;
@@ -101,17 +103,13 @@
         ytPlayer.loadVideoById(videoId);
         ytPlayer.__currentVideoId = videoId;
       }
-      if (muted) ytPlayer.mute();
-      else ytPlayer.unMute();
     } else {
       ytPlayer = new YT.Player("yt-player-frame", {
         videoId: videoId,
-        playerVars: { autoplay: 1, rel: 0, mute: muted ? 1 : 0 },
+        playerVars: { autoplay: 1, rel: 0 },
         events: {
           onReady: function () {
             ytPlayer.__currentVideoId = videoId;
-            if (muted) ytPlayer.mute();
-            else ytPlayer.unMute();
           },
           onStateChange: onPlayerStateChange,
           onError: onPlayerError
@@ -211,19 +209,6 @@
       ytBtn.target = "_blank";
       ytBtn.rel = "noopener";
       els.actions.appendChild(ytBtn);
-
-      const unmuteBtn = document.createElement("button");
-      unmuteBtn.className = "btn-primary";
-      unmuteBtn.textContent = muted ? "Unmute" : "Mute";
-      unmuteBtn.onclick = function () {
-        muted = !muted;
-        if (ytPlayer) {
-          if (muted) ytPlayer.mute();
-          else ytPlayer.unMute();
-        }
-        render();
-      };
-      els.actions.appendChild(unmuteBtn);
     }
 
     const shuffleBtn = document.createElement("button");
