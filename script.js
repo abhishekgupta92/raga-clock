@@ -371,21 +371,13 @@
 
   render();
 
-  // When launched from the home screen, the installed "Raga Clock" app runs in
-  // standalone display mode. In that case, hand off straight to NewPipe with a
-  // fresh pick — one tap on the icon opens a new, time-appropriate raga in
-  // NewPipe. In an ordinary browser tab this does nothing, and the on-screen
-  // "Open in NewPipe" / "Open in YouTube" buttons stay in charge.
-  const isStandalone =
-    (window.matchMedia &&
-      window.matchMedia("(display-mode: standalone)").matches) ||
-    window.navigator.standalone === true;
-
-  if (isAndroid && isStandalone) {
-    setTimeout(function () {
-      window.location.href = newPipeIntentUrl(currentPick.videoId);
-    }, 300);
-  }
+  // NOTE: we deliberately do NOT auto-redirect to NewPipe on load (even in the
+  // installed / standalone app). Android only lets an app-intent launch happen
+  // from a real user gesture (a tap); a programmatic navigation on page load is
+  // blocked and silently falls back to the intent's browser_fallback_url — i.e.
+  // it opens YouTube in the browser instead of NewPipe. So NewPipe is opened
+  // only by tapping "Open in NewPipe", where the tap is a genuine gesture and
+  // the intent reliably hands off to the app.
 
   tick();
   setInterval(tick, 1000);
