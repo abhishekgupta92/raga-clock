@@ -389,3 +389,13 @@ footer a {
     width: 100%;
   }
 }
+
+/* Compact WhatsApp share button — kept small and non-stretching even inside
+   the mobile layout where the other action buttons grow to fill the row. */
+.actions .btn-whatsapp {
+  flex: 0 0 auto;
+  width: auto;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
+}

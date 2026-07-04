@@ -198,7 +198,7 @@
 
       const shareBtn = document.createElement("a");
       shareBtn.className = "btn btn-whatsapp";
-      shareBtn.textContent = "Share on WhatsApp";
+      shareBtn.textContent = "WhatsApp";
       const shareText =
         "Right now on Raga Clock: Raga " +
         pick.raga +
@@ -213,7 +213,7 @@
       if (deferredInstallPrompt) {
         const installBtn = document.createElement("button");
         installBtn.className = "btn-install";
-        installBtn.textContent = "Add to Home Screen";
+        installBtn.textContent = "Install Raga Clock";
         installBtn.onclick = function () {
           deferredInstallPrompt.prompt();
           deferredInstallPrompt.userChoice.finally(function () {
@@ -371,9 +371,21 @@
 
   render();
 
-  // On Android, we no longer auto-redirect to NewPipe on load — instead the
-  // "Open in NewPipe" / "Open in YouTube" buttons above just sit there as
-  // ordinary links the listener taps when ready.
+  // When launched from the home screen, the installed "Raga Clock" app runs in
+  // standalone display mode. In that case, hand off straight to NewPipe with a
+  // fresh pick — one tap on the icon opens a new, time-appropriate raga in
+  // NewPipe. In an ordinary browser tab this does nothing, and the on-screen
+  // "Open in NewPipe" / "Open in YouTube" buttons stay in charge.
+  const isStandalone =
+    (window.matchMedia &&
+      window.matchMedia("(display-mode: standalone)").matches) ||
+    window.navigator.standalone === true;
+
+  if (isAndroid && isStandalone) {
+    setTimeout(function () {
+      window.location.href = newPipeIntentUrl(currentPick.videoId);
+    }, 300);
+  }
 
   tick();
   setInterval(tick, 1000);
