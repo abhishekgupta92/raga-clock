@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raga Clock — the right raga for right now</title>
   <meta name="description" content="Plays the Hindustani classical raga traditionally associated with the current time of day, on YouTube (web) or NewPipe (Android)." />
-  <meta name="theme-color" content="#ff7241" />
+  <meta name="theme-color" content="#ff7241" id="theme-color-meta" />
+  <link rel="canonical" href="https://abhishekgupta92.github.io/raga-clock/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Raga Clock" />
+  <meta property="og:title" content="Raga Clock — the right raga for right now" />
+  <meta property="og:description" content="The Hindustani classical raga traditionally paired with the current time of day, across 8 praharas. Plays on YouTube (web) or NewPipe (Android)." />
+  <meta property="og:url" content="https://abhishekgupta92.github.io/raga-clock/" />
+  <meta property="og:image" content="https://abhishekgupta92.github.io/raga-clock/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Raga Clock — the right raga for right now" />
+  <meta name="twitter:description" content="The Hindustani classical raga traditionally paired with the current time of day, across 8 praharas." />
+  <meta name="twitter:image" content="https://abhishekgupta92.github.io/raga-clock/og-image.png" />
+
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -24,7 +42,7 @@
     </header>
 
     <main>
-      <div class="clock-card">
+      <div class="clock-card" aria-live="polite" aria-atomic="true">
         <div class="prahar-label" id="prahar-label">—</div>
         <div class="time-range" id="time-range">—</div>
         <div class="raga-name" id="raga-name">—</div>
@@ -34,17 +52,20 @@
         <div class="actions" id="actions"></div>
         <div class="player-shell" id="player-shell"></div>
         <div class="follow-note" id="follow-note"></div>
-        <div class="live-clock" id="live-clock">--:--:--</div>
+        <div class="clock-foot">
+          <span class="live-clock" id="live-clock">--:--:--</span>
+          <span class="next-prahar" id="next-prahar" aria-live="off"></span>
+        </div>
       </div>
 
       <section class="browse">
         <h2>Browse all 8 praharas</h2>
-        <div class="grid" id="grid"></div>
+        <div class="grid" id="grid" role="list"></div>
       </section>
     </main>
 
     <footer>
-      Each prahar draws a random piece from its pool every time you load the page or hit Shuffle.<br />
+      Each prahar draws a random piece from its pool every time you load the page or hit Shuffle (or press the <kbd>S</kbd> key).<br />
       On Android, tap "Open in NewPipe" (falls back to YouTube if not installed) or share the pick on WhatsApp — and add Raga Clock to your home screen for one-tap access.<br />
       On other devices it autoplays inline with sound — if your browser blocks unmuted autoplay on a first visit, just click anywhere on the page once.
     </footer>

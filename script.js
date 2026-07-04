@@ -11,8 +11,17 @@
     actions: document.getElementById("actions"),
     playerShell: document.getElementById("player-shell"),
     followNote: document.getElementById("follow-note"),
+    nextPrahar: document.getElementById("next-prahar"),
+    themeColorMeta: document.getElementById("theme-color-meta"),
     grid: document.getElementById("grid")
   };
+
+  // Accent colours per prahar, mirrored from style.css so the browser theme
+  // colour (address bar / task switcher) matches the on-screen palette.
+  const PRAHAR_ACCENTS = [
+    "#ff9a6b", "#ffc24b", "#57c7ff", "#4fd1c5",
+    "#ff7241", "#b58cff", "#6f8cff", "#8a7dff"
+  ];
 
   let following = true; // true = always show whatever prahar matches the clock
   let selected = getCurrentPrahar();
@@ -135,6 +144,35 @@
     );
   }
 
+  // Robustly hand off to NewPipe. The intent:// scheme only works in Chrome /
+  // Chromium-based browsers; other Android browsers (and in-app webviews such
+  // as the one inside WhatsApp/Instagram) silently ignore it, so a naked
+  // intent link does nothing at all. Here we try the intent, then fall back
+  // to the plain YouTube URL if the page hasn't been handed off to another
+  // app within a short window.
+  function launchNewPipe(videoId) {
+    const fallback = youtubeWatchUrl(videoId);
+    let handed = false;
+    const markHanded = function () { handed = true; };
+    document.addEventListener("visibilitychange", markHanded);
+    window.addEventListener("pagehide", markHanded);
+    window.addEventListener("blur", markHanded);
+
+    const timer = setTimeout(function () {
+      document.removeEventListener("visibilitychange", markHanded);
+      window.removeEventListener("pagehide", markHanded);
+      window.removeEventListener("blur", markHanded);
+      if (!handed && !document.hidden) window.location.href = fallback;
+    }, 1500);
+
+    try {
+      window.location.href = newPipeIntentUrl(videoId);
+    } catch (e) {
+      clearTimeout(timer);
+      window.location.href = fallback;
+    }
+  }
+
   function newPick(prahar) {
     // Avoid repeating the same pick twice in a row when there's more than one option.
     const opts = prahar.options;
@@ -148,9 +186,19 @@
     return next;
   }
 
+  // Shift the whole page palette to match the prahar being shown, and keep the
+  // browser theme colour in step with it.
+  function applyTheme(prahar) {
+    document.body.setAttribute("data-prahar", String(prahar.id));
+    if (els.themeColorMeta && PRAHAR_ACCENTS[prahar.id]) {
+      els.themeColorMeta.setAttribute("content", PRAHAR_ACCENTS[prahar.id]);
+    }
+  }
+
   function render() {
     const p = selected;
     const pick = currentPick;
+    applyTheme(p);
     els.praharLabel.textContent = p.label;
     els.timeRange.textContent = p.time;
     els.ragaName.textContent = "Raga " + pick.raga;
@@ -163,7 +211,12 @@
       const newPipeBtn = document.createElement("a");
       newPipeBtn.className = "btn btn-primary";
       newPipeBtn.textContent = "Open in NewPipe";
-      newPipeBtn.href = newPipeIntentUrl(pick.videoId);
+      // href is the no-JS fallback; the handler adds the intent + timed fallback.
+      newPipeBtn.href = youtubeWatchUrl(pick.videoId);
+      newPipeBtn.onclick = function (e) {
+        e.preventDefault();
+        launchNewPipe(pick.videoId);
+      };
       els.actions.appendChild(newPipeBtn);
 
       const ytBtn = document.createElement("a");
@@ -213,6 +266,8 @@
 
     const shuffleBtn = document.createElement("button");
     shuffleBtn.className = "btn-secondary";
+    shuffleBtn.type = "button";
+    shuffleBtn.setAttribute("aria-label", "Shuffle to another performance from this prahar");
     shuffleBtn.textContent = "Shuffle (" + p.options.length + " in pool)";
     shuffleBtn.onclick = function () {
       currentPick = newPick(p);
@@ -241,6 +296,7 @@
     els.followNote.innerHTML = "";
     const text = document.createTextNode("Browsing " + selected.label + ". ");
     const backBtn = document.createElement("button");
+    backBtn.type = "button";
     backBtn.textContent = "Back to now";
     backBtn.onclick = function () {
       following = true;
@@ -257,6 +313,14 @@
     PRAHARS.forEach(function (p) {
       const card = document.createElement("button");
       card.className = "card" + (p.id === selected.id ? " active" : "");
+      card.type = "button";
+      card.setAttribute("role", "listitem");
+      card.setAttribute(
+        "aria-label",
+        p.label + ", " + p.time + ", raga " + p.familyRaga +
+          ", " + p.options.length + " performances"
+      );
+      if (p.id === selected.id) card.setAttribute("aria-current", "true");
       card.innerHTML =
         '<div class="card-time">' +
         p.time +
@@ -275,6 +339,27 @@
     });
   }
 
+  // Seconds until the next prahar begins (wrapping past midnight).
+  function secondsToNextPrahar(now) {
+    const boundaries = PRAHARS.map(function (p) { return p.start; });
+    const cur = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    let best = Infinity;
+    boundaries.forEach(function (b) {
+      let diff = b * 3600 - cur;
+      if (diff <= 0) diff += 24 * 3600;
+      if (diff < best) best = diff;
+    });
+    return best;
+  }
+
+  function formatCountdown(secs) {
+    const h = Math.floor(secs / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    if (h > 0) return h + "h " + m + "m";
+    if (m > 0) return m + "m";
+    return (secs % 60) + "s";
+  }
+
   function tick() {
     const now = new Date();
     els.liveClock.textContent = now.toLocaleTimeString([], {
@@ -282,6 +367,19 @@
       minute: "2-digit",
       second: "2-digit"
     });
+
+    // Countdown shown only while following the live clock.
+    if (els.nextPrahar) {
+      if (following) {
+        const current = getCurrentPrahar(now);
+        const next = PRAHARS[(current.id + 1) % PRAHARS.length];
+        els.nextPrahar.textContent =
+          "Next: " + next.label + " in " + formatCountdown(secondsToNextPrahar(now));
+      } else {
+        els.nextPrahar.textContent = "";
+      }
+    }
+
     if (following) {
       const current = getCurrentPrahar(now);
       if (current.id !== selected.id) {
@@ -291,6 +389,16 @@
       }
     }
   }
+
+  // Keyboard shortcut: press "S" (outside of any text field) to shuffle.
+  document.addEventListener("keydown", function (e) {
+    const tag = (e.target && e.target.tagName) || "";
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag) || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "s" || e.key === "S") {
+      currentPick = newPick(selected);
+      render();
+    }
+  });
 
   render();
 

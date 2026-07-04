@@ -17,6 +17,11 @@ associated with the current time of day (the "prahar" system), inspired by
   someone. You can also add Raga Clock to your home screen for one-tap
   access, as an installable app.
 - You can also browse all 8 time slots manually.
+- The whole page tints itself to match the hour: the ambient glow and accent
+  colour shift through dawn, midday, dusk and night as the prahar changes.
+  Honours `prefers-reduced-motion`.
+- A live countdown shows how long until the next prahar begins, and pressing
+  the **S** key shuffles without touching the mouse.
 
 No build step, no dependencies, no backend — just `index.html`, `style.css`,
 `script.js`, and `data.js`.
@@ -70,6 +75,13 @@ intent://www.youtube.com/watch?v=<ID>#Intent;scheme=https;package=org.schabi.new
 This asks Android to open the YouTube URL specifically with the NewPipe app
 (`org.schabi.newpipe`). If NewPipe isn't installed, the browser falls back to
 the plain YouTube URL.
+
+The `intent://` scheme is only understood by Chrome / Chromium-based browsers.
+Other Android browsers and in-app webviews (e.g. the browser inside WhatsApp)
+ignore it, which would make the button appear to do nothing. To cover those,
+the button runs a small script that tries the intent and then falls back to the
+plain YouTube URL if the page hasn't been handed off to another app within a
+short window, so tapping it always does something.
 
 ## Publish to GitHub Pages
 
