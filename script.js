@@ -144,35 +144,6 @@
     );
   }
 
-  // Robustly hand off to NewPipe. The intent:// scheme only works in Chrome /
-  // Chromium-based browsers; other Android browsers (and in-app webviews such
-  // as the one inside WhatsApp/Instagram) silently ignore it, so a naked
-  // intent link does nothing at all. Here we try the intent, then fall back
-  // to the plain YouTube URL if the page hasn't been handed off to another
-  // app within a short window.
-  function launchNewPipe(videoId) {
-    const fallback = youtubeWatchUrl(videoId);
-    let handed = false;
-    const markHanded = function () { handed = true; };
-    document.addEventListener("visibilitychange", markHanded);
-    window.addEventListener("pagehide", markHanded);
-    window.addEventListener("blur", markHanded);
-
-    const timer = setTimeout(function () {
-      document.removeEventListener("visibilitychange", markHanded);
-      window.removeEventListener("pagehide", markHanded);
-      window.removeEventListener("blur", markHanded);
-      if (!handed && !document.hidden) window.location.href = fallback;
-    }, 1500);
-
-    try {
-      window.location.href = newPipeIntentUrl(videoId);
-    } catch (e) {
-      clearTimeout(timer);
-      window.location.href = fallback;
-    }
-  }
-
   function newPick(prahar) {
     // Avoid repeating the same pick twice in a row when there's more than one option.
     const opts = prahar.options;
@@ -211,12 +182,10 @@
       const newPipeBtn = document.createElement("a");
       newPipeBtn.className = "btn btn-primary";
       newPipeBtn.textContent = "Open in NewPipe";
-      // href is the no-JS fallback; the handler adds the intent + timed fallback.
-      newPipeBtn.href = youtubeWatchUrl(pick.videoId);
-      newPipeBtn.onclick = function (e) {
-        e.preventDefault();
-        launchNewPipe(pick.videoId);
-      };
+      // Direct intent link: launches NewPipe straight away, and the
+      // browser_fallback_url baked into the intent opens plain YouTube only
+      // when NewPipe isn't installed.
+      newPipeBtn.href = newPipeIntentUrl(pick.videoId);
       els.actions.appendChild(newPipeBtn);
 
       const ytBtn = document.createElement("a");

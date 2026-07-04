@@ -76,13 +76,6 @@ This asks Android to open the YouTube URL specifically with the NewPipe app
 (`org.schabi.newpipe`). If NewPipe isn't installed, the browser falls back to
 the plain YouTube URL.
 
-The `intent://` scheme is only understood by Chrome / Chromium-based browsers.
-Other Android browsers and in-app webviews (e.g. the browser inside WhatsApp)
-ignore it, which would make the button appear to do nothing. To cover those,
-the button runs a small script that tries the intent and then falls back to the
-plain YouTube URL if the page hasn't been handed off to another app within a
-short window, so tapping it always does something.
-
 ## Publish to GitHub Pages
 
 From inside this `raga-clock` folder:
