@@ -399,3 +399,31 @@ footer a {
   font-weight: 600;
   padding: 7px 14px;
 }
+
+/* Classical / Little Filmy mode toggle */
+.mode-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin: 0 auto 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.mode-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: #1a0d06;
+}

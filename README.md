@@ -22,6 +22,10 @@ associated with the current time of day (the "prahar" system), inspired by
   Honours `prefers-reduced-motion`.
 - A live countdown shows how long until the next prahar begins, and pressing
   the **S** key shuffles without touching the mouse.
+- A **Classical / Little Filmy** toggle: "Little Filmy" swaps the classical
+  performance for a Bollywood song built on one of that prahar's ragas (e.g.
+  *Man Tarpat Hari Darshan Ko Aaj* in Malkauns for Late Night, *Ehsan Tera
+  Hoga Mujh Par* in Yaman for Evening). Same time-of-day logic, filmy flavour.
 
 No build step, no dependencies, no backend — just `index.html`, `style.css`,
 `script.js`, and `data.js`.
@@ -53,6 +57,16 @@ a pool of `options`, and one is picked at random each time:
 | 1:00–4:00 AM | Malkauns | 31 |
 
 **Total: 177 verified performances** across all 8 praharas.
+
+## Little Filmy mode
+
+Toggle **Little Filmy** and each prahar plays a Hindustani-classical-based
+*Bollywood* song instead — mapped to the prahar by the raga the song is built
+on. `data.js` gives every prahar a `filmy` pool of `{ song, film, year, artist,
+raga, videoId, mood }` objects (currently 22 verified songs, all eras from
+Baiju Bawra to A.R. Rahman). Like the classical pools, it can grow — just add
+more verified entries to a prahar's `filmy` array. A prahar with no filmy songs
+yet falls back to Classical automatically.
 
 Pool sizes vary because not every raga family has that many distinct,
 verifiable, named-artist performances actually indexed on YouTube — every

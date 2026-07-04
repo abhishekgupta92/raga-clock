@@ -13,6 +13,8 @@
     followNote: document.getElementById("follow-note"),
     nextPrahar: document.getElementById("next-prahar"),
     themeColorMeta: document.getElementById("theme-color-meta"),
+    modeClassical: document.getElementById("mode-classical"),
+    modeFilmy: document.getElementById("mode-filmy"),
     grid: document.getElementById("grid")
   };
 
@@ -24,8 +26,9 @@
   ];
 
   let following = true; // true = always show whatever prahar matches the clock
+  let filmy = false;    // false = Classical mode, true = Little Filmy mode
   let selected = getCurrentPrahar();
-  let currentPick = pickRandomOption(selected);
+  let currentPick = pickFrom(selected);
 
   // YouTube IFrame Player API state (desktop/web only — Android hands off to
   // NewPipe/YouTube instead of embedding a player).
@@ -144,17 +147,47 @@
     );
   }
 
+  // The active pool depends on the mode: Filmy = Bollywood songs built on the
+  // prahar's ragas; Classical = the Hindustani performances. Falls back to
+  // classical if a prahar has no filmy songs yet.
+  function activePool(prahar) {
+    return (filmy && prahar.filmy && prahar.filmy.length) ? prahar.filmy : prahar.options;
+  }
+
+  function pickFrom(prahar) {
+    const pool = activePool(prahar);
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
   function newPick(prahar) {
-    // Avoid repeating the same pick twice in a row when there's more than one option.
-    const opts = prahar.options;
-    if (opts.length === 1) return opts[0];
-    let next = pickRandomOption(prahar);
+    // Avoid repeating the same pick twice in a row when the pool has more than one.
+    const pool = activePool(prahar);
+    if (pool.length <= 1) return pool[0];
+    let next = pickFrom(prahar);
     let guard = 0;
-    while (currentPick && next.videoId === currentPick.videoId && guard < 8) {
-      next = pickRandomOption(prahar);
+    while (currentPick && next && next.videoId === currentPick.videoId && guard < 8) {
+      next = pickFrom(prahar);
       guard++;
     }
     return next;
+  }
+
+  function updateModeButtons() {
+    if (els.modeClassical) {
+      els.modeClassical.classList.toggle("active", !filmy);
+      els.modeClassical.setAttribute("aria-pressed", String(!filmy));
+    }
+    if (els.modeFilmy) {
+      els.modeFilmy.classList.toggle("active", filmy);
+      els.modeFilmy.setAttribute("aria-pressed", String(filmy));
+    }
+  }
+
+  function setMode(toFilmy) {
+    if (filmy === toFilmy) return;
+    filmy = toFilmy;
+    currentPick = pickFrom(selected);
+    render();
   }
 
   // Shift the whole page palette to match the prahar being shown, and keep the
@@ -172,9 +205,16 @@
     applyTheme(p);
     els.praharLabel.textContent = p.label;
     els.timeRange.textContent = p.time;
-    els.ragaName.textContent = "Raga " + pick.raga;
-    els.artist.textContent = pick.artist;
-    els.mood.textContent = pick.mood;
+    if (filmy) {
+      els.ragaName.textContent = pick.song;
+      els.artist.textContent = pick.artist + " \u00b7 " + pick.film + " (" + pick.year + ")";
+      els.mood.textContent = "Inspired by Raga " + pick.raga + ". " + pick.mood;
+    } else {
+      els.ragaName.textContent = "Raga " + pick.raga;
+      els.artist.textContent = pick.artist;
+      els.mood.textContent = pick.mood;
+    }
+    updateModeButtons();
 
     els.actions.innerHTML = "";
 
@@ -200,10 +240,10 @@
       shareBtn.className = "btn btn-whatsapp";
       shareBtn.textContent = "WhatsApp";
       const shareText =
-        "Right now on Raga Clock: Raga " +
-        pick.raga +
-        " by " +
-        pick.artist +
+        (filmy
+          ? "Right now on Raga Clock (Filmy): " + pick.song + " (" + pick.film +
+              ") — inspired by Raga " + pick.raga
+          : "Right now on Raga Clock: Raga " + pick.raga + " by " + pick.artist) +
         " — https://abhishekgupta92.github.io/raga-clock/";
       shareBtn.href = "https://wa.me/?text=" + encodeURIComponent(shareText);
       shareBtn.target = "_blank";
@@ -237,7 +277,7 @@
     shuffleBtn.className = "btn-secondary";
     shuffleBtn.type = "button";
     shuffleBtn.setAttribute("aria-label", "Shuffle to another performance from this prahar");
-    shuffleBtn.textContent = "Shuffle (" + p.options.length + " in pool)";
+    shuffleBtn.textContent = "Shuffle (" + activePool(p).length + " in pool)";
     shuffleBtn.onclick = function () {
       currentPick = newPick(p);
       render();
@@ -270,7 +310,7 @@
     backBtn.onclick = function () {
       following = true;
       selected = getCurrentPrahar();
-      currentPick = pickRandomOption(selected);
+      currentPick = pickFrom(selected);
       render();
     };
     els.followNote.appendChild(text);
@@ -287,7 +327,7 @@
       card.setAttribute(
         "aria-label",
         p.label + ", " + p.time + ", raga " + p.familyRaga +
-          ", " + p.options.length + " performances"
+          ", " + p.options.length + " classical performances, " + p.filmy.length + " filmy songs"
       );
       if (p.id === selected.id) card.setAttribute("aria-current", "true");
       card.innerHTML =
@@ -296,12 +336,12 @@
         '</div><div class="card-raga">' +
         p.familyRaga +
         '</div><div class="card-artist">' +
-        p.options.length +
-        " performances</div>";
+        p.options.length + " classical \u00b7 " + p.filmy.length + " filmy" +
+        "</div>";
       card.onclick = function () {
         following = false;
         selected = p;
-        currentPick = pickRandomOption(p);
+        currentPick = pickFrom(p);
         render();
       };
       els.grid.appendChild(card);
@@ -353,7 +393,7 @@
       const current = getCurrentPrahar(now);
       if (current.id !== selected.id) {
         selected = current;
-        currentPick = pickRandomOption(selected);
+        currentPick = pickFrom(selected);
         render();
       }
     }
@@ -368,6 +408,9 @@
       render();
     }
   });
+
+  if (els.modeClassical) els.modeClassical.onclick = function () { setMode(false); };
+  if (els.modeFilmy) els.modeFilmy.onclick = function () { setMode(true); };
 
   render();
 
