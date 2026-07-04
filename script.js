@@ -136,12 +136,19 @@
 
   // Explicit Android intent that targets the NewPipe package directly.
   // If NewPipe isn't installed, Chrome falls back to the plain YouTube URL.
+  // NewPipe's own intent-filter (RouterActivity in its AndroidManifest.xml)
+  // requires the android.intent.category.BROWSABLE category to match —
+  // Chrome doesn't reliably add that category on its own on every
+  // Android/Chrome version, so without it Android can fail to resolve the
+  // intent to NewPipe at all (silently doing nothing, or dropping straight
+  // to the browser fallback). Declaring it explicitly makes the hand-off
+  // reliable.
   function newPipeIntentUrl(videoId) {
     const watchUrl = youtubeWatchUrl(videoId);
     return (
       "intent://www.youtube.com/watch?v=" +
       videoId +
-      "#Intent;scheme=https;package=org.schabi.newpipe;S.browser_fallback_url=" +
+      "#Intent;scheme=https;package=org.schabi.newpipe;category=android.intent.category.BROWSABLE;S.browser_fallback_url=" +
       encodeURIComponent(watchUrl) +
       ";end"
     );
@@ -207,7 +214,7 @@
     els.timeRange.textContent = p.time;
     if (filmy) {
       els.ragaName.textContent = pick.song;
-      els.artist.textContent = pick.artist + " \u00b7 " + pick.film + " (" + pick.year + ")";
+      els.artist.textContent = pick.artist + " · " + pick.film + " (" + pick.year + ")";
       els.mood.textContent = "Inspired by Raga " + pick.raga + ". " + pick.mood;
     } else {
       els.ragaName.textContent = "Raga " + pick.raga;
@@ -336,7 +343,7 @@
         '</div><div class="card-raga">' +
         p.familyRaga +
         '</div><div class="card-artist">' +
-        p.options.length + " classical \u00b7 " + p.filmy.length + " filmy" +
+        p.options.length + " classical · " + p.filmy.length + " filmy" +
         "</div>";
       card.onclick = function () {
         following = false;
