@@ -1,9 +1,20 @@
 // Ashta Prahar (8 three-hour segments) mapped to the Hindustani classical
 // ragas traditionally sung/played during that time of day. Each prahar has:
-//   - options: a pool of verified, named-artist YouTube performances (classical)
+//   - options: verified, named-artist YouTube performances (classical)
 //   - filmy:   verified Bollywood songs built on a raga of that prahar
 // One entry is picked at random on load / prahar change / Shuffle. Every
-// videoId was copied from a real YouTube search result (never invented).
+// videoId was pulled from a real search result and confirmed live via
+// YouTube's oEmbed endpoint (never invented, never guessed).
+//
+// RAGA -> PRAHAR PLACEMENT GUIDE (so any raga-based piece has a home):
+//   0 Early Morning (4-7)  : Bhairav, Bhairavi, Ramkali, Kalingada, Lalit, Jogia, Vibhas, Gunkali
+//   1 Morning (7-10)       : Ahir Bhairav, Todi, Miyan ki Todi, Gujari Todi, Bilaskhani Todi, Jaunpuri, Asavari
+//   2 Late Morning (10-13) : Bilawal, Alhaiya Bilawal, Deshkar, Shuddh Sarang, Gaud Sarang, Shankara, Devgiri
+//   3 Afternoon (13-16)    : Bhimpalasi, Multani, Patdeep, Madhuvanti, Dhani, Brindavani Sarang, Piloo
+//   4 Dusk / Sandhi (16-19): Puriya Dhanashri, Marwa, Puriya, Shri, Puriya Kalyan, Multani (late)
+//   5 Evening (19-22)      : Yaman, Yaman Kalyan, Bhupali, Shuddh Kalyan, Kalyan, Khamaj, Jhinjhoti, Tilak Kamod, Desh, Kafi
+//   6 Night (22-1)         : Kedar, Hameer, Bihag, Maru Bihag, Nand, Kamod, Chhayanat, Durga, Shankara, Rageshri, Jaijaiwanti
+//   7 Late Night (1-4)     : Malkauns, Darbari Kanada, Bageshri, Adana, Chandrakauns, Kaunsi Kanada, Nayaki Kanada, Basant, Bahar, Sohni
 
 const PRAHARS = [
   {
@@ -150,6 +161,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "350K",
         "mood": "Grand and resonant — the Rampur-Sahaswan master greeting sunrise with commanding Bhairav."
+      },
+      {
+        "raga": "Bhairav",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "ARl1OlQoBzg",
+        "gender": "male",
+        "views": "80K",
+        "mood": "The Banaras brothers' stately Bhairav khayal — grave, devotional dawn."
       }
     ],
     "filmy": [
@@ -391,6 +410,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "300K",
         "mood": "Robust and radiant, the maestro's Ahir Bhairav carries morning devotion in full voice."
+      },
+      {
+        "raga": "Gujari Todi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "PdWenqMtpas",
+        "gender": "male",
+        "views": "40K",
+        "mood": "A searching Gujari Todi, morning light filtered through longing."
       }
     ],
     "filmy": [
@@ -789,6 +816,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "20K",
         "mood": "Light and swaying, like a garden swing catching a warm afternoon breeze tinged with nostalgia."
+      },
+      {
+        "raga": "Brindavani Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "2efM0j2KOyU",
+        "gender": "male",
+        "views": "30K",
+        "mood": "Brindavani Sarang — the bright, open air of high noon."
       }
     ],
     "filmy": [
@@ -979,6 +1014,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "110K",
         "mood": "The sitar sighs through austere, introspective phrases as the world dims into dusk."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "SJ38KvvEVjQ",
+        "gender": "male",
+        "views": "50K",
+        "mood": "Marwa's unsettled twilight, the sun dropping below the horizon."
       }
     ],
     "filmy": [
@@ -1178,6 +1221,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "60K",
         "mood": "Grave and contemplative — a rare late-night-leaning Yaman Kalyan from the Indore maestro."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "mBtXjOP__CE",
+        "gender": "male",
+        "views": "45K",
+        "mood": "A luminous Yaman (with Champakali) — the classic early-evening raga."
       }
     ],
     "filmy": [
@@ -1404,6 +1455,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "100K",
         "mood": "Unhurried and profound, his 1960s live Bihag melts into a meditative hush."
+      },
+      {
+        "raga": "Bihag",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "9AxH39VaQO8",
+        "gender": "male",
+        "views": "60K",
+        "mood": "Bihag's romantic night glow, a vilambit unfolding into a tarana."
       }
     ],
     "filmy": [
@@ -1674,6 +1733,22 @@ const PRAHARS = [
         "gender": "female",
         "views": "50K",
         "mood": "N. Rajam's singing violin draws Darbari's somber curves into a meditative, near-silent vigil."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "ismOvvhQVKE",
+        "gender": "male",
+        "views": "70K",
+        "mood": "Darbari Kanada's regal, midnight gravity from the Banaras duo."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "QSVAzOxk-3w",
+        "gender": "male",
+        "views": "90K",
+        "mood": "A deep, meditative Malkauns for the stillest hour of the night."
       }
     ],
     "filmy": [
