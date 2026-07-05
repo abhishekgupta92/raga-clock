@@ -1124,6 +1124,24 @@ const PRAHARS = [
         "raga": "Puriya Dhanashri",
         "videoId": "HcXJxsJQwNQ",
         "mood": "Ustad Amir Khan's khayal in Puriya Dhanashri, the grave beauty of sundown."
+      },
+      {
+        "song": "Kitne Dino Ke Baad",
+        "film": "Aayee Milan Ki Raat",
+        "year": 1991,
+        "artist": "Anuradha Paudwal, Mohammed Aziz",
+        "raga": "Puriya Dhanashri",
+        "videoId": "SK_rX1yPnHg",
+        "mood": "A Puriya Dhanashri duet for the night of reunion, twilight turning to longing."
+      },
+      {
+        "song": "Ruth Aa Gayee Re",
+        "film": "1947: Earth",
+        "year": 1998,
+        "artist": "Sukhwinder Singh",
+        "raga": "Puriya Dhanashri",
+        "videoId": "NtIi01Mp_6c",
+        "mood": "A.R. Rahman's Puriya Dhanashri — dusk swelling with a bittersweet ache."
       }
     ]
   },
@@ -1616,6 +1634,15 @@ const PRAHARS = [
         "raga": "Malgunji",
         "videoId": "Gn-IrbInS8s",
         "mood": "Vasant Desai's Malgunji duet, eyes meeting and shying away at night."
+      },
+      {
+        "song": "Tere Sur Aur Mere Geet",
+        "film": "Goonj Uthi Shehnai",
+        "year": 1959,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bihag",
+        "videoId": "a2YVETrBKNo",
+        "mood": "Vasant Desai's Bihag — two melodies entwining in the romantic night."
       }
     ]
   },
