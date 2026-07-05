@@ -1598,6 +1598,24 @@ const PRAHARS = [
         "raga": "Hameer",
         "videoId": "crxIol2Hu84",
         "mood": "Naushad's Hameer showpiece — a nighttime dance of pure classical joy."
+      },
+      {
+        "song": "Bekas Pe Karam Kijiye",
+        "film": "Mughal-e-Azam",
+        "year": 1960,
+        "artist": "Lata Mangeshkar",
+        "raga": "Kedar",
+        "videoId": "B3X411sSUSo",
+        "mood": "Naushad's Kedar prayer — a moonlit plea rising from the prison dark."
+      },
+      {
+        "song": "Nain So Nain Nahi Milao",
+        "film": "Jhanak Jhanak Payal Baaje",
+        "year": 1955,
+        "artist": "Lata Mangeshkar, Hemant Kumar",
+        "raga": "Malgunji",
+        "videoId": "Gn-IrbInS8s",
+        "mood": "Vasant Desai's Malgunji duet, eyes meeting and shying away at night."
       }
     ]
   },
@@ -1928,6 +1946,15 @@ const PRAHARS = [
         "raga": "Bageshri",
         "videoId": "RfK54g1wo9k",
         "mood": "A.R. Rahman's Bageshri reverie, aching and restless after midnight."
+      },
+      {
+        "song": "Jhanak Jhanak Payal Baaje",
+        "film": "Jhanak Jhanak Payal Baaje",
+        "year": 1955,
+        "artist": "Ustad Amir Khan",
+        "raga": "Adana",
+        "videoId": "RziYfS_CCqo",
+        "mood": "Ustad Amir Khan's Adana — a pure classical title song for the deep night."
       }
     ]
   }
