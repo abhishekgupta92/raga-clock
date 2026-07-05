@@ -1151,6 +1151,33 @@ const PRAHARS = [
         "raga": "Puriya Dhanashri",
         "videoId": "NtIi01Mp_6c",
         "mood": "A.R. Rahman's Puriya Dhanashri — dusk swelling with a bittersweet ache."
+      },
+      {
+        "song": "Labon Se Chum Lo",
+        "film": "Aastha",
+        "year": 1997,
+        "artist": "Sreeradha Banerjee",
+        "raga": "Puriya Dhanashri",
+        "videoId": "iwJuiJpxpF0",
+        "mood": "A sensuous Puriya Dhanashri at dusk, hushed and close."
+      },
+      {
+        "song": "Prem Lagan Man Mein Basaye",
+        "film": "Soorat Aur Seerat",
+        "year": 1962,
+        "artist": "Asha Bhosle",
+        "raga": "Puriya Dhanashri",
+        "videoId": "9vD4Wwybwho",
+        "mood": "Roshan's Puriya Dhanashri — devotion settling in with the twilight."
+      },
+      {
+        "song": "Tumne Kya Kya Kiya Hai",
+        "film": "Prem Geet",
+        "year": 1981,
+        "artist": "Asha Bhosle",
+        "raga": "Puriya Dhanashri",
+        "videoId": "bTBO-OBpMuk",
+        "mood": "Jagjit Singh's Puriya Dhanashri, a wistful sundown of gratitude."
       }
     ]
   },
