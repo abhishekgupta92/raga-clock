@@ -215,6 +215,24 @@ const PRAHARS = [
         "raga": "Bhairavi",
         "videoId": "dYF356rIjhc",
         "mood": "Manna Dey's classical tour de force in Bhairavi, brimming with surrender."
+      },
+      {
+        "song": "Tu Ganga Ki Mauj",
+        "film": "Baiju Bawra",
+        "year": 1952,
+        "artist": "Mohammed Rafi, Lata Mangeshkar",
+        "raga": "Bhairavi",
+        "videoId": "T1a36ff7_m0",
+        "mood": "Naushad's serene Bhairavi duet — the river and the morning as one."
+      },
+      {
+        "song": "Mora Gora Ang Laile",
+        "film": "Bandini",
+        "year": 1963,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhairavi",
+        "videoId": "WmsTsSdms2o",
+        "mood": "S.D. Burman & Gulzar's Bhairavi — a moonlit-to-dawn plea, tender and shy."
       }
     ]
   },
@@ -1348,6 +1366,24 @@ const PRAHARS = [
         "raga": "Khamaj",
         "videoId": "v0cN4AXHiW4",
         "mood": "Salil Chowdhury's Khamaj, the monsoon evening pining for a lover."
+      },
+      {
+        "song": "Ab Kya Misaal Doon",
+        "film": "Aarti",
+        "year": 1962,
+        "artist": "Mohammed Rafi",
+        "raga": "Yaman",
+        "videoId": "WchI8cTVxi8",
+        "mood": "Roshan's Yaman — an evening ode to a beloved's beauty."
+      },
+      {
+        "song": "Saranga Teri Yaad Mein",
+        "film": "Saranga",
+        "year": 1961,
+        "artist": "Mukesh",
+        "raga": "Yaman",
+        "videoId": "mJzehD-SKLg",
+        "mood": "A yearning Yaman lament, restless eyes waiting through the evening."
       }
     ]
   },
