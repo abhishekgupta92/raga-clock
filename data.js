@@ -617,6 +617,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "20K",
         "mood": "Traditional and unhurried, carrying forward a lineage of sunlit devotion."
+      },
+      {
+        "raga": "Gaud Sarang",
+        "artist": "Ashwini Bhide-Deshpande",
+        "videoId": "yb9jivq1n_M",
+        "gender": "female",
+        "views": "25K",
+        "mood": "Gaud Sarang's zigzag melody, sunlight climbing toward noon."
       }
     ],
     "filmy": [
@@ -824,6 +832,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "30K",
         "mood": "Brindavani Sarang — the bright, open air of high noon."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Pandit Venkatesh Kumar",
+        "videoId": "QwONU9X5c5c",
+        "gender": "male",
+        "views": "150K",
+        "mood": "A powerful Multani khayal — the heavy stillness of mid-afternoon."
       }
     ],
     "filmy": [
@@ -1022,6 +1038,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "50K",
         "mood": "Marwa's unsettled twilight, the sun dropping below the horizon."
+      },
+      {
+        "raga": "Shri",
+        "artist": "Shruti Sadolikar",
+        "videoId": "1EcRrZvc52o",
+        "gender": "female",
+        "views": "20K",
+        "mood": "Raga Shri's austere sunset gravity, a sandhi-prakash twilight raga."
       }
     ],
     "filmy": [
@@ -1463,6 +1487,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "60K",
         "mood": "Bihag's romantic night glow, a vilambit unfolding into a tarana."
+      },
+      {
+        "raga": "Maru Bihag",
+        "artist": "Shruti Sadolikar",
+        "videoId": "JcwV6Gk998g",
+        "gender": "female",
+        "views": "30K",
+        "mood": "Maru Bihag glows warm and amorous deep into the night."
       }
     ],
     "filmy": [
