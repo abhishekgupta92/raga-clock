@@ -168,7 +168,7 @@ const PRAHARS = [
         "year": 1956,
         "artist": "Lata Mangeshkar",
         "raga": "Bhairav",
-        "videoId": "WN-bjhtqoyU",
+        "videoId": "cFM7xqthtgM",
         "mood": "A luminous morning prayer in Bhairav, waking Krishna at first light."
       },
       {
@@ -177,7 +177,7 @@ const PRAHARS = [
         "year": 1978,
         "artist": "Lata Mangeshkar",
         "raga": "Bhairavi",
-        "videoId": "5o_GLXqUBek",
+        "videoId": "a-iKo3fYgT8",
         "mood": "A Bhairavi thumri at the riverbank as morning breaks."
       },
       {
@@ -599,7 +599,7 @@ const PRAHARS = [
         "year": 1961,
         "artist": "Lata Mangeshkar",
         "raga": "Deshkar",
-        "videoId": "6OWNiGODXc0",
+        "videoId": "oUXF9Xc6k7c",
         "mood": "A radiant Deshkar bhajan — the late-morning light spilling like a lamp."
       },
       {
@@ -608,7 +608,7 @@ const PRAHARS = [
         "year": 1972,
         "artist": "Lata Mangeshkar",
         "raga": "Todi",
-        "videoId": "BcRCCC5pMI4",
+        "videoId": "_UqpW8YE994",
         "mood": "R.D. Burman's Todi-tinged classic, the mid-morning ache of waiting."
       }
     ]
@@ -798,7 +798,7 @@ const PRAHARS = [
         "year": 1966,
         "artist": "Lata Mangeshkar",
         "raga": "Bhimpalasi",
-        "videoId": "aNfFDGuK2yk",
+        "videoId": "AtgmPdSMG1U",
         "mood": "Madan Mohan's Bhimpalasi — a hazy afternoon heavy with memory."
       }
     ]
@@ -1413,7 +1413,7 @@ const PRAHARS = [
         "year": 1960,
         "artist": "Mohammed Rafi",
         "raga": "Hameer",
-        "videoId": "0_MUdUw2Lw4",
+        "videoId": "crxIol2Hu84",
         "mood": "Naushad's Hameer showpiece — a nighttime dance of pure classical joy."
       }
     ]
@@ -1701,7 +1701,7 @@ const PRAHARS = [
         "year": 1959,
         "artist": "Mahendra Kapoor, Asha Bhosle",
         "raga": "Malkauns",
-        "videoId": "C1vI9jqUdSo",
+        "videoId": "30GfQcNH1Ag",
         "mood": "C. Ramchandra's Malkauns under a half-moon, half the night gone."
       },
       {

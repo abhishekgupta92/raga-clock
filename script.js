@@ -148,7 +148,7 @@
     return (
       "intent://www.youtube.com/watch?v=" +
       videoId +
-      "#Intent;scheme=https;package=org.schabi.newpipe;category=android.intent.category.BROWSABLE;S.browser_fallback_url=" +
+      "#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=org.schabi.newpipe;S.browser_fallback_url=" +
       encodeURIComponent(watchUrl) +
       ";end"
     );
