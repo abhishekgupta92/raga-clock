@@ -910,6 +910,24 @@ const PRAHARS = [
         "raga": "Madhuvanti",
         "videoId": "DM0bS5iqx3M",
         "mood": "Madan Mohan's Madhuvanti ghazal — the wistful glow of a fading afternoon."
+      },
+      {
+        "song": "Kuch Dil Ne Kaha",
+        "film": "Anupama",
+        "year": 1966,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhimpalasi",
+        "videoId": "fwMCqvMe6bA",
+        "mood": "Hemant Kumar's Bhimpalasi — a pensive afternoon reverie, half-spoken."
+      },
+      {
+        "song": "Maine Chand Aur Sitaron Ki Tamanna Ki Thi",
+        "film": "Chandrakanta",
+        "year": 1956,
+        "artist": "Mohammed Rafi",
+        "raga": "Bhimpalasi",
+        "videoId": "PQDVe7XL9t0",
+        "mood": "N. Datta's Bhimpalasi — longing for the moon and stars in the afternoon heat."
       }
     ]
   },
