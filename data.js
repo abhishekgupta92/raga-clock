@@ -472,6 +472,24 @@ const PRAHARS = [
         "raga": "Ahir Bhairav",
         "videoId": "mKksC_XKCGM",
         "mood": "S.D. Burman's Ahir Bhairav, a night passed in longing as dawn arrives."
+      },
+      {
+        "song": "Ab Tere Bin Jee Lenge Hum",
+        "film": "Aashiqui",
+        "year": 1990,
+        "artist": "Kumar Sanu",
+        "raga": "Ahir Bhairav",
+        "videoId": "rXHY4Cv9cA8",
+        "mood": "Nadeem-Shravan's Ahir Bhairav — a wounded morning vow to carry on."
+      },
+      {
+        "song": "Meri Veena Tum Bin Roye",
+        "film": "Dekh Kabira Roya",
+        "year": 1957,
+        "artist": "Lata Mangeshkar",
+        "raga": "Ahir Bhairav",
+        "videoId": "_V1I3xd-j2k",
+        "mood": "Madan Mohan's Ahir Bhairav — a veena weeping softly into the dawn."
       }
     ]
   },
