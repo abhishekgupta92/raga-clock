@@ -901,6 +901,15 @@ const PRAHARS = [
         "raga": "Bhimpalasi",
         "videoId": "AtgmPdSMG1U",
         "mood": "Madan Mohan's Bhimpalasi — a hazy afternoon heavy with memory."
+      },
+      {
+        "song": "Rasm-e-Ulfat Ko Nibhaye",
+        "film": "Dil Ki Rahen",
+        "year": 1973,
+        "artist": "Lata Mangeshkar",
+        "raga": "Madhuvanti",
+        "videoId": "DM0bS5iqx3M",
+        "mood": "Madan Mohan's Madhuvanti ghazal — the wistful glow of a fading afternoon."
       }
     ]
   },
