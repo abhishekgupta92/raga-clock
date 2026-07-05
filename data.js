@@ -169,6 +169,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "80K",
         "mood": "The Banaras brothers' stately Bhairav khayal — grave, devotional dawn."
+      },
+      {
+        "raga": "Lalit",
+        "artist": "Pandit Bhimsen Joshi",
+        "videoId": "J0IgCdLIseE",
+        "gender": "male",
+        "views": "120K",
+        "mood": "Lalit's aching pre-dawn twilight, poised between night and morning."
       }
     ],
     "filmy": [
@@ -418,6 +426,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "40K",
         "mood": "A searching Gujari Todi, morning light filtered through longing."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Kishori Amonkar",
+        "videoId": "KoMfFkoNSj4",
+        "gender": "female",
+        "views": "90K",
+        "mood": "A vintage Jaunpuri (1967) — the plaintive settle of full morning."
       }
     ],
     "filmy": [
@@ -625,6 +641,14 @@ const PRAHARS = [
         "gender": "female",
         "views": "25K",
         "mood": "Gaud Sarang's zigzag melody, sunlight climbing toward noon."
+      },
+      {
+        "raga": "Shuddh Sarang",
+        "artist": "Pandit Bhimsen Joshi",
+        "videoId": "sqoMYQhpgCE",
+        "gender": "male",
+        "views": "70K",
+        "mood": "Shuddh Sarang's bright, thirsty midday climb toward noon."
       }
     ],
     "filmy": [
@@ -840,6 +864,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "150K",
         "mood": "A powerful Multani khayal — the heavy stillness of mid-afternoon."
+      },
+      {
+        "raga": "Patdeep",
+        "artist": "Pandit Nikhil Banerjee (sitar)",
+        "videoId": "GEQYoyi-ARM",
+        "gender": "male",
+        "views": "110K",
+        "mood": "Nikhil Banerjee's Patdeep on sitar — warm, restless afternoon."
       }
     ],
     "filmy": [
@@ -1046,6 +1078,14 @@ const PRAHARS = [
         "gender": "female",
         "views": "20K",
         "mood": "Raga Shri's austere sunset gravity, a sandhi-prakash twilight raga."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Ustad Ali Akbar Khan (sarod)",
+        "videoId": "dXPUQfZDITs",
+        "gender": "male",
+        "views": "130K",
+        "mood": "Marwa & Shree on sarod, the unsettled hush as the sun goes down."
       }
     ],
     "filmy": [
@@ -1253,6 +1293,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "45K",
         "mood": "A luminous Yaman (with Champakali) — the classic early-evening raga."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ustad Vilayat Khan (sitar)",
+        "videoId": "NKwhtyQBquk",
+        "gender": "male",
+        "views": "200K",
+        "mood": "Vilayat Khan's singing sitar Yaman — the quintessential evening raga."
       }
     ],
     "filmy": [
@@ -1495,6 +1543,14 @@ const PRAHARS = [
         "gender": "female",
         "views": "30K",
         "mood": "Maru Bihag glows warm and amorous deep into the night."
+      },
+      {
+        "raga": "Rageshri",
+        "artist": "Ustad Shahid Parvez Khan (sitar)",
+        "videoId": "kuodgoYjy60",
+        "gender": "male",
+        "views": "80K",
+        "mood": "Rageshri's serene night glow, unfurling on the sitar."
       }
     ],
     "filmy": [
@@ -1781,6 +1837,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "90K",
         "mood": "A deep, meditative Malkauns for the stillest hour of the night."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Ustad Ali Akbar Khan (sarod)",
+        "videoId": "ld1gocdOooY",
+        "gender": "male",
+        "views": "160K",
+        "mood": "Ali Akbar Khan's sarod Darbari — the deepest, most regal midnight."
       }
     ],
     "filmy": [
