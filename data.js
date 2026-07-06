@@ -1625,6 +1625,60 @@ const PRAHARS = [
         "raga": "Yaman Kalyan",
         "videoId": "J4ZKNty9cQ4",
         "mood": "Madan Mohan's Yaman Kalyan — the beloved has stolen the heart, one evening."
+      },
+      {
+        "song": "Abhi Na Jao Chhod Kar",
+        "film": "Hum Dono",
+        "year": 1961,
+        "artist": "Mohammed Rafi, Asha Bhosle",
+        "raga": "Yaman Kalyan",
+        "videoId": "NfWJsgu5uVo",
+        "mood": "Jaidev's Yaman Kalyan — an evening plea to stay, the heart not yet full."
+      },
+      {
+        "song": "Chhupa Lo Yun Dil Mein Pyar Mera",
+        "film": "Mamta",
+        "year": 1966,
+        "artist": "Lata Mangeshkar, Hemant Kumar",
+        "raga": "Yaman Kalyan",
+        "videoId": "GXgKgZt9Jik",
+        "mood": "Roshan's Yaman Kalyan — hide this love in your heart, an evening vow."
+      },
+      {
+        "song": "Aap Ke Anurodh Pe",
+        "film": "Anurodh",
+        "year": 1977,
+        "artist": "Kishore Kumar",
+        "raga": "Yaman Kalyan",
+        "videoId": "hsfcCJ034Fk",
+        "mood": "Laxmikant-Pyarelal's Yaman Kalyan — a graceful evening song of request."
+      },
+      {
+        "song": "Aaye Ho Meri Zindagi Mein",
+        "film": "Raja Hindustani",
+        "year": 1996,
+        "artist": "Udit Narayan",
+        "raga": "Yaman Kalyan",
+        "videoId": "r7cUMWxS6Xo",
+        "mood": "Nadeem-Shravan's Yaman Kalyan — gratitude blooming into an evening."
+      },
+      {
+        "song": "Ansu Samajh Ke",
+        "film": "Chhaya",
+        "year": 1961,
+        "artist": "Talat Mahmood",
+        "raga": "Yaman Kalyan",
+        "videoId": "pLyHeI1HRw8",
+        "mood": "Salil Chowdhury's Yaman Kalyan — Talat's velvet ache at dusk."
+      },
+      {
+        "song": "Bade Bhole Ho",
+        "film": "Ardhangini",
+        "year": 1959,
+        "artist": "Lata Mangeshkar",
+        "raga": "Yaman Kalyan",
+        "videoId": "ficIAWjm6KQ",
+        "mood": "Vasant Desai's Yaman Kalyan — a teasing, tender evening address to Kanha."
       }
     ]
   },
