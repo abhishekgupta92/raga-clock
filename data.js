@@ -1044,6 +1044,33 @@ const PRAHARS = [
         "raga": "Bhimpalasi",
         "videoId": "pNgYZ2oovZU",
         "mood": "A.R. Rahman's Bhimpalasi — a bright, love-struck afternoon confession."
+      },
+      {
+        "song": "Mere Man Ka Bawra Panchhi",
+        "film": "Amardeep",
+        "year": 1958,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhimpalasi",
+        "videoId": "-4pp5EFPp_4",
+        "mood": "C. Ramchandra's Bhimpalasi — the mind's restless bird in the afternoon heat."
+      },
+      {
+        "song": "Man Mor Hua Matwala",
+        "film": "Afsar",
+        "year": 1950,
+        "artist": "Suraiyya",
+        "raga": "Bhimpalasi",
+        "videoId": "o1lU_gqF3fs",
+        "mood": "S.D. Burman's early Bhimpalasi — the heart dances, intoxicated by the day."
+      },
+      {
+        "song": "Khanabadosh",
+        "film": "London Dreams",
+        "year": 2009,
+        "artist": "Mohan Kannan",
+        "raga": "Bhimpalasi",
+        "videoId": "bMlOhcoXb68",
+        "mood": "Shankar-Ehsaan-Loy's Bhimpalasi — a wandering afternoon restlessness."
       }
     ]
   },
