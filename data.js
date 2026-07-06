@@ -2527,6 +2527,60 @@ const PRAHARS = [
         "raga": "Basant",
         "videoId": "dSMUJ2oEGB4",
         "mood": "Birju Maharaj's Basant — a kathak thumri blazing through the spring night."
+      },
+      {
+        "song": "Balma Mane Na",
+        "film": "Opera House",
+        "year": 1961,
+        "artist": "Lata Mangeshkar",
+        "raga": "Malkauns",
+        "videoId": "j2zi19WKpow",
+        "mood": "Chitragupta's Malkauns — the beloved won't relent, deep in the night."
+      },
+      {
+        "song": "Darbar Mein Upar Wale Ke",
+        "film": "Hera Pheri",
+        "year": 1976,
+        "artist": "Kishore Kumar, Mahendra Kapoor",
+        "raga": "Malkauns",
+        "videoId": "tq9xBmKwaNM",
+        "mood": "Kalyanji-Anandji's Malkauns — a wry midnight sermon on fate's tricks."
+      },
+      {
+        "song": "Deep Jalaye Jo Geeton Ke",
+        "film": "Kalakaar",
+        "year": 1983,
+        "artist": "Suresh Wadkar",
+        "raga": "Malkauns",
+        "videoId": "ngCQ2uJiO_o",
+        "mood": "Kalyanji-Anandji's Malkauns — lamps lit with song against the night."
+      },
+      {
+        "song": "Ek Ladki Thi Kitni Sharmili",
+        "film": "Love You Hamesha",
+        "year": 1999,
+        "artist": "Kavita Krishnamurthy",
+        "raga": "Malkauns",
+        "videoId": "mc3nnXYyDIc",
+        "mood": "A.R. Rahman's surprisingly pure Malkauns — a shy girl remembered at night."
+      },
+      {
+        "song": "Ankhiyan Sang Ankhiyaan Laagi",
+        "film": "Bada Aadmi",
+        "year": 1961,
+        "artist": "Mohammed Rafi",
+        "raga": "Malkauns",
+        "videoId": "KG8cxLEKAAk",
+        "mood": "Chitragupta's Malkauns — eyes locking with eyes in the deep night."
+      },
+      {
+        "song": "Mujhe Na Bula",
+        "film": "Suvarna Sundari",
+        "year": 1958,
+        "artist": "Lata Mangeshkar",
+        "raga": "Malkauns",
+        "videoId": "uQ7JQli7Ehs",
+        "mood": "A tender Malkauns plea — do not call me now, in the stillness of night."
       }
     ]
   }
