@@ -516,6 +516,15 @@ const PRAHARS = [
         "raga": "Ahir Bhairav",
         "videoId": "_V1I3xd-j2k",
         "mood": "Madan Mohan's Ahir Bhairav — a veena weeping softly into the dawn."
+      },
+      {
+        "song": "Aaj Gaawat Man Mero",
+        "film": "Baiju Bawra",
+        "year": 1952,
+        "artist": "Ustad Amir Khan & D.V. Paluskar",
+        "raga": "Desi",
+        "videoId": "LK1AhJyWofY",
+        "mood": "A legendary jugalbandi in raga Desi — two titans trading morning phrases."
       }
     ]
   },
@@ -999,6 +1008,15 @@ const PRAHARS = [
         "raga": "Bhimpalasi",
         "videoId": "PQDVe7XL9t0",
         "mood": "N. Datta's Bhimpalasi — longing for the moon and stars in the afternoon heat."
+      },
+      {
+        "song": "Sur Na Saje",
+        "film": "Basant Bahar",
+        "year": 1956,
+        "artist": "Manna Dey",
+        "raga": "Pilu",
+        "videoId": "0jGUBOCmB_I",
+        "mood": "Manna Dey's Pilu lament — 'the notes won't come together', an afternoon of doubt."
       }
     ]
   },
@@ -1838,6 +1856,15 @@ const PRAHARS = [
         "raga": "Tilak Kamod",
         "videoId": "WPwTPhFMm3k",
         "mood": "Ustad Rashid Khan's Tilak Kamod — a luminous nighttime promise of return."
+      },
+      {
+        "song": "Shubh Din Aayo Raj Dulara",
+        "film": "Mughal-e-Azam",
+        "year": 1960,
+        "artist": "Ustad Bade Ghulam Ali Khan",
+        "raga": "Rageshri",
+        "videoId": "ozp4srmwkaM",
+        "mood": "Bade Ghulam Ali Khan's Rageshri, sung for Tansen — regal night in the emperor's court."
       }
     ]
   },
@@ -2194,6 +2221,15 @@ const PRAHARS = [
         "raga": "Malkauns",
         "videoId": "YRr2oqHb6js",
         "mood": "The Mishra brothers in Malkauns for film — birds of melody arriving in the night."
+      },
+      {
+        "song": "Prem Jogan Ban Ke",
+        "film": "Mughal-e-Azam",
+        "year": 1960,
+        "artist": "Ustad Bade Ghulam Ali Khan",
+        "raga": "Sohni",
+        "videoId": "zJuM0IDrEmM",
+        "mood": "Bade Ghulam Ali Khan's Sohni — the pre-dawn ache of love, one of film's greatest classical moments."
       }
     ]
   }
