@@ -2090,6 +2090,60 @@ const PRAHARS = [
         "raga": "Jhinjhoti",
         "videoId": "yGmPL_IVuAk",
         "mood": "Hemant Kumar's Jhinjhoti — someone called from afar, then hid in the night."
+      },
+      {
+        "song": "Aji Rooth Kar Ab Kahan Jaiyega",
+        "film": "Aarzoo",
+        "year": 1965,
+        "artist": "Lata Mangeshkar",
+        "raga": "Desh",
+        "videoId": "SJAx_2ZmiuM",
+        "mood": "Shankar-Jaikishan's Desh — a tender nighttime coax not to leave in anger."
+      },
+      {
+        "song": "Dil Ne Kaha Chupke Se",
+        "film": "1942: A Love Story",
+        "year": 1994,
+        "artist": "Kavita Krishnamurthy",
+        "raga": "Desh",
+        "videoId": "doKN8wH93yE",
+        "mood": "R.D. Burman's last-film Desh — the heart's soft night-whisper of love."
+      },
+      {
+        "song": "Door Koi Gaaye",
+        "film": "Baiju Bawra",
+        "year": 1952,
+        "artist": "Mohammed Rafi, Lata Mangeshkar",
+        "raga": "Desh",
+        "videoId": "7lKqQW66pKo",
+        "mood": "Naushad's Desh — a far-off melody drifting across the night."
+      },
+      {
+        "song": "Hum Tere Pyar Mein",
+        "film": "Dil Ek Mandir",
+        "year": 1963,
+        "artist": "Lata Mangeshkar",
+        "raga": "Desh",
+        "videoId": "KvSxWV9rcbw",
+        "mood": "Shankar-Jaikishan's Desh — lost to the whole world in love, one night."
+      },
+      {
+        "song": "Dukh Ke Ab Din Bitat Nahi",
+        "film": "Devdas",
+        "year": 1936,
+        "artist": "K.L. Saigal",
+        "raga": "Desh",
+        "videoId": "3IPKMmDrB0Q",
+        "mood": "Saigal's historic Desh — the days of sorrow no longer pass, sung into the night."
+      },
+      {
+        "song": "Aapko Pyar Chhupane Ki",
+        "film": "Neela Aakash",
+        "year": 1965,
+        "artist": "Mohammed Rafi, Asha Bhosle",
+        "raga": "Desh",
+        "videoId": "iK5RcbGQy1E",
+        "mood": "Madan Mohan's Desh — a playful night complaint about hiding one's love."
       }
     ]
   },
