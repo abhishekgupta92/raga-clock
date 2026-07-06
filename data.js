@@ -242,6 +242,24 @@ const PRAHARS = [
         "raga": "Bhatiyar",
         "videoId": "AJRrUAC9OLs",
         "mood": "The Mishra brothers' film playback — Bhatiyar greeting the very first light."
+      },
+      {
+        "song": "Humein Tumse Pyar Kitna",
+        "film": "Kudrat",
+        "year": 1981,
+        "artist": "Begum Parveen Sultana",
+        "raga": "Mishra Bhairavi",
+        "videoId": "79g8SRTozZU",
+        "mood": "Parveen Sultana's towering Mishra Bhairavi — classical grandeur poured into a film love song."
+      },
+      {
+        "song": "Ka Karoon Sajni Aaye Na Balam",
+        "film": "Swami",
+        "year": 1977,
+        "artist": "K.J. Yesudas",
+        "raga": "Bhairavi",
+        "videoId": "5h4JxqgnymQ",
+        "mood": "Yesudas in a Bhairavi thumri — a bride's morning ache that the beloved hasn't come."
       }
     ]
   },
@@ -1535,6 +1553,15 @@ const PRAHARS = [
         "raga": "Yaman Kalyan",
         "videoId": "NQaRaxXYM0Q",
         "mood": "Madan Mohan's Kalyan — old memories aching in the evening quiet."
+      },
+      {
+        "song": "Dil Hoom Hoom Kare",
+        "film": "Rudaali",
+        "year": 1993,
+        "artist": "Bhupen Hazarika",
+        "raga": "Bhupali",
+        "videoId": "uw09KhKHQyE",
+        "mood": "Bhupen Hazarika's Bhupali — the heart trembling like a slow evening flame."
       }
     ]
   },
@@ -1793,6 +1820,24 @@ const PRAHARS = [
         "raga": "Durga",
         "videoId": "y-zX9E9ObzY",
         "mood": "Kishori Amonkar's rare film title song — Durga, pentatonic and luminous at night."
+      },
+      {
+        "song": "Bole Re Papihara",
+        "film": "Guddi",
+        "year": 1971,
+        "artist": "Vani Jairam",
+        "raga": "Miyan ki Malhar",
+        "videoId": "MiA2zSIcIFc",
+        "mood": "Vani Jairam's debut — Miyan ki Malhar, the papiha calling through the monsoon night."
+      },
+      {
+        "song": "Aaoge Jab Tum O Sajna",
+        "film": "Jab We Met",
+        "year": 2007,
+        "artist": "Ustad Rashid Khan",
+        "raga": "Tilak Kamod",
+        "videoId": "WPwTPhFMm3k",
+        "mood": "Ustad Rashid Khan's Tilak Kamod — a luminous nighttime promise of return."
       }
     ]
   },
