@@ -452,6 +452,14 @@ const PRAHARS = [
         "gender": "female",
         "views": "90K",
         "mood": "A vintage Jaunpuri (1967) — the plaintive settle of full morning."
+      },
+      {
+        "raga": "Bilaskhani Todi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "XI3Mlwjc4Is",
+        "gender": "male",
+        "views": "40K",
+        "mood": "Bilaskhani Todi — Todi's grave beauty softened with Asavari, mid-morning."
       }
     ],
     "filmy": [
@@ -472,15 +480,6 @@ const PRAHARS = [
         "raga": "Ahir Bhairav",
         "videoId": "mKksC_XKCGM",
         "mood": "S.D. Burman's Ahir Bhairav, a night passed in longing as dawn arrives."
-      },
-      {
-        "song": "Ab Tere Bin Jee Lenge Hum",
-        "film": "Aashiqui",
-        "year": 1990,
-        "artist": "Kumar Sanu",
-        "raga": "Ahir Bhairav",
-        "videoId": "rXHY4Cv9cA8",
-        "mood": "Nadeem-Shravan's Ahir Bhairav — a wounded morning vow to carry on."
       },
       {
         "song": "Meri Veena Tum Bin Roye",
@@ -1176,6 +1175,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "130K",
         "mood": "Marwa & Shree on sarod, the unsettled hush as the sun goes down."
+      },
+      {
+        "raga": "Puriya",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "ruxRXU-hQwQ",
+        "gender": "male",
+        "views": "25K",
+        "mood": "A drut Puriya (Marwa thaat) — the charged stillness just after sunset."
       }
     ],
     "filmy": [
@@ -1722,6 +1729,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "80K",
         "mood": "Rageshri's serene night glow, unfurling on the sitar."
+      },
+      {
+        "raga": "Jaijaiwanti",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "TTqwEwrkDRU",
+        "gender": "male",
+        "views": "30K",
+        "mood": "Jaijaiwanti's tender, conversational sway deep in the night."
       }
     ],
     "filmy": [
@@ -2043,6 +2058,14 @@ const PRAHARS = [
         "gender": "male",
         "views": "160K",
         "mood": "Ali Akbar Khan's sarod Darbari — the deepest, most regal midnight."
+      },
+      {
+        "raga": "Kaunsi Kanada",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "QGceECIH7vU",
+        "gender": "male",
+        "views": "35K",
+        "mood": "Kaunsi Kanada — Malkauns meets Kanada in the stillest small hours."
       }
     ],
     "filmy": [
