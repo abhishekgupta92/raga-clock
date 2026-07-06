@@ -260,6 +260,69 @@ const PRAHARS = [
         "raga": "Bhairavi",
         "videoId": "5h4JxqgnymQ",
         "mood": "Yesudas in a Bhairavi thumri — a bride's morning ache that the beloved hasn't come."
+      },
+      {
+        "song": "Ghar Aaya Mera Pardesi",
+        "film": "Awara",
+        "year": 1951,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhairavi",
+        "videoId": "PaXVU-DNqf0",
+        "mood": "Shankar-Jaikishan's dream-sequence Bhairavi — the wanderer home at daybreak."
+      },
+      {
+        "song": "Insaaf Ka Mandir Hai",
+        "film": "Amar",
+        "year": 1954,
+        "artist": "Mohammed Rafi",
+        "raga": "Bhairavi",
+        "videoId": "E6D30Gl6NUU",
+        "mood": "Naushad's Bhairavi hymn — this is the temple of justice, God's own house."
+      },
+      {
+        "song": "Hothon Pe Sachhai Rehti Hai",
+        "film": "Jis Desh Mein Ganga Behti Hai",
+        "year": 1960,
+        "artist": "Mukesh",
+        "raga": "Bhairavi",
+        "videoId": "wdbudoa5018",
+        "mood": "Shankar-Jaikishan's Bhairavi — a morning creed of honesty and open hearts."
+      },
+      {
+        "song": "Hum Bhi Hain Tum Bhi Ho",
+        "film": "Jis Desh Mein Ganga Behti Hai",
+        "year": 1960,
+        "artist": "Mukesh",
+        "raga": "Bhairavi",
+        "videoId": "Ej_iyN6B6Bs",
+        "mood": "A gentle Bhairavi of togetherness under the open morning sky."
+      },
+      {
+        "song": "Ek Dil Aur Sau Afsane",
+        "film": "Ek Dil Sau Afsane",
+        "year": 1963,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhairavi",
+        "videoId": "1GJYDWUQ3uU",
+        "mood": "A tender Bhairavi — one heart and a hundred tales, told at dawn."
+      },
+      {
+        "song": "Is Bhari Duniya Mein",
+        "film": "Bharosa",
+        "year": 1963,
+        "artist": "Mohammed Rafi",
+        "raga": "Bhairavi",
+        "videoId": "up4Gkxb66ac",
+        "mood": "Ravi's plaintive Bhairavi — alone in a crowded world as morning breaks."
+      },
+      {
+        "song": "Ek Tara Bole",
+        "film": "Yaadgar",
+        "year": 1970,
+        "artist": "Mahendra Kapoor",
+        "raga": "Bhairavi",
+        "videoId": "MHlJ5DmPP-0",
+        "mood": "A one-stringed ektara ringing a simple Bhairavi truth at first light."
       }
     ]
   },
