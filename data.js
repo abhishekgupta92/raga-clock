@@ -1091,15 +1091,6 @@ const PRAHARS = [
         "mood": "Manna Dey's Pilu lament — 'the notes won't come together', an afternoon of doubt."
       },
       {
-        "song": "Megha Chhaye Aadhi Raat",
-        "film": "Sharmeelee",
-        "year": 1971,
-        "artist": "Lata Mangeshkar",
-        "raga": "Patdeep",
-        "videoId": "VhhrPSsDfgE",
-        "mood": "S.D. Burman's Patdeep — restless afternoon clouds of longing."
-      },
-      {
         "song": "Kehta Hai Mera Yeh Dil",
         "film": "Jeans",
         "year": 1998,
