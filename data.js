@@ -1035,6 +1035,15 @@ const PRAHARS = [
         "raga": "Patdeep",
         "videoId": "VhhrPSsDfgE",
         "mood": "S.D. Burman's Patdeep — restless afternoon clouds of longing."
+      },
+      {
+        "song": "Kehta Hai Mera Yeh Dil",
+        "film": "Jeans",
+        "year": 1998,
+        "artist": "Kavita Krishnamurthy",
+        "raga": "Bhimpalasi",
+        "videoId": "pNgYZ2oovZU",
+        "mood": "A.R. Rahman's Bhimpalasi — a bright, love-struck afternoon confession."
       }
     ]
   },
@@ -1607,6 +1616,15 @@ const PRAHARS = [
         "raga": "Yaman Kalyan",
         "videoId": "yCb_1eAaqMc",
         "mood": "Dattaram's Yaman Kalyan — tears strung along the evening road of life."
+      },
+      {
+        "song": "Jiya Le Gayo Ji Mora Sanwariya",
+        "film": "Anpadh",
+        "year": 1962,
+        "artist": "Lata Mangeshkar",
+        "raga": "Yaman Kalyan",
+        "videoId": "J4ZKNty9cQ4",
+        "mood": "Madan Mohan's Yaman Kalyan — the beloved has stolen the heart, one evening."
       }
     ]
   },
@@ -2284,6 +2302,15 @@ const PRAHARS = [
         "raga": "Darbari Kanada",
         "videoId": "Qqc10SrSMW4",
         "mood": "Manna Dey's Darbari Kanada — anklets ringing through the deep court night."
+      },
+      {
+        "song": "Kaahe Chhed Chhed Mohe",
+        "film": "Devdas",
+        "year": 2002,
+        "artist": "Pandit Birju Maharaj, Kavita Krishnamurthy",
+        "raga": "Basant",
+        "videoId": "dSMUJ2oEGB4",
+        "mood": "Birju Maharaj's Basant — a kathak thumri blazing through the spring night."
       }
     ]
   }
