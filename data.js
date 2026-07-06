@@ -597,6 +597,33 @@ const PRAHARS = [
         "raga": "Miyan ki Todi",
         "videoId": "6aSZl22CFiQ",
         "mood": "A Miyan ki Todi plea — 'the world holds nothing for me' — grave morning renunciation."
+      },
+      {
+        "song": "Aapne Jeevan Ki Uljhan Ko",
+        "film": "Uljhan",
+        "year": 1975,
+        "artist": "Kishore Kumar",
+        "raga": "Ahir Bhairav",
+        "videoId": "eLxh9njV6Co",
+        "mood": "Kalyanji-Anandji's Ahir Bhairav — untangling life's knots in the morning light."
+      },
+      {
+        "song": "Chalo Man Jayen Ghar Aapne",
+        "film": "Swami Vivekananda",
+        "year": 1994,
+        "artist": "K.J. Yesudas",
+        "raga": "Ahir Bhairav",
+        "videoId": "_MrdDBW6Eh0",
+        "mood": "Salil Chowdhury's Ahir Bhairav — Yesudas calling the soul homeward at dawn."
+      },
+      {
+        "song": "Dheere Dheere Subah Hui",
+        "film": "Haisiyat",
+        "year": 1984,
+        "artist": "K.J. Yesudas",
+        "raga": "Ahir Bhairav",
+        "videoId": "iS7lZjF4eFI",
+        "mood": "Bappi Lahiri's Ahir Bhairav — slowly the morning breaks and life stirs awake."
       }
     ]
   },
