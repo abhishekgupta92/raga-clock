@@ -26,7 +26,14 @@
   ];
 
   let following = true; // true = always show whatever prahar matches the clock
-  let filmy = false;    // false = Classical mode, true = Little Filmy mode
+  // Mode: Little Filmy is the default on a first visit; the choice is then
+  // remembered across refreshes via localStorage.
+  let filmy = true;
+  try {
+    var savedMode = localStorage.getItem("ragaClockMode");
+    if (savedMode === "classical") filmy = false;
+    else if (savedMode === "filmy") filmy = true;
+  } catch (e) {}
   let selected = getCurrentPrahar();
   let currentPick = pickFrom(selected);
 
@@ -193,6 +200,7 @@
   function setMode(toFilmy) {
     if (filmy === toFilmy) return;
     filmy = toFilmy;
+    try { localStorage.setItem("ragaClockMode", toFilmy ? "filmy" : "classical"); } catch (e) {}
     currentPick = pickFrom(selected);
     render();
   }
@@ -212,7 +220,7 @@
     applyTheme(p);
     els.praharLabel.textContent = p.label;
     els.timeRange.textContent = p.time;
-    if (filmy) {
+    if (filmy && pick.song) {
       els.ragaName.textContent = pick.song;
       els.artist.textContent = pick.artist + " · " + pick.film + " (" + pick.year + ")";
       els.mood.textContent = "Inspired by Raga " + pick.raga + ". " + pick.mood;

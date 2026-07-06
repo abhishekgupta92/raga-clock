@@ -525,6 +525,15 @@ const PRAHARS = [
         "raga": "Desi",
         "videoId": "LK1AhJyWofY",
         "mood": "A legendary jugalbandi in raga Desi — two titans trading morning phrases."
+      },
+      {
+        "song": "Duniya Na Bhaye Mohe",
+        "film": "Basant Bahar",
+        "year": 1956,
+        "artist": "Mohammed Rafi",
+        "raga": "Miyan ki Todi",
+        "videoId": "6aSZl22CFiQ",
+        "mood": "A Miyan ki Todi plea — 'the world holds nothing for me' — grave morning renunciation."
       }
     ]
   },
@@ -1017,6 +1026,15 @@ const PRAHARS = [
         "raga": "Pilu",
         "videoId": "0jGUBOCmB_I",
         "mood": "Manna Dey's Pilu lament — 'the notes won't come together', an afternoon of doubt."
+      },
+      {
+        "song": "Megha Chhaye Aadhi Raat",
+        "film": "Sharmeelee",
+        "year": 1971,
+        "artist": "Lata Mangeshkar",
+        "raga": "Patdeep",
+        "videoId": "VhhrPSsDfgE",
+        "mood": "S.D. Burman's Patdeep — restless afternoon clouds of longing."
       }
     ]
   },
@@ -1580,6 +1598,15 @@ const PRAHARS = [
         "raga": "Bhupali",
         "videoId": "uw09KhKHQyE",
         "mood": "Bhupen Hazarika's Bhupali — the heart trembling like a slow evening flame."
+      },
+      {
+        "song": "Aansoo Bhari Hai Ye Jeevan Ki Raahen",
+        "film": "Parvarish",
+        "year": 1958,
+        "artist": "Mukesh",
+        "raga": "Yaman Kalyan",
+        "videoId": "yCb_1eAaqMc",
+        "mood": "Dattaram's Yaman Kalyan — tears strung along the evening road of life."
       }
     ]
   },
@@ -1865,6 +1892,24 @@ const PRAHARS = [
         "raga": "Rageshri",
         "videoId": "ozp4srmwkaM",
         "mood": "Bade Ghulam Ali Khan's Rageshri, sung for Tansen — regal night in the emperor's court."
+      },
+      {
+        "song": "Man Mohana Bade Jhoothe",
+        "film": "Seema",
+        "year": 1955,
+        "artist": "Lata Mangeshkar",
+        "raga": "Jaijaiwanti",
+        "videoId": "uXGMxTTB_Dg",
+        "mood": "Shankar-Jaikishan's Jaijaiwanti — a night reproach to a beloved deceiver."
+      },
+      {
+        "song": "Chhup Gaya Koi Re",
+        "film": "Champakali",
+        "year": 1957,
+        "artist": "Lata Mangeshkar",
+        "raga": "Jhinjhoti",
+        "videoId": "yGmPL_IVuAk",
+        "mood": "Hemant Kumar's Jhinjhoti — someone called from afar, then hid in the night."
       }
     ]
   },
@@ -2230,6 +2275,15 @@ const PRAHARS = [
         "raga": "Sohni",
         "videoId": "zJuM0IDrEmM",
         "mood": "Bade Ghulam Ali Khan's Sohni — the pre-dawn ache of love, one of film's greatest classical moments."
+      },
+      {
+        "song": "Jhanak Jhanak Tori Baaje Payaliya",
+        "film": "Mere Huzoor",
+        "year": 1968,
+        "artist": "Manna Dey",
+        "raga": "Darbari Kanada",
+        "videoId": "Qqc10SrSMW4",
+        "mood": "Manna Dey's Darbari Kanada — anklets ringing through the deep court night."
       }
     ]
   }
