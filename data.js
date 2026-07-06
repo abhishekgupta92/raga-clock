@@ -705,6 +705,33 @@ const PRAHARS = [
         "raga": "Todi",
         "videoId": "_UqpW8YE994",
         "mood": "R.D. Burman's Todi-tinged classic, the mid-morning ache of waiting."
+      },
+      {
+        "song": "Sare Ke Sare Ga Ma Ko Lekar",
+        "film": "Parichay",
+        "year": 1972,
+        "artist": "Kishore Kumar, Asha Bhosle",
+        "raga": "Alhaiya Bilawal",
+        "videoId": "l8vUzE3dt24",
+        "mood": "R.D. Burman's bright Alhaiya Bilawal — a sunlit late-morning romp up the scale."
+      },
+      {
+        "song": "Dil Hai Chhota Sa (Chhoti Si Aasha)",
+        "film": "Roja",
+        "year": 1992,
+        "artist": "Minmini",
+        "raga": "Alhaiya Bilawal",
+        "videoId": "P2s1Cl23oik",
+        "mood": "A.R. Rahman's Alhaiya Bilawal — open, hopeful, the full light of morning."
+      },
+      {
+        "song": "Bhor Aayi Gaya Andhiyara",
+        "film": "Bawarchi",
+        "year": 1972,
+        "artist": "Manna Dey, Kishore Kumar",
+        "raga": "Alhaiya Bilawal",
+        "videoId": "MB_1iDS6_vY",
+        "mood": "Madan Mohan's first-prahar Alhaiya Bilawal — dawn done, the day begun."
       }
     ]
   },
@@ -1474,6 +1501,24 @@ const PRAHARS = [
         "raga": "Yaman",
         "videoId": "mJzehD-SKLg",
         "mood": "A yearning Yaman lament, restless eyes waiting through the evening."
+      },
+      {
+        "song": "Mausam Hai Aashiqana",
+        "film": "Pakeezah",
+        "year": 1971,
+        "artist": "Lata Mangeshkar",
+        "raga": "Yaman Kalyan",
+        "videoId": "-LaPJaUhZYk",
+        "mood": "Ghulam Mohammed's Kalyan — a languid, love-struck early evening."
+      },
+      {
+        "song": "Bhooli Hui Yaadon",
+        "film": "Sanjog",
+        "year": 1961,
+        "artist": "Mukesh",
+        "raga": "Yaman Kalyan",
+        "videoId": "NQaRaxXYM0Q",
+        "mood": "Madan Mohan's Kalyan — old memories aching in the evening quiet."
       }
     ]
   },
