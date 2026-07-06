@@ -233,6 +233,15 @@ const PRAHARS = [
         "raga": "Bhairavi",
         "videoId": "WmsTsSdms2o",
         "mood": "S.D. Burman & Gulzar's Bhairavi — a moonlit-to-dawn plea, tender and shy."
+      },
+      {
+        "song": "Aayo Prabhat Sab Mil Gao",
+        "film": "Sur Sangam",
+        "year": 1985,
+        "artist": "Pt. Rajan & Sajan Mishra, S. Janaki",
+        "raga": "Bhatiyar",
+        "videoId": "AJRrUAC9OLs",
+        "mood": "The Mishra brothers' film playback — Bhatiyar greeting the very first light."
       }
     ]
   },
@@ -1775,6 +1784,15 @@ const PRAHARS = [
         "raga": "Bihag",
         "videoId": "a2YVETrBKNo",
         "mood": "Vasant Desai's Bihag — two melodies entwining in the romantic night."
+      },
+      {
+        "song": "Geet Gaya Patharon Ne",
+        "film": "Geet Gaya Patharon Ne",
+        "year": 1964,
+        "artist": "Kishori Amonkar",
+        "raga": "Durga",
+        "videoId": "y-zX9E9ObzY",
+        "mood": "Kishori Amonkar's rare film title song — Durga, pentatonic and luminous at night."
       }
     ]
   },
@@ -2122,6 +2140,15 @@ const PRAHARS = [
         "raga": "Adana",
         "videoId": "RziYfS_CCqo",
         "mood": "Ustad Amir Khan's Adana — a pure classical title song for the deep night."
+      },
+      {
+        "song": "Aaye Sur Ke Panchhi Aaye",
+        "film": "Sur Sangam",
+        "year": 1985,
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "raga": "Malkauns",
+        "videoId": "YRr2oqHb6js",
+        "mood": "The Mishra brothers in Malkauns for film — birds of melody arriving in the night."
       }
     ]
   }
