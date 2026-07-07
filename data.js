@@ -2617,6 +2617,51 @@ const PRAHARS = [
         "raga": "Malkauns",
         "videoId": "uQ7JQli7Ehs",
         "mood": "A tender Malkauns plea — do not call me now, in the stillness of night."
+      },
+      {
+        "song": "Rang Raliyan Karat",
+        "film": "Birbal My Brother",
+        "year": 1973,
+        "artist": "Bhimsen Joshi, Pandit Jasraj",
+        "raga": "Malkauns",
+        "videoId": "3o_4PHPJiX8",
+        "mood": "Two titans in jugalbandi — reputedly the purest Malkauns in any Hindi film."
+      },
+      {
+        "song": "O Pavan Veg Se Udanewale Ghode",
+        "film": "Jai Chitaur",
+        "year": 1961,
+        "artist": "Lata Mangeshkar",
+        "raga": "Malkauns",
+        "videoId": "9pFSvHxbE74",
+        "mood": "S.N. Tripathi's Malkauns — a midnight cry to the galloping wind-swift steed."
+      },
+      {
+        "song": "Nirbal Se Ladai Balwan Ki",
+        "film": "Toofan Aur Diya",
+        "year": 1956,
+        "artist": "Manna Dey",
+        "raga": "Malkauns",
+        "videoId": "up1rsSYPUf8",
+        "mood": "Vasant Desai's Malkauns — the lamp's defiance of the storm, deep in the night."
+      },
+      {
+        "song": "Tu Chhupi Hai Kahan",
+        "film": "Navrang",
+        "year": 1959,
+        "artist": "Asha Bhosle, Manna Dey",
+        "raga": "Malkauns",
+        "videoId": "1lieuCEc_wI",
+        "mood": "C. Ramchandra's Malkauns — searching the night for a hidden beloved."
+      },
+      {
+        "song": "Sawan Ki Raat Kari Kari",
+        "film": "Meharban",
+        "year": 1967,
+        "artist": "Asha Bhosle",
+        "raga": "Malkauns",
+        "videoId": "cQ7vIY-fcW8",
+        "mood": "Ravi's Malkauns — a black monsoon night, heavy and yearning."
       }
     ]
   }
