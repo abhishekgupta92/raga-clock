@@ -1152,6 +1152,42 @@ const PRAHARS = [
         "raga": "Bhimpalasi",
         "videoId": "bMlOhcoXb68",
         "mood": "Shankar-Ehsaan-Loy's Bhimpalasi — a wandering afternoon restlessness."
+      },
+      {
+        "song": "Samay O Dhire Chalo",
+        "film": "Rudaali",
+        "year": 1993,
+        "artist": "Asha Bhosle",
+        "raga": "Bhimpalasi",
+        "videoId": "teRh44Pl_3g",
+        "mood": "Bhupen Hazarika's chaste Bhimpalasi — time, walk slowly through the afternoon."
+      },
+      {
+        "song": "O Nirdai Pritam",
+        "film": "Stree",
+        "year": 1961,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhimpalasi",
+        "videoId": "FGl1WgKiX0E",
+        "mood": "C. Ramchandra's restrained Bhimpalasi — a reproach to a heartless beloved."
+      },
+      {
+        "song": "O Beqaraar Dil",
+        "film": "Kohraa",
+        "year": 1964,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhimpalasi",
+        "videoId": "4ZlbYFEcJrg",
+        "mood": "Hemant Kumar's Bhimpalasi — a restless heart in the languid afternoon."
+      },
+      {
+        "song": "Zindagi Mein To Sabhi Pyar Kiya Karte Hain",
+        "film": "Azmat",
+        "year": 1973,
+        "artist": "Mehdi Hassan",
+        "raga": "Bhimpalasi",
+        "videoId": "4dcIvP8_sRk",
+        "mood": "Mehdi Hassan's Bhimpalasi ghazal — everyone loves, but few know how."
       }
     ]
   },
