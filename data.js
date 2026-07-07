@@ -323,6 +323,33 @@ const PRAHARS = [
         "raga": "Bhairavi",
         "videoId": "MHlJ5DmPP-0",
         "mood": "A one-stringed ektara ringing a simple Bhairavi truth at first light."
+      },
+      {
+        "song": "Aye Maalik Tere Bande Hum",
+        "film": "Do Aankhen Barah Haath",
+        "year": 1957,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhairav",
+        "videoId": "fFc9TMxRbQg",
+        "mood": "Vasant Desai's Bhairav prayer — the dawn hymn of the redeemed, seeking strength and grace."
+      },
+      {
+        "song": "Man Re Hari Ke Gun Ga",
+        "film": "Musafir",
+        "year": 1957,
+        "artist": "Lata Mangeshkar",
+        "raga": "Bhairav",
+        "videoId": "c8QV1EJnK_E",
+        "mood": "Salil Chowdhury's Bhairav — a morning call to the mind to sing the Lord's praise."
+      },
+      {
+        "song": "Main Ek Raja Hoon",
+        "film": "Uphaar",
+        "year": 1971,
+        "artist": "Mohammed Rafi",
+        "raga": "Bhairav",
+        "videoId": "8gCpXojxo_4",
+        "mood": "Laxmikant-Pyarelal's Bhairav — a bright, playful morning of young romance."
       }
     ]
   },
