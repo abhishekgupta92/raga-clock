@@ -2288,6 +2288,42 @@ const PRAHARS = [
         "raga": "Desh",
         "videoId": "iK5RcbGQy1E",
         "mood": "Madan Mohan's Desh — a playful night complaint about hiding one's love."
+      },
+      {
+        "song": "Aap Ki Aankhon Mein Kuchh",
+        "film": "Ghar",
+        "year": 1978,
+        "artist": "Kishore Kumar, Lata Mangeshkar",
+        "raga": "Kedar",
+        "videoId": "3bZ45auFtAU",
+        "mood": "R.D. Burman's Kedar-tinged night — a fragrant secret in a lover's eyes."
+      },
+      {
+        "song": "Aap Yun Hi Agar Humse Milte Rahe",
+        "film": "Ek Musafir Ek Hasina",
+        "year": 1962,
+        "artist": "Mohammed Rafi, Asha Bhosle",
+        "raga": "Kedar",
+        "videoId": "3Ez_GyVEST0",
+        "mood": "O.P. Nayyar's Kedar — a moonlit warning that this could turn to love."
+      },
+      {
+        "song": "Darshan Do Ghanshyam",
+        "film": "Narsi Bhagat",
+        "year": 1957,
+        "artist": "Hemant Kumar, Manna Dey, Sudha Malhotra",
+        "raga": "Kedar",
+        "videoId": "0UYtyMXwEuo",
+        "mood": "Ravi's Kedar bhajan — thirsting eyes plead for a vision of the Lord at night."
+      },
+      {
+        "song": "Kuchh Ajnabi Se Aap Hain",
+        "film": "Shagun",
+        "year": 1964,
+        "artist": "Talat Mahmood, Mubarak Begum",
+        "raga": "Mishra Kedar",
+        "videoId": "bHQC1hAuVjc",
+        "mood": "Khayyam's Mishra Kedar — a tender, hesitant night of new acquaintance."
       }
     ]
   },
