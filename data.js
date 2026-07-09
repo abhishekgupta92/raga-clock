@@ -1850,6 +1850,87 @@ const PRAHARS = [
         "raga": "Yaman Kalyan",
         "videoId": "ficIAWjm6KQ",
         "mood": "Vasant Desai's Yaman Kalyan — a teasing, tender evening address to Kanha."
+      },
+      {
+        "song": "Aa Dil Se Dil Mila Le",
+        "film": "Navrang",
+        "year": 1959,
+        "artist": "Asha Bhosle",
+        "raga": "Khamaj",
+        "videoId": "5BTCwI5HEpg",
+        "mood": "C. Ramchandra's Khamaj — an evening invitation for heart to meet heart."
+      },
+      {
+        "song": "Aayo Kahan Se Ghanshyam",
+        "film": "Buddha Mil Gaya",
+        "year": 1971,
+        "artist": "Manna Dey, Archana",
+        "raga": "Khamaj",
+        "videoId": "1YcECS_WsK4",
+        "mood": "R.D. Burman's thumri-style Khamaj — a delicious evening tease."
+      },
+      {
+        "song": "Baar Baar Tohe Kya Samjhaye",
+        "film": "Aarti",
+        "year": 1962,
+        "artist": "Mohammed Rafi, Lata Mangeshkar",
+        "raga": "Khamaj",
+        "videoId": "D5gjRvVlk3c",
+        "mood": "Roshan's Khamaj — anklets pleading through a tender evening."
+      },
+      {
+        "song": "Bada Natkhat Hai Re Krishna Kanhaiya",
+        "film": "Amar Prem",
+        "year": 1971,
+        "artist": "Lata Mangeshkar",
+        "raga": "Khamaj",
+        "videoId": "8uhPePg1oNQ",
+        "mood": "R.D. Burman's Khamaj lullaby — Yashoda's fond evening complaint about naughty Krishna."
+      },
+      {
+        "song": "Chunariya Katati Jaye",
+        "film": "Mother India",
+        "year": 1957,
+        "artist": "Manna Dey, Rafi, Shamshad Begum",
+        "raga": "Khamaj",
+        "videoId": "8GiBCQ9QFjk",
+        "mood": "Naushad's Khamaj — the thread of life spinning out as evening falls."
+      },
+      {
+        "song": "Dhal Chuki Shaam-e-Gham",
+        "film": "Kohinoor",
+        "year": 1960,
+        "artist": "Mohammed Rafi",
+        "raga": "Khamaj",
+        "videoId": "xLG5rU2xOEQ",
+        "mood": "Naushad's Khamaj — the evening of sorrow has passed, so smile, beloved."
+      },
+      {
+        "song": "Hum Apna Unhe Bana Na Sake",
+        "film": "Bhanwara",
+        "year": 1944,
+        "artist": "K.L. Saigal",
+        "raga": "Khamaj",
+        "videoId": "kVqbalGykrE",
+        "mood": "Saigal's vintage Khamaj — an evening ache for a love that could not be."
+      },
+      {
+        "song": "Mere To Giridhar Gopal",
+        "film": "Meera",
+        "year": 1979,
+        "artist": "Vani Jairam",
+        "raga": "Khamaj",
+        "videoId": "FMtPn6-fjq0",
+        "mood": "Pt. Ravi Shankar's Khamaj — Meera's evening surrender to Giridhar Gopal."
+      },
+      {
+        "song": "Mitwa",
+        "film": "Kabhi Alvida Naa Kehna",
+        "year": 2006,
+        "artist": "Shafqat Amanat Ali, Shankar Mahadevan",
+        "raga": "Khamaj",
+        "videoId": "ru_5PA8cwkE",
+        "mood": "Shankar-Ehsaan-Loy's Khamaj — a modern evening reckoning of the heart."
       }
     ]
   },
