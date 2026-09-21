@@ -36,14 +36,19 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Raga Clock</div>
-      <h1>The right raga, for right now</h1>
-      <p>Inspired by <a href="https://ragya.com" style="color:inherit">Ragya</a>'s prahar system — 8 time-of-day segments, each paired with a raga.</p>
+      <div class="brand" id="brand">Raga Clock</div>
+      <h1 id="page-title">The right raga, for right now</h1>
+      <p id="page-sub">Inspired by <a href="https://ragya.com" style="color:inherit">Ragya</a>'s prahar system — 8 time-of-day segments, each paired with a raga.</p>
     </header>
+
+    <nav class="section-nav" id="section-nav" aria-label="Sections">
+      <button class="section-btn active" id="section-raga" type="button" aria-pressed="true">Raga Clock</button>
+      <button class="section-btn" id="section-kabir" type="button" aria-pressed="false">Kabir</button>
+    </nav>
 
     <main>
       <div class="clock-card" aria-live="polite" aria-atomic="true">
-        <div class="mode-toggle" role="group" aria-label="Playback mode">
+        <div class="mode-toggle" id="mode-toggle" role="group" aria-label="Playback mode">
           <button class="mode-btn active" id="mode-classical" type="button" aria-pressed="true">Classical</button>
           <button class="mode-btn" id="mode-filmy" type="button" aria-pressed="false">Little Filmy</button>
         </div>
@@ -56,19 +61,19 @@
         <div class="actions" id="actions"></div>
         <div class="player-shell" id="player-shell"></div>
         <div class="follow-note" id="follow-note"></div>
-        <div class="clock-foot">
+        <div class="clock-foot" id="clock-foot">
           <span class="live-clock" id="live-clock">--:--:--</span>
           <span class="next-prahar" id="next-prahar" aria-live="off"></span>
         </div>
       </div>
 
       <section class="browse">
-        <h2>Browse all 8 praharas</h2>
+        <h2 id="browse-title">Browse all 8 praharas</h2>
         <div class="grid" id="grid" role="list"></div>
       </section>
     </main>
 
-    <footer>
+    <footer id="footer-note">
       Each prahar draws a random piece from its pool every time you load the page or hit Shuffle (or press the <kbd>S</kbd> key).<br />
       On Android, tap "Open in NewPipe" (falls back to YouTube if NewPipe isn't installed) or share the pick on WhatsApp. You can also install Raga Clock to your home screen for one-tap access.<br />
       On other devices it autoplays inline with sound — if your browser blocks unmuted autoplay on a first visit, just click anywhere on the page once.
@@ -76,6 +81,7 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="kabir.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

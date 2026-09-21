@@ -1,8 +1,17 @@
 # Raga Clock
 
-A tiny static web app that plays the Hindustani classical raga traditionally
-associated with the current time of day (the "prahar" system), inspired by
-[ragya.com](https://ragya.com).
+A tiny static web app with two sections, chosen from the menu at the top:
+
+- **Raga Clock** — plays the Hindustani classical raga traditionally associated
+  with the current time of day (the "prahar" system), inspired by
+  [ragya.com](https://ragya.com).
+- **Kabir** — the same player, but organised by *kind of Kabir* rather than by
+  the clock.
+
+No build step, no dependencies, no backend — just `index.html`, `style.css`,
+`script.js`, `data.js` and `kabir.js`.
+
+## Raga Clock
 
 - Every prahar has a pool of verified, named-artist performances (mostly
   female Hindustani classical musicians). A random one is picked whenever
@@ -26,19 +35,6 @@ associated with the current time of day (the "prahar" system), inspired by
   performance for a Bollywood song built on one of that prahar's ragas (e.g.
   *Man Tarpat Hari Darshan Ko Aaj* in Malkauns for Late Night, *Ehsan Tera
   Hoga Mujh Par* in Yaman for Evening). Same time-of-day logic, filmy flavour.
-
-No build step, no dependencies, no backend — just `index.html`, `style.css`,
-`script.js`, and `data.js`.
-
-## Run it locally
-
-Open `index.html` directly in a browser, or serve the folder:
-
-```bash
-cd raga-clock
-python3 -m http.server 8000
-# visit http://localhost:8000
-```
 
 ## The 8 praharas
 
@@ -77,6 +73,45 @@ simply because Malkauns/Bageshri/Darbari Kanada turned up the most verified
 recordings; the others can grow the same way — just add more `{ raga,
 artist, videoId, gender, views, mood }` objects to a prahar's `options`
 array.
+
+## Kabir
+
+Kabir's poems carry no time-of-day association — there is no prahar system for
+them — so this section drops the clock entirely. Instead the pools are
+**styles**, and you pick the register you want:
+
+| Style | Recordings | What it is |
+|---|---|---|
+| Nirgun Classical | 10 | Kabir as Hindustani classical — above all Kumar Gandharva, who rebuilt the nirguni bhajan after tuberculosis cost him a lung. |
+| Malwa & Rajasthan Folk | 18 | The living tradition — Kabir sung in village courtyards on tambura and kartal, where the poems never stopped being folk songs. |
+| Fusion & Rock | 19 | Kabir with a bass guitar and a drum kit — Neeraj Arya's Kabir Cafe put 15th-century verse on the festival circuit and it worked. |
+| Sufi | 2 | Kabir read from the other side of the same argument — the Sufi voice that treats his verse as its own. |
+| Popular & Devotional | 3 | Kabir as most people meet him first — bhajan albums, film playback, and dohe recited on a loop. |
+
+**Total: 52 verified recordings** across 5 styles.
+
+Everything else behaves exactly as in Raga Clock: a random track on load, the
+same inline YouTube player with auto-advance, the same NewPipe/WhatsApp
+hand-off on Android, the same <kbd>S</kbd> shuffle key. The page tint follows
+the chosen style rather than the hour. Your section and style are remembered
+across visits.
+
+`kabir.js` holds the data as `{ label, blurb, accent, tracks: [{ title, artist,
+videoId, note }] }`, and is loaded as a separate optional file — if it fails to
+load, the Kabir menu item hides itself and Raga Clock carries on unaffected.
+The pools can grow the same way the raga ones do. Sufi is the thinnest at two
+entries, simply because few full Abida Parveen Kabir recordings are indexed as
+individual tracks rather than as jukeboxes.
+
+## Run it locally
+
+Open `index.html` directly in a browser, or serve the folder:
+
+```bash
+cd raga-clock
+python3 -m http.server 8000
+# visit http://localhost:8000
+```
 
 ## How the NewPipe link works
 

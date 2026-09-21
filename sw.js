@@ -1,8 +1,8 @@
 // Minimal service worker — its only job is to exist, so Chrome on Android
 // treats Raga Clock as installable ("Add to Home screen"). It caches the
 // app shell so the shell loads instantly on repeat visits, but always goes
-// to the network for data.js/YouTube so raga picks and videos stay fresh.
-const CACHE_NAME = "raga-clock-shell-v1";
+// to the network for data.js/kabir.js/YouTube so picks and videos stay fresh.
+const CACHE_NAME = "raga-clock-shell-v2";
 const SHELL_FILES = [
   "./",
   "./index.html",

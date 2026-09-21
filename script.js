@@ -15,8 +15,29 @@
     themeColorMeta: document.getElementById("theme-color-meta"),
     modeClassical: document.getElementById("mode-classical"),
     modeFilmy: document.getElementById("mode-filmy"),
-    grid: document.getElementById("grid")
+    grid: document.getElementById("grid"),
+    sectionRaga: document.getElementById("section-raga"),
+    sectionKabir: document.getElementById("section-kabir"),
+    modeToggle: document.getElementById("mode-toggle"),
+    clockFoot: document.getElementById("clock-foot"),
+    browseTitle: document.getElementById("browse-title"),
+    footerNote: document.getElementById("footer-note"),
+    brand: document.getElementById("brand"),
+    pageTitle: document.getElementById("page-title"),
+    pageSub: document.getElementById("page-sub")
   };
+
+  // Footer copy differs per section: the raga notes talk about praharas and
+  // the live clock, neither of which applies to Kabir.
+  const FOOTER_RAGA = els.footerNote ? els.footerNote.innerHTML : "";
+  const FOOTER_KABIR =
+    'Kabir has no time of day — the poems were never tied to praharas, so these pools are ' +
+    'styles instead: pick a register and it draws a random track from it (or press the ' +
+    '<kbd>S</kbd> key to shuffle).<br />Every recording is a real, named performance — ' +
+    'Kumar Gandharva\'s nirguni bhajans, the Malwa and Rajasthan folk lineage, and the ' +
+    'bands that put Kabir on a festival stage.<br />' +
+    'On Android, tap "Open in NewPipe" (falls back to YouTube if NewPipe isn\'t installed) ' +
+    'or share the pick on WhatsApp.';
 
   // Accent colours per prahar, mirrored from style.css so the browser theme
   // colour (address bar / task switcher) matches the on-screen palette.
@@ -24,6 +45,14 @@
     "#ff9a6b", "#ffc24b", "#57c7ff", "#4fd1c5",
     "#ff7241", "#b58cff", "#6f8cff", "#8a7dff"
   ];
+
+  // kabir.js is a separate file, so treat it as optional: if it fails to load
+  // the Kabir section simply isn't offered and the raga clock works as before.
+  const KABIR =
+    (typeof KABIR_STYLES !== "undefined" && KABIR_STYLES && KABIR_STYLES.length)
+      ? KABIR_STYLES
+      : null;
+  if (!KABIR && els.sectionKabir) els.sectionKabir.style.display = "none";
 
   let following = true; // true = always show whatever prahar matches the clock
   // Mode: Little Filmy is the default on a first visit; the choice is then
@@ -34,6 +63,25 @@
     if (savedMode === "classical") filmy = false;
     else if (savedMode === "filmy") filmy = true;
   } catch (e) {}
+  // Which top-level section is showing. Raga Clock follows the clock; Kabir
+  // ignores it entirely and is browsed by style. Remembered across refreshes.
+  let section = "raga";
+  try {
+    var savedSection = localStorage.getItem("ragaClockSection");
+    if (savedSection === "kabir" || savedSection === "raga") section = savedSection;
+    if (section === "kabir" && !KABIR) section = "raga";
+  } catch (e) {}
+
+  // The Kabir style currently being drawn from (the analogue of `selected`).
+  let kabirStyle = KABIR ? KABIR[0] : null;
+  try {
+    var savedStyle = localStorage.getItem("ragaClockKabirStyle");
+    var foundStyle = KABIR
+      ? KABIR.filter(function (st) { return st.key === savedStyle; })[0]
+      : null;
+    if (foundStyle) kabirStyle = foundStyle;
+  } catch (e) {}
+
   let selected = getCurrentPrahar();
   let currentPick = pickFrom(selected);
 
@@ -168,14 +216,21 @@
     return (filmy && prahar.filmy && prahar.filmy.length) ? prahar.filmy : prahar.options;
   }
 
+  // The pool the current section draws from. In Kabir mode the prahar argument
+  // is irrelevant — the active style decides — so callers can keep passing one.
+  function poolFor(prahar) {
+    if (section === "kabir") return kabirStyle.tracks;
+    return activePool(prahar || selected);
+  }
+
   function pickFrom(prahar) {
-    const pool = activePool(prahar);
+    const pool = poolFor(prahar);
     return pool[Math.floor(Math.random() * pool.length)];
   }
 
   function newPick(prahar) {
     // Avoid repeating the same pick twice in a row when the pool has more than one.
-    const pool = activePool(prahar);
+    const pool = poolFor(prahar);
     if (pool.length <= 1) return pool[0];
     let next = pickFrom(prahar);
     let guard = 0;
@@ -208,13 +263,83 @@
   // Shift the whole page palette to match the prahar being shown, and keep the
   // browser theme colour in step with it.
   function applyTheme(prahar) {
+    document.body.removeAttribute("data-kabir");
     document.body.setAttribute("data-prahar", String(prahar.id));
     if (els.themeColorMeta && PRAHAR_ACCENTS[prahar.id]) {
       els.themeColorMeta.setAttribute("content", PRAHAR_ACCENTS[prahar.id]);
     }
   }
 
-  function render() {
+  // Kabir has no hour to mirror, so the palette follows the chosen style
+  // instead of the clock.
+  function applyKabirTheme(style) {
+    document.body.removeAttribute("data-prahar");
+    document.body.setAttribute("data-kabir", String(style.id));
+    if (els.themeColorMeta && style.accent) {
+      els.themeColorMeta.setAttribute("content", style.accent);
+    }
+  }
+
+  function setSection(next) {
+    if (section === next) return;
+    section = next;
+    try { localStorage.setItem("ragaClockSection", next); } catch (e) {}
+    if (next === "raga") {
+      following = true;
+      selected = getCurrentPrahar();
+    }
+    currentPick = pickFrom(selected);
+    render();
+  }
+
+  function setKabirStyle(style) {
+    kabirStyle = style;
+    try { localStorage.setItem("ragaClockKabirStyle", style.key); } catch (e) {}
+    currentPick = pickFrom();
+    render();
+  }
+
+  function updateSectionButtons() {
+    if (els.sectionRaga) {
+      els.sectionRaga.classList.toggle("active", section === "raga");
+      els.sectionRaga.setAttribute("aria-pressed", String(section === "raga"));
+    }
+    if (els.sectionKabir) {
+      els.sectionKabir.classList.toggle("active", section === "kabir");
+      els.sectionKabir.setAttribute("aria-pressed", String(section === "kabir"));
+    }
+  }
+
+  // Show/hide the chrome that only makes sense for one section, and retitle
+  // the page. Everything else (card, actions, player, grid) is shared.
+  function renderChrome() {
+    const isKabir = section === "kabir";
+    if (els.modeToggle) els.modeToggle.style.display = isKabir ? "none" : "";
+    if (els.clockFoot) els.clockFoot.style.display = isKabir ? "none" : "";
+    if (els.brand) els.brand.textContent = isKabir ? "Kabir" : "Raga Clock";
+    if (els.pageTitle) {
+      els.pageTitle.textContent = isKabir
+        ? "Kabir, in every voice that sings him"
+        : "The right raga, for right now";
+    }
+    if (els.pageSub) {
+      els.pageSub.innerHTML = isKabir
+        ? "No clock here — Kabir's poems belong to no prahar. Pick the kind of Kabir you want instead."
+        : 'Inspired by <a href="https://ragya.com" style="color:inherit">Ragya</a>\'s prahar system — 8 time-of-day segments, each paired with a raga.';
+    }
+    if (els.browseTitle) {
+      els.browseTitle.textContent = isKabir
+        ? "Browse Kabir by style"
+        : "Browse all 8 praharas";
+    }
+    if (els.footerNote) els.footerNote.innerHTML = isKabir ? FOOTER_KABIR : FOOTER_RAGA;
+    document.title = isKabir
+      ? "Kabir — every voice that sings him"
+      : "Raga Clock — the right raga for right now";
+    updateSectionButtons();
+  }
+
+  function renderRagaHead() {
     const p = selected;
     const pick = currentPick;
     applyTheme(p);
@@ -230,6 +355,38 @@
       els.mood.textContent = pick.mood;
     }
     updateModeButtons();
+  }
+
+  function renderKabirHead() {
+    const style = kabirStyle;
+    const pick = currentPick;
+    applyKabirTheme(style);
+    els.praharLabel.textContent = style.label;
+    els.timeRange.textContent =
+      style.tracks.length + (style.tracks.length === 1 ? " recording" : " recordings");
+    els.ragaName.textContent = pick.title;
+    els.artist.textContent = pick.artist;
+    els.mood.textContent = pick.note;
+  }
+
+  // Shared by both sections — WhatsApp needs a one-line description of
+  // whatever is currently playing.
+  function shareText(pick) {
+    if (section === "kabir") {
+      return "Kabir right now: " + pick.title + " — " + pick.artist +
+        " (" + kabirStyle.label + ")";
+    }
+    return filmy && pick.song
+      ? "Right now on Raga Clock (Filmy): " + pick.song + " (" + pick.film +
+          ") — inspired by Raga " + pick.raga
+      : "Right now on Raga Clock: Raga " + pick.raga + " by " + pick.artist;
+  }
+
+  function render() {
+    const p = selected;
+    const pick = currentPick;
+    if (section === "kabir") renderKabirHead(); else renderRagaHead();
+    renderChrome();
 
     els.actions.innerHTML = "";
 
@@ -254,13 +411,8 @@
       const shareBtn = document.createElement("a");
       shareBtn.className = "btn btn-whatsapp";
       shareBtn.textContent = "WhatsApp";
-      const shareText =
-        (filmy
-          ? "Right now on Raga Clock (Filmy): " + pick.song + " (" + pick.film +
-              ") — inspired by Raga " + pick.raga
-          : "Right now on Raga Clock: Raga " + pick.raga + " by " + pick.artist) +
-        " — https://abhishekgupta92.github.io/raga-clock/";
-      shareBtn.href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+      const msg = shareText(pick) + " — https://abhishekgupta92.github.io/raga-clock/";
+      shareBtn.href = "https://wa.me/?text=" + encodeURIComponent(msg);
       shareBtn.target = "_blank";
       shareBtn.rel = "noopener";
       els.actions.appendChild(shareBtn);
@@ -291,8 +443,13 @@
     const shuffleBtn = document.createElement("button");
     shuffleBtn.className = "btn-secondary";
     shuffleBtn.type = "button";
-    shuffleBtn.setAttribute("aria-label", "Shuffle to another performance from this prahar");
-    shuffleBtn.textContent = "Shuffle (" + activePool(p).length + " in pool)";
+    shuffleBtn.setAttribute(
+      "aria-label",
+      section === "kabir"
+        ? "Shuffle to another recording in this Kabir style"
+        : "Shuffle to another performance from this prahar"
+    );
+    shuffleBtn.textContent = "Shuffle (" + poolFor(p).length + " in pool)";
     shuffleBtn.onclick = function () {
       currentPick = newPick(p);
       render();
@@ -312,6 +469,10 @@
   }
 
   function renderFollowNote() {
+    if (section === "kabir") {
+      els.followNote.textContent = kabirStyle.blurb;
+      return;
+    }
     const current = getCurrentPrahar();
     if (selected.id === current.id) {
       els.followNote.textContent = "Showing the raga for right now.";
@@ -333,6 +494,41 @@
   }
 
   function renderGrid() {
+    if (section === "kabir") return renderKabirGrid();
+    return renderPraharGrid();
+  }
+
+  function renderKabirGrid() {
+    els.grid.innerHTML = "";
+    KABIR.forEach(function (st) {
+      const card = document.createElement("button");
+      card.className = "card" + (st.id === kabirStyle.id ? " active" : "");
+      card.type = "button";
+      card.setAttribute("role", "listitem");
+      card.setAttribute(
+        "aria-label",
+        st.label + ", " + st.tracks.length + " recordings. " + st.blurb
+      );
+      if (st.id === kabirStyle.id) card.setAttribute("aria-current", "true");
+      const count = document.createElement("div");
+      count.className = "card-time";
+      count.textContent =
+        st.tracks.length + (st.tracks.length === 1 ? " recording" : " recordings");
+      const name = document.createElement("div");
+      name.className = "card-raga";
+      name.textContent = st.label;
+      const blurb = document.createElement("div");
+      blurb.className = "card-blurb";
+      blurb.textContent = st.blurb;
+      card.appendChild(count);
+      card.appendChild(name);
+      card.appendChild(blurb);
+      card.onclick = function () { setKabirStyle(st); };
+      els.grid.appendChild(card);
+    });
+  }
+
+  function renderPraharGrid() {
     els.grid.innerHTML = "";
     PRAHARS.forEach(function (p) {
       const card = document.createElement("button");
@@ -392,6 +588,9 @@
       second: "2-digit"
     });
 
+    // Kabir ignores the clock entirely — no countdown, no auto-advance.
+    if (section === "kabir") return;
+
     // Countdown shown only while following the live clock.
     if (els.nextPrahar) {
       if (following) {
@@ -426,6 +625,12 @@
 
   if (els.modeClassical) els.modeClassical.onclick = function () { setMode(false); };
   if (els.modeFilmy) els.modeFilmy.onclick = function () { setMode(true); };
+  if (els.sectionRaga) els.sectionRaga.onclick = function () { setSection("raga"); };
+  if (els.sectionKabir) els.sectionKabir.onclick = function () { setSection("kabir"); };
+
+  // A remembered Kabir section needs its first pick drawn from the Kabir pool
+  // rather than the prahar one that seeded currentPick above.
+  if (section === "kabir") currentPick = pickFrom();
 
   render();
 
