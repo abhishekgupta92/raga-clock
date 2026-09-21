@@ -680,3 +680,13 @@ footer a {
 }
 
 .card-prahar-tile .raga-art { height: 72px; }
+
+/* Kabir tiles carry a blurb under the artwork, so they need more room than a
+   raga tile and sit in a wider column. */
+.grid.grid-ragas .card-kabir-tile .card-blurb {
+  margin: 6px 12px 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.card-kabir-tile .raga-art { height: 76px; }

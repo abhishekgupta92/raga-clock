@@ -167,6 +167,12 @@ hand-off on Android, the same <kbd>S</kbd> shuffle key. The page tint follows
 the chosen style rather than the hour. Your section and style are remembered
 across visits.
 
+Each style tile carries its own generated image too, in its own colours rather
+than a prahar palette — since Kabir belongs to no hour. Nirgun is drawn as rings
+opening around an absence (the formless one), the folk lineage as a row of
+seated singers, the bands as an amplified waveform, Sufi as a whirl, and the
+devotional pool as a lamp.
+
 `kabir.js` holds the data as `{ label, blurb, accent, tracks: [{ title, artist,
 videoId, note }] }`, and is loaded as a separate optional file — if it fails to
 load, the Kabir menu item hides itself and Raga Clock carries on unaffected.

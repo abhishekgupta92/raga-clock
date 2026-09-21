@@ -956,6 +956,116 @@
     return svg;
   }
 
+  // ---- Kabir artwork ------------------------------------------------------
+  // Kabir has no prahar, so these don't use the sky palettes. Each style gets
+  // its own colours and its own idea: the formless one as a void, the folk
+  // lineage as a row of singers, the bands as a waveform, the Sufi side as a
+  // whirl, and the devotional pool as a lamp.
+  const KABIR_PALETTE = {
+    nirgun:  ["#1b1230", "#b58cff", "#e6d9ff"],
+    folk:    ["#4a3410", "#ffc24b", "#ffe9a8"],
+    fusion:  ["#4a1508", "#ff7241", "#ffc59e"],
+    sufi:    ["#0d2f28", "#4fd1c5", "#d8f5ef"],
+    popular: ["#111a3d", "#6f8cff", "#c3cdff"]
+  };
+
+  const KABIR_ART = {
+    // Nirgun: the formless. Rings opening outward around an absence.
+    nirgun: function (svg, pal, rand) {
+      const cx = W / 2, cy = H / 2;
+      for (let i = 5; i >= 1; i--) {
+        svg.appendChild(svgEl("circle", {
+          cx: cx, cy: cy, r: (i * 7).toFixed(1), fill: "none",
+          stroke: pal[2], "stroke-width": (0.5 + i * 0.12).toFixed(2),
+          opacity: (0.4 - i * 0.05).toFixed(2)
+        }));
+      }
+      svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 6, fill: "#0d0d10", opacity: "0.9" }));
+      scatter(svg, pal, rand, 6, H);
+    },
+    // Folk: a row of seated singers under an open sky.
+    folk: function (svg, pal, rand) {
+      horizon(svg, pal, rand, 1, 0.78, 0.5);
+      for (let i = 0; i < 5; i++) {
+        const x = 16 + i * 22 + rand() * 4;
+        const h = 12 + rand() * 6;
+        svg.appendChild(svgEl("circle", {
+          cx: x.toFixed(1), cy: (H - h - 5).toFixed(1), r: "3.2",
+          fill: "#0d0d10", opacity: "0.88"
+        }));
+        svg.appendChild(svgEl("path", {
+          d: "M" + (x - 5).toFixed(1) + "," + H + " Q" + x.toFixed(1) + "," +
+             (H - h).toFixed(1) + " " + (x + 5).toFixed(1) + "," + H + " Z",
+          fill: "#0d0d10", opacity: "0.88"
+        }));
+      }
+    },
+    // Fusion: an amplified waveform.
+    fusion: function (svg, pal, rand) {
+      const mid = H * 0.55;
+      for (let i = 0; i < 26; i++) {
+        const x = 3 + i * 4.5;
+        const amp = (3 + rand() * 18) * (i % 3 === 0 ? 1.3 : 0.8);
+        svg.appendChild(svgEl("line", {
+          x1: x.toFixed(1), y1: (mid - amp / 2).toFixed(1),
+          x2: x.toFixed(1), y2: (mid + amp / 2).toFixed(1),
+          stroke: pal[2], "stroke-width": "2", "stroke-linecap": "round",
+          opacity: (0.35 + rand() * 0.45).toFixed(2)
+        }));
+      }
+    },
+    // Sufi: a whirl.
+    sufi: function (svg, pal, rand) {
+      const cx = W / 2, cy = H / 2;
+      let d = "M" + cx + "," + cy;
+      for (let t = 0; t < 46; t++) {
+        const ang = t * 0.42, r = t * 0.72;
+        d += " L" + (cx + Math.cos(ang) * r * 1.6).toFixed(1) + "," +
+             (cy + Math.sin(ang) * r).toFixed(1);
+      }
+      svg.appendChild(svgEl("path", {
+        d: d, fill: "none", stroke: pal[2], "stroke-width": "1.3", opacity: "0.6"
+      }));
+      scatter(svg, pal, rand, 5, H);
+    },
+    // Popular & devotional: a lamp flame throwing light.
+    popular: function (svg, pal, rand) {
+      const cx = W / 2, base = H * 0.78;
+      svg.appendChild(svgEl("circle", {
+        cx: cx, cy: (base - 12).toFixed(1), r: "17", fill: pal[2], opacity: "0.14" }));
+      svg.appendChild(svgEl("path", {
+        d: "M" + cx + "," + (base - 24).toFixed(1) +
+           " Q" + (cx + 6) + "," + (base - 12).toFixed(1) + " " + cx + "," + base.toFixed(1) +
+           " Q" + (cx - 6) + "," + (base - 12).toFixed(1) + " " + cx + "," + (base - 24).toFixed(1) + " Z",
+        fill: pal[2], opacity: "0.85"
+      }));
+      svg.appendChild(svgEl("ellipse", {
+        cx: cx, cy: (base + 3).toFixed(1), rx: "13", ry: "3.5",
+        fill: "#0d0d10", opacity: "0.85"
+      }));
+      scatter(svg, pal, rand, 7, H * 0.6);
+    }
+  };
+
+  function kabirArt(st) {
+    const rand = rng(seedFrom(st.key));
+    const pal = KABIR_PALETTE[st.key] || KABIR_PALETTE.nirgun;
+    const svg = svgEl("svg", {
+      viewBox: "0 0 " + W + " " + H, class: "raga-art kabir-art",
+      preserveAspectRatio: "xMidYMid slice", "aria-hidden": "true", focusable: "false"
+    });
+    const uid = "k" + seedFrom(st.key).toString(36);
+    const defs = svgEl("defs", {});
+    svg.appendChild(defs);
+    const grad = svgEl("linearGradient", { id: uid, x1: "0", y1: "0", x2: "0.4", y2: "1" });
+    grad.appendChild(svgEl("stop", { offset: "0", "stop-color": pal[0] }));
+    grad.appendChild(svgEl("stop", { offset: "1", "stop-color": pal[1] }));
+    defs.appendChild(grad);
+    svg.appendChild(svgEl("rect", { x: 0, y: 0, width: W, height: H, fill: "url(#" + uid + ")" }));
+    (KABIR_ART[st.key] || KABIR_ART.nirgun)(svg, pal, rand);
+    return svg;
+  }
+
   function ragaArt(g) {
     return makeArt(g.name, g.prahar, characterOf(g.name, g.prahar),
       Math.min(5, Math.floor(g.tracks.length / 10)), "raga-art");
@@ -971,7 +1081,8 @@
   function renderGrid() {
     els.grid.innerHTML = "";
     els.grid.classList.toggle("grid-artists", section === "artist");
-    els.grid.classList.toggle("grid-ragas", section === "raga" || section === "prahar");
+    els.grid.classList.toggle("grid-ragas",
+      section === "raga" || section === "prahar" || section === "kabir");
     let shown = 0;
 
     if (section === "kabir") {
@@ -980,8 +1091,10 @@
         const c = card(st.id === kabirStyle.id,
           st.label + ", " + countLabel(st.tracks.length, "recording") + ". " + st.blurb,
           function () { choose("kabir", st); });
-        c.appendChild(line("card-time", countLabel(st.tracks.length, "recording")));
+        c.classList.add("card-raga-tile", "card-kabir-tile");
+        c.appendChild(kabirArt(st));
         c.appendChild(line("card-raga", st.label));
+        c.appendChild(line("card-time", countLabel(st.tracks.length, "recording")));
         c.appendChild(line("card-blurb", st.blurb));
         els.grid.appendChild(c);
       });
