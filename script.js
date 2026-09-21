@@ -20,6 +20,9 @@
     modeToggle: document.getElementById("mode-toggle"),
     clockFoot: document.getElementById("clock-foot"),
     browseTitle: document.getElementById("browse-title"),
+    pool: document.getElementById("pool"),
+    poolSummary: document.getElementById("pool-summary"),
+    poolList: document.getElementById("pool-list"),
     search: document.getElementById("grid-search"),
     searchEmpty: document.getElementById("search-empty"),
     footerNote: document.getElementById("footer-note"),
@@ -252,6 +255,90 @@
     }
   }
 
+  // ------------------------------------------------------------------ url --
+  // The address bar mirrors what is playing: #/<section>/<selection>/<videoId>.
+  // Without this, the WhatsApp button named a specific recording but linked to
+  // the site root, so whoever opened it got a random pick instead of the one
+  // they were sent.
+  //
+  // replaceState, not pushState: shuffling is a rapid-fire action and pushing
+  // every pick would bury the back button under hundreds of entries. The URL
+  // stays copyable and bookmarkable, which is the point.
+  let applyingHash = false;
+
+  function selectionKey() {
+    if (section === "kabir") return kabirStyle.key;
+    if (section === "raga") return selectedRaga.key;
+    if (section === "artist") return selectedArtist.key;
+    return String(selected.id);
+  }
+
+  function currentUrl() {
+    const parts = ["#", section, encodeURIComponent(selectionKey())];
+    if (currentPick && currentPick.videoId) parts.push(currentPick.videoId);
+    return parts.join("/");
+  }
+
+  function syncUrl() {
+    if (applyingHash) return;
+    try {
+      const next = currentUrl();
+      if (location.hash !== next) history.replaceState(null, "", next);
+    } catch (e) {}
+  }
+
+  function shareUrl() {
+    return "https://abhishekgupta92.github.io/raga-clock/" + currentUrl();
+  }
+
+  // Restore whatever the hash names. Returns true if anything was applied.
+  function applyHash() {
+    let raw = "";
+    try { raw = decodeURIComponent(location.hash || ""); } catch (e) { raw = location.hash || ""; }
+    const bits = raw.replace(/^#\/?/, "").split("/").filter(Boolean);
+    if (!bits.length) return false;
+    const sec = bits[0];
+    if (["prahar", "raga", "artist", "kabir"].indexOf(sec) === -1) return false;
+    if (sec === "kabir" && !KABIR) return false;
+
+    applyingHash = true;
+    section = sec;
+    const key = bits[1];
+    if (key) {
+      if (sec === "prahar") {
+        const p = PRAHARS.filter(function (x) { return String(x.id) === key; })[0];
+        if (p) { selected = p; following = false; }
+      } else if (sec === "raga") {
+        const g = CATALOG.ragas.filter(function (x) { return x.key === key; })[0];
+        if (g) selectedRaga = g;
+      } else if (sec === "artist") {
+        const a = CATALOG.artists.filter(function (x) { return x.key === key; })[0];
+        if (a) selectedArtist = a;
+      } else {
+        const st = KABIR.filter(function (x) { return x.key === key; })[0];
+        if (st) kabirStyle = st;
+      }
+    }
+
+    const vid = bits[2];
+    let found = null;
+    if (vid) {
+      if (sec === "prahar") {
+        // The toggle follows the linked recording rather than the other way
+        // round, so a shared classical link doesn't land in Filmy mode.
+        const inFilmy = selected.filmy.filter(function (t) { return t.videoId === vid; })[0];
+        const inOpts = selected.options.filter(function (t) { return t.videoId === vid; })[0];
+        if (inFilmy) { filmy = true; found = inFilmy; }
+        else if (inOpts) { filmy = false; found = inOpts; }
+      } else {
+        found = poolFor().filter(function (t) { return t.videoId === vid; })[0];
+      }
+    }
+    currentPick = found || pickFrom();
+    applyingHash = false;
+    return true;
+  }
+
   // ------------------------------------------------------------ selection --
   function setSection(next) {
     if (section === next) return;
@@ -411,6 +498,24 @@
     }
   }
 
+  // Picks come in four shapes (a classical entry, a filmy entry, a flattened
+  // catalogue track, a Kabir track). This is the one place that knows how to
+  // read a title and a credit off any of them.
+  function describe(pick) {
+    if (!pick) return { title: "—", credit: "" };
+    if (pick.title && pick.credit) return { title: pick.title, credit: pick.credit };
+    if (pick.song) {
+      return {
+        title: pick.song,
+        credit: pick.film
+          ? pick.artist + " · " + pick.film + " (" + pick.year + ")"
+          : pick.artist
+      };
+    }
+    if (pick.raga) return { title: "Raga " + pick.raga, credit: pick.artist };
+    return { title: pick.title || "—", credit: pick.artist || "" };
+  }
+
   function countLabel(n, word) {
     return n + " " + word + (n === 1 ? "" : "s");
   }
@@ -457,7 +562,7 @@
       const shareBtn = document.createElement("a");
       shareBtn.className = "btn btn-whatsapp";
       shareBtn.textContent = "WhatsApp";
-      const msg = shareText(pick) + " — https://abhishekgupta92.github.io/raga-clock/";
+      const msg = shareText(pick) + " — " + shareUrl();
       shareBtn.href = "https://wa.me/?text=" + encodeURIComponent(msg);
       shareBtn.target = "_blank";
       shareBtn.rel = "noopener";
@@ -506,7 +611,63 @@
     }
 
     renderGrid();
+    renderPool();
     renderFollowNote();
+    syncUrl();
+  }
+
+  // Until now every view offered exactly one pick and a Shuffle button, so a
+  // 73-deep pool could only be explored by chance. This lists it.
+  function renderPool() {
+    if (!els.poolList) return;
+    const pool = poolFor();
+    els.poolList.innerHTML = "";
+    els.poolSummary.textContent =
+      "All " + pool.length + " recording" + (pool.length === 1 ? "" : "s") + " in this pool";
+    // Nothing to browse when there is only the one.
+    els.pool.style.display = pool.length > 1 ? "" : "none";
+
+    pool.forEach(function (t) {
+      const d = describe(t);
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pool-item" +
+        (currentPick && t.videoId === currentPick.videoId ? " playing" : "");
+      // Whichever field is constant across the pool carries no information, so
+      // lead with the one that actually distinguishes the rows: the performer
+      // inside a raga, the piece inside an artist. The second line then shows
+      // context rather than repeating what the header already says.
+      let leadText = d.title, subText = d.credit;
+      if (section === "raga") {
+        leadText = d.credit || d.title;
+        subText = "";
+      } else if (section === "artist") {
+        leadText = d.title;
+        subText = (typeof t.prahar === "number" && PRAHARS[t.prahar])
+          ? PRAHARS[t.prahar].label
+          : "";
+      }
+      const lead = document.createElement("span");
+      lead.className = "pool-title";
+      lead.textContent = leadText;
+      b.appendChild(lead);
+      if (subText && subText !== leadText) {
+        const sub = document.createElement("span");
+        sub.className = "pool-credit";
+        sub.textContent = subText;
+        b.appendChild(sub);
+      }
+      if (currentPick && t.videoId === currentPick.videoId) {
+        b.setAttribute("aria-current", "true");
+      }
+      b.onclick = function () {
+        currentPick = t;
+        render();
+      };
+      li.appendChild(b);
+      els.poolList.appendChild(li);
+    });
   }
 
   function renderFollowNote() {
@@ -1240,6 +1401,19 @@
       })(btns[i]);
     }
   }
+
+  // A hash in the address bar wins over the remembered section, so a shared
+  // link always opens on the recording it names.
+  applyHash();
+
+  // Someone pasting a different link into the same tab, or using back/forward
+  // across a section change, should navigate rather than sit there.
+  window.addEventListener("hashchange", function () {
+    if (applyingHash) return;
+    if (location.hash && location.hash !== currentUrl()) {
+      if (applyHash()) render();
+    }
+  });
 
   render();
 

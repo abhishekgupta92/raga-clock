@@ -180,6 +180,32 @@ The pools can grow the same way the raga ones do. Sufi is the thinnest at two
 entries, simply because few full Abida Parveen Kabir recordings are indexed as
 individual tracks rather than as jukeboxes.
 
+## Links and browsing
+
+The address bar mirrors what is playing — `#/<section>/<selection>/<videoId>`:
+
+```
+#/raga/Darbari%20Kanada/ismOvvhQVKE
+#/artist/kishori%20amonkar/
+#/prahar/6/
+#/kabir/fusion/BYFdcc0WHYk
+```
+
+Opening one of those restores that exact recording. Before this, the share
+button composed a message naming a specific piece and then linked to the site
+root, so whoever opened it got a random pick instead of the one they were sent;
+now the link carries the recording. A link without a `videoId` opens that raga
+/ artist / prahar on a random pick, which is the useful thing to send when you
+mean "this artist" rather than "this recording".
+
+State is written with `replaceState`, not `pushState`: shuffling is rapid-fire
+and pushing every pick would bury the back button.
+
+Each view also lists its whole pool under **All N recordings in this pool** —
+previously a 73-deep prahar could only be explored by shuffling and hoping.
+Rows lead with whatever distinguishes them: the performer inside a raga, the
+piece (and its prahar) inside an artist.
+
 ## Run it locally
 
 Open `index.html` directly in a browser, or serve the folder:
