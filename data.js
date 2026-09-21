@@ -1133,7 +1133,7 @@ const PRAHARS = [
         "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
       },
       {
-        "raga": "Miyan Ki Todi",
+        "raga": "Miyan ki Todi",
         "artist": "Bhimsen Joshi",
         "videoId": "FBD5lVdyMss",
         "gender": "male",
@@ -1189,7 +1189,7 @@ const PRAHARS = [
         "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
       },
       {
-        "raga": "Miyan Ki Todi",
+        "raga": "Miyan ki Todi",
         "artist": "M. Venkatesh Kumar",
         "videoId": "wQhkNikrWuw",
         "gender": "male",
@@ -1229,7 +1229,7 @@ const PRAHARS = [
         "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
       },
       {
-        "raga": "Miyan Ki Todi",
+        "raga": "Miyan ki Todi",
         "artist": "N. Rajam",
         "videoId": "ajtglYDxIxs",
         "gender": "female",
@@ -1293,7 +1293,7 @@ const PRAHARS = [
         "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Jaipur-Atrauli gharana."
       },
       {
-        "raga": "Miyan Ki Todi",
+        "raga": "Miyan ki Todi",
         "artist": "Ulhas Kashalkar",
         "videoId": "Dp83Ib9MKtk",
         "gender": "male",
@@ -3763,7 +3763,7 @@ const PRAHARS = [
         "mood": "Monsoon raga — clouds gathering, sung deep into the night. On sitar."
       },
       {
-        "raga": "Miyan Ki Malhar",
+        "raga": "Miyan ki Malhar",
         "artist": "Pandit Jasraj",
         "videoId": "YBA58q6Ut-g",
         "gender": "male",

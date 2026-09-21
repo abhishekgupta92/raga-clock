@@ -1,17 +1,27 @@
 # Raga Clock
 
-A tiny static web app with two sections, chosen from the menu at the top:
+A tiny static web app. One catalogue of 589 verified YouTube recordings,
+four ways of getting into it — chosen from the menu at the top:
 
-- **Raga Clock** — plays the Hindustani classical raga traditionally associated
-  with the current time of day (the "prahar" system), inspired by
+- **Prahar** — plays the Hindustani classical raga traditionally associated with
+  the current time of day (the "prahar" system), inspired by
   [ragya.com](https://ragya.com).
-- **Kabir** — the same player, but organised by *kind of Kabir* rather than by
-  the clock.
+- **Raga** — the same recordings grouped by raga, one tile per raga, each with
+  generated artwork.
+- **Artists** — the same recordings grouped by performer, 112 of them, with
+  portraits where a freely-licensed one exists.
+- **Kabir** — a separate pool, organised by *kind of Kabir* rather than by the
+  clock.
+
+`data.js` is the only place recordings live. `catalog.js` flattens it once at
+load and groups it by prahar, by raga and by artist, so the views are three
+readings of one database rather than three copies of it. A recording credited to
+several artists ("Mohammed Rafi, Lata Mangeshkar") shows up under each of them.
 
 No build step, no dependencies, no backend — just `index.html`, `style.css`,
-`script.js`, `data.js` and `kabir.js`.
+`script.js`, `data.js`, `kabir.js`, `artists.js` and `catalog.js`.
 
-## Raga Clock
+## Prahar
 
 - Every prahar has a pool of verified, named-artist performances (mostly
   female Hindustani classical musicians). A random one is picked whenever
@@ -53,6 +63,33 @@ a pool of `options`, and one is picked at random each time:
 | 1:00 AM – 4:00 AM | Malkauns | 71 |
 
 **Total: 415 verified performances** across all 8 praharas.
+
+## Raga
+
+Every raga in the catalogue gets a tile — **95 of them** — ordered by how many
+recordings there are, and drawing from the classical and filmy pools together.
+Picking one plays a random recording of that raga regardless of the hour.
+
+The tile artwork is **generated, not fetched**: a sky in the palette of the
+prahar the raga belongs to, a sun or moon at the height that hour implies, and a
+horizon whose silhouette is seeded from the raga's own name. The same raga
+therefore always draws the same picture, and no image files ship with the app.
+Dawn ragas get peach and indigo, dusk ragas burnt orange, late-night ragas a
+crescent on near-black.
+
+## Artists
+
+One tile per performer, **112 in all**, in a fresh random order every visit.
+Names are matched with honorifics stripped, so "Pt. Bhimsen Joshi" and "Pandit
+Bhimsen Joshi" are one artist rather than two tiles.
+
+71 of them have a portrait — a freely-licensed thumbnail hosted by Wikimedia,
+hotlinked rather than re-hosted. The rest fall back to a generated initials tile
+whose colour is derived from the name, so it is stable per artist. Most of the
+gaps are artists for whom Wikipedia has no free image at all.
+
+Both the Raga and Artists lists have a search box. Artists match on name *and*
+gharana/discipline, so typing `kirana` finds the Kirana singers.
 
 ## Little Filmy mode
 

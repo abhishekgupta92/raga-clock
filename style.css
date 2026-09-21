@@ -440,10 +440,12 @@ footer a {
 .section-nav {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
   padding: 5px;
   margin: 0 auto 22px;
   width: fit-content;
+  max-width: 100%;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -456,7 +458,8 @@ footer a {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.01em;
-  padding: 9px 22px;
+  white-space: nowrap;
+  padding: 9px 20px;
   border-radius: 999px;
   background: transparent;
   color: var(--muted);
@@ -484,6 +487,170 @@ footer a {
   color: var(--muted);
 }
 
+@media (max-width: 560px) {
+  .section-btn { padding: 8px 14px; font-size: 13px; }
+}
+
+@media (max-width: 380px) {
+  .section-btn { padding: 7px 11px; font-size: 12px; }
+}
+
+/* ---- Artist tiles ------------------------------------------------------- */
+/* Denser than the prahar/raga cards, because there are ~112 of them and each
+   carries a portrait. */
+.grid.grid-artists {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.card-artist-tile {
+  align-items: center;
+  text-align: center;
+  padding: 14px 10px 12px;
+  gap: 10px;
+}
+
+.avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+}
+
+/* The monogram is always rendered; a portrait, when there is one, sits on top
+   and simply removes itself if it fails to load. */
+.avatar-mono,
+.avatar-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.avatar-img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.card-artist-tile .artist-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.card-artist-tile .card-raga {
+  font-size: 13.5px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.card-artist-tile .card-time {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.card-artist-tile.active .avatar {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
 @media (max-width: 480px) {
-  .section-btn { padding: 9px 16px; font-size: 13px; }
+  .grid.grid-artists { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+  .avatar { width: 60px; height: 60px; }
+  .avatar-mono { font-size: 19px; }
+}
+
+/* ---- Raga tiles --------------------------------------------------------- */
+.grid.grid-ragas {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.card-raga-tile {
+  padding: 0 0 12px;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* The generated sky sits flush against the top of the card. */
+.raga-art {
+  display: block;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-raga-tile .card-raga {
+  margin: 10px 12px 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.card-raga-tile .card-time {
+  margin: 2px 12px 0;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* ---- Search ------------------------------------------------------------- */
+.browse-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grid-search {
+  flex: 0 1 220px;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.grid-search::placeholder { color: var(--muted); }
+
+.grid-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.search-empty {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .grid.grid-ragas { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .raga-art { height: 56px; }
+  .card-raga-tile .card-raga { font-size: 16.5px; }
+  .grid-search { flex: 1 1 100%; }
 }
