@@ -4,7 +4,7 @@
 // runtime by grouping data.js, so there is one database and several views.
 //
 // `img` is a freely-licensed thumbnail hosted by Wikimedia (CC BY-SA / public
-// domain), present for 71 of 112 artists. The rest have no free image on
+// domain), present for 70 of 111 artists. The rest have no free image on
 // Wikipedia and fall back to a generated initials tile — no image is bundled
 // or re-hosted here.
 //
@@ -428,11 +428,6 @@ const ARTIST_INFO = [
     "key": "sanjeev abhyankar",
     "name": "Pandit Sanjeev Abhyankar",
     "img": "https://upload.wikimedia.org/wikipedia/commons/7/73/Sanjeev_Abhyankar_2_%28cropped%29.jpg"
-  },
-  {
-    "key": "rajan mishra",
-    "name": "Pt. Rajan Mishra",
-    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Pandit_Rajan_Sajan_Mishra_Performing_at_Bharat_Bhavan_Bhopal_06.jpg/500px-Pandit_Rajan_Sajan_Mishra_Performing_at_Bharat_Bhavan_Bhopal_06.jpg"
   },
   {
     "key": "sajan mishra & swaransh mishra",

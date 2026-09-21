@@ -2077,7 +2077,7 @@ const PRAHARS = [
         "film": "Basant Bahar",
         "year": 1956,
         "artist": "Manna Dey",
-        "raga": "Pilu",
+        "raga": "Piloo",
         "videoId": "0jGUBOCmB_I",
         "mood": "Manna Dey's Pilu lament — 'the notes won't come together', an afternoon of doubt."
       },
@@ -2181,7 +2181,7 @@ const PRAHARS = [
         "mood": "A tanpura-session rendition of Puriya Dhanashri at twilight."
       },
       {
-        "raga": "Puriya Dhanashree",
+        "raga": "Puriya Dhanashri",
         "artist": "Pandit Rabin Ghosh (violin)",
         "videoId": "khVG2k-uZkI",
         "gender": "male",
@@ -2189,7 +2189,7 @@ const PRAHARS = [
         "mood": "Violin traces Puriya Dhanashri's sandhiprakash mood of transition."
       },
       {
-        "raga": "Pooriya",
+        "raga": "Puriya",
         "artist": "Ustad Rashid Khan (Live)",
         "videoId": "NJggXtEK70Q",
         "gender": "male",
@@ -2221,7 +2221,7 @@ const PRAHARS = [
         "mood": "A hollow, searching sky-gaze rendered in slow, aching phrases as the sun dips low."
       },
       {
-        "raga": "Sohoni",
+        "raga": "Sohni",
         "artist": "Ashwini Bhide-Deshpande",
         "videoId": "vrktPyrexTA",
         "gender": "female",
@@ -2309,7 +2309,7 @@ const PRAHARS = [
         "mood": "Stark and unsentimental, a raga that stares straight into the dying light without blinking."
       },
       {
-        "raga": "Sohoni",
+        "raga": "Sohni",
         "artist": "Pandit Ulhas Kashalkar",
         "videoId": "JuQyTV8Jj5M",
         "gender": "male",
@@ -2593,7 +2593,7 @@ const PRAHARS = [
         "mood": "Graceful and unhurried — the meditative calm of dusk settling over the raga."
       },
       {
-        "raga": "Shuddha Kalyan",
+        "raga": "Shuddh Kalyan",
         "artist": "Ashwini Bhide-Deshpande",
         "videoId": "VVHHvGCdBJw",
         "gender": "female",
@@ -3507,7 +3507,7 @@ const PRAHARS = [
         "mood": "A brisk drut khayal in Bihag, sweet and romantic at night."
       },
       {
-        "raga": "Basanti Kedar / Kafi Kanada",
+        "raga": "Basanti Kedar",
         "artist": "Pt. Ulhas Kashalkar",
         "videoId": "bn5LZ-dm9kU",
         "gender": "male",
@@ -3531,7 +3531,7 @@ const PRAHARS = [
         "mood": "A tender, glowing rendition that wraps Lord Shiva's raga in youthful grace."
       },
       {
-        "raga": "Des",
+        "raga": "Desh",
         "artist": "Ashwini Bhide-Deshpande",
         "videoId": "SKLJLTfkrDo",
         "gender": "female",
@@ -3571,7 +3571,7 @@ const PRAHARS = [
         "mood": "Stately and sweet, delivered with the grounded warmth of the Gwalior gharana."
       },
       {
-        "raga": "Des",
+        "raga": "Desh",
         "artist": "Meeta Pandit",
         "videoId": "YUguojXNTxo",
         "gender": "female",

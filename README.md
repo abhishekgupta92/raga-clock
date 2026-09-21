@@ -8,7 +8,7 @@ four ways of getting into it — chosen from the menu at the top:
   [ragya.com](https://ragya.com).
 - **Raga** — the same recordings grouped by raga, one tile per raga, each with
   generated artwork.
-- **Artists** — the same recordings grouped by performer, 112 of them, with
+- **Artists** — the same recordings grouped by performer, 111 of them, with
   portraits where a freely-licensed one exists.
 - **Kabir** — a separate pool, organised by *kind of Kabir* rather than by the
   clock.
@@ -66,7 +66,7 @@ a pool of `options`, and one is picked at random each time:
 
 ## Raga
 
-Every raga in the catalogue gets a tile — **95 of them** — ordered by how many
+Every raga in the catalogue gets a tile — **89 of them** — ordered by how many
 recordings there are, and drawing from the classical and filmy pools together.
 Picking one plays a random recording of that raga regardless of the hour.
 
@@ -92,16 +92,26 @@ character, and each character is drawn differently:
 | `yearning` | one long unresolved diagonal | Bhimpalasi, Madhuvanti, Charukeshi, Jog |
 
 A raga not named in that map falls back to something reasonable for its hour.
+
+Raga names are normalised in `catalog.js` as well, so spelling variants of one
+raga (Pooriya/Puriya, Des/Desh, Sohoni/Sohni) share a tile instead of splitting
+into two. Ragas that merely *look* alike are deliberately kept apart: Puriya,
+Puriya Dhanashri and Puriya Kalyan are three different ragas, as are the Todi
+family, the Bilawal prakars and the Malhars.
 The eight **Prahar** tiles use the same engine, drawn in the character of the
 raga family that names them.
 
 ## Artists
 
-One tile per performer, **112 in all**, in a fresh random order every visit.
+One tile per performer, **111 in all**, in a fresh random order every visit.
 Names are matched with honorifics stripped, so "Pt. Bhimsen Joshi" and "Pandit
-Bhimsen Joshi" are one artist rather than two tiles.
+Bhimsen Joshi" are one artist rather than two tiles, plus a small alias map in
+`catalog.js` for the cases stripping can't catch — spelling variants
+(Chakrabarty / Chakraborty), and Rajan Mishra's few solo-credited recordings,
+which sit on the Rajan & Sajan Mishra tile rather than a near-empty one of
+their own.
 
-71 of them have a portrait — a freely-licensed thumbnail hosted by Wikimedia,
+70 of them have a portrait — a freely-licensed thumbnail hosted by Wikimedia,
 hotlinked rather than re-hosted. The rest fall back to a generated initials tile
 whose colour is derived from the name, so it is stable per artist. Most of the
 gaps are artists for whom Wikipedia has no free image at all.

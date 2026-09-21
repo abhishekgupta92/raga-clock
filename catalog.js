@@ -25,8 +25,45 @@ const CATALOG = (function () {
     "ks chitra": "k s chitra",
     "kj yesudas": "k j yesudas",
     "kl saigal": "k l saigal",
-    "dv paluskar": "d v paluskar"
+    "dv paluskar": "d v paluskar",
+    // Rajan Mishra sang as half of the duo; his handful of solo-credited
+    // recordings belong on the same tile rather than a near-empty one of
+    // their own.
+    "rajan mishra": "rajan & sajan mishra"
   };
+
+  // Ragas that turn up under two spellings. data.js is kept canonical, but
+  // normalising here too means a variant slipped in later merges into the
+  // existing tile instead of quietly creating a near-duplicate.
+  //
+  // Only true spelling variants belong here. Puriya / Puriya Dhanashri /
+  // Puriya Kalyan, the Todi family, the Bilawal prakars and the Malhars are
+  // different ragas that merely look alike, and must stay apart.
+  const RAGA_ALIAS = {
+    "pooriya": "Puriya",
+    "des": "Desh",
+    "puriya dhanashree": "Puriya Dhanashri",
+    "shuddha kalyan": "Shuddh Kalyan",
+    "sohoni": "Sohni",
+    "pilu": "Piloo",
+    "miyan ki todi": "Miyan ki Todi",
+    "miyan ki malhar": "Miyan ki Malhar",
+    "hamsadhwani": "Hansadhwani",
+    "shree": "Shri",
+    "bageshree": "Bageshri",
+    "rageshree": "Rageshri",
+    "jaijaivanti": "Jaijaiwanti",
+    "chayanat": "Chhayanat",
+    "bhimplasi": "Bhimpalasi",
+    "marva": "Marwa",
+    "bhoop": "Bhupali"
+  };
+
+  function normaliseRaga(name) {
+    if (!name) return name;
+    const k = String(name).toLowerCase().replace(/\s+/g, " ").trim();
+    return RAGA_ALIAS[k] || name;
+  }
 
   function splitArtists(s) {
     return String(s || "").split(",").map(function (x) { return x.trim(); })
@@ -47,8 +84,8 @@ const CATALOG = (function () {
     p.options.forEach(function (e) {
       tracks.push({
         videoId: e.videoId,
-        title: "Raga " + e.raga,
-        raga: e.raga,
+        title: "Raga " + normaliseRaga(e.raga),
+        raga: normaliseRaga(e.raga),
         credit: e.artist,
         artists: splitArtists(e.artist),
         mood: e.mood,
@@ -60,7 +97,7 @@ const CATALOG = (function () {
       tracks.push({
         videoId: f.videoId,
         title: f.song,
-        raga: f.raga || null,
+        raga: f.raga ? normaliseRaga(f.raga) : null,
         credit: f.artist + (f.film ? " · " + f.film + " (" + f.year + ")" : ""),
         artists: splitArtists(f.artist),
         mood: f.mood,
