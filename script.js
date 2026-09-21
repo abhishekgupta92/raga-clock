@@ -616,11 +616,13 @@
   }
 
 
-  // ---- Raga artwork -------------------------------------------------------
-  // Each raga gets its own abstract image, drawn rather than fetched: a sky in
-  // the palette of the prahar it belongs to, a sun or moon at the height that
-  // hour implies, and a horizon whose shape is seeded from the raga's name. The
-  // same raga therefore always renders identically, and nothing is downloaded.
+  // ---- Generated artwork --------------------------------------------------
+  // Every prahar and raga tile draws its own picture rather than loading one:
+  // a sky in the palette of the hour, and on top of it a composition chosen
+  // from the raga's character — grave, devotional, monsoon, spring, ascetic,
+  // playful, bright, romantic or yearning. Everything is seeded from the
+  // raga's own name, so a given raga always renders identically, and no image
+  // files ship with the app.
   const SKY = [
     ["#3b2a4d", "#ff9a6b", "#ffd9b8"],  // 0 Early Morning — indigo into peach
     ["#8a5a1a", "#ffc24b", "#ffe9a8"],  // 1 Morning — amber
@@ -631,8 +633,61 @@
     ["#111a3d", "#6f8cff", "#c3cdff"],  // 6 Night — deep blue
     ["#0b0a1c", "#8a7dff", "#b9b2ff"]   // 7 Late Night — near black
   ];
-  // How high the sun/moon sits, 0 = horizon, 1 = top of the frame.
+  // How high the sun/moon sits: 0 = on the horizon, 1 = top of the frame.
   const DISC_HEIGHT = [0.14, 0.42, 0.78, 0.66, 0.20, 0.46, 0.70, 0.30];
+
+  // What each raga is *like*, which decides the composition drawn over the sky.
+  const RAGA_CHARACTER = {
+    // devotional, first light
+    "Bhairav": "dawn", "Bhairavi": "dawn", "Mishra Bhairavi": "dawn",
+    "Sindhi Bhairavi": "dawn", "Jangla Bhairavi": "dawn", "Nat Bhairav": "dawn",
+    "Ahir Bhairav": "dawn", "Ramkali": "dawn", "Jogiya": "dawn", "Lalit": "dawn",
+    "Bhankar": "dawn", "Kalingada": "dawn", "Vibhas": "dawn", "Gunkali": "dawn",
+    "Bhatiyar": "dawn",
+    // heavy, serious, deep
+    "Darbari Kanada": "grave", "Malkauns": "grave", "Sampurna Malkauns": "grave",
+    "Todi": "grave", "Miyan ki Todi": "grave", "Gujari Todi": "grave",
+    "Bilaskhani Todi": "grave", "Adana": "grave", "Nayaki Kanada": "grave",
+    "Kaunsi Kanada": "grave", "Multani": "grave", "Asavari": "grave",
+    "Jaunpuri": "grave", "Chandrakauns": "grave", "Desi": "grave",
+    // rain
+    "Megh": "monsoon", "Miyan ki Malhar": "monsoon", "Gaud Malhar": "monsoon",
+    "Desh": "monsoon", "Malhar": "monsoon",
+    // spring
+    "Basant": "spring", "Bahar": "spring",
+    // stark, ascetic, the ground taken away
+    "Marwa": "ascetic", "Puriya": "ascetic", "Shri": "ascetic",
+    "Puriya Dhanashri": "ascetic", "Puriya Kalyan": "ascetic", "Sohni": "ascetic",
+    // light, folk-adjacent, unserious
+    "Khamaj": "playful", "Piloo": "playful", "Mishra Piloo": "playful",
+    "Jhinjhoti": "playful", "Tilak Kamod": "playful", "Kafi": "playful",
+    "Mishra Kafi": "playful", "Pahadi": "playful", "Gara": "playful",
+    "Dhani": "playful", "Sindhura": "playful", "Mishra Gara": "playful",
+    // bold, bright, wide open
+    "Bilawal": "bright", "Alhaiya Bilawal": "bright", "Shankara": "bright",
+    "Hansadhwani": "bright", "Hamsadhwani": "bright", "Deshkar": "bright",
+    "Bhupali": "bright", "Bhoop": "bright", "Shuddh Kalyan": "bright",
+    "Shuddha Kalyan": "bright", "Shuddh Sarang": "bright", "Gaud Sarang": "bright",
+    "Brindavani Sarang": "bright", "Durga": "bright", "Devgiri": "bright",
+    "Madhyamavati": "bright",
+    // romantic, warm, night
+    "Yaman": "romantic", "Yaman Kalyan": "romantic", "Bihag": "romantic",
+    "Maru Bihag": "romantic", "Kedar": "romantic", "Nand": "romantic",
+    "Hameer": "romantic", "Kamod": "romantic", "Chhayanat": "romantic",
+    "Rageshri": "romantic", "Bageshri": "romantic", "Jaijaiwanti": "romantic",
+    "Kalavati": "romantic", "Gorakh Kalyan": "romantic",
+    // aching, unresolved
+    "Bhimpalasi": "yearning", "Madhuvanti": "yearning", "Patdeep": "yearning",
+    "Charukeshi": "yearning", "Kirwani": "yearning", "Jog": "yearning",
+    "Jogkauns": "yearning", "Chandranandan": "yearning"
+  };
+  // Anything not named above falls back to something reasonable for its hour.
+  const CHARACTER_BY_PRAHAR = ["dawn", "grave", "bright", "yearning",
+                               "ascetic", "romantic", "romantic", "grave"];
+
+  function characterOf(name, prahar) {
+    return RAGA_CHARACTER[name] || CHARACTER_BY_PRAHAR[prahar] || "romantic";
+  }
 
   function seedFrom(str) {
     let h = 2166136261;
@@ -660,82 +715,263 @@
     return e;
   }
 
-  function ragaArt(g) {
-    const pal = SKY[g.prahar] || SKY[5];
-    const rand = rng(seedFrom(g.name));
-    const W = 120, H = 64;
-    const svg = svgEl("svg", {
-      viewBox: "0 0 " + W + " " + H, class: "raga-art",
-      preserveAspectRatio: "xMidYMid slice", "aria-hidden": "true", focusable: "false"
-    });
-    const uid = "rg" + seedFrom(g.name).toString(36);
+  const W = 120, H = 64;
 
-    const defs = svgEl("defs", {});
+  // The shared base every tile starts from: graded sky, sun or moon, horizon.
+  function skyBase(svg, defs, uid, prahar, rand, opts) {
+    const pal = SKY[prahar] || SKY[5];
     const grad = svgEl("linearGradient", { id: uid, x1: "0", y1: "0", x2: "0", y2: "1" });
     grad.appendChild(svgEl("stop", { offset: "0", "stop-color": pal[0] }));
     grad.appendChild(svgEl("stop", { offset: "0.62", "stop-color": pal[1] }));
     grad.appendChild(svgEl("stop", { offset: "1", "stop-color": pal[2] }));
     defs.appendChild(grad);
-    svg.appendChild(defs);
     svg.appendChild(svgEl("rect", { x: 0, y: 0, width: W, height: H, fill: "url(#" + uid + ")" }));
 
-    // Sun or moon. Night ragas get a crescent, bitten out with a second disc.
-    const cy = H - DISC_HEIGHT[g.prahar] * H * 0.9;
+    const cy = H - DISC_HEIGHT[prahar] * H * 0.9;
     const cx = 22 + rand() * (W - 44);
-    const r = 7 + rand() * 5;
-    const night = g.prahar >= 5;
+    const r = (opts.discR || 7) + rand() * 5;
+    const night = prahar >= 5;
     if (night) {
-      const cres = svgEl("g", { opacity: "0.92" });
       const m = svgEl("mask", { id: uid + "m" });
       m.appendChild(svgEl("rect", { x: 0, y: 0, width: W, height: H, fill: "#fff" }));
       m.appendChild(svgEl("circle", { cx: cx + r * 0.55, cy: cy - r * 0.3, r: r, fill: "#000" }));
       defs.appendChild(m);
-      cres.appendChild(svgEl("circle", {
-        cx: cx, cy: cy, r: r, fill: pal[2], mask: "url(#" + uid + "m)"
+      svg.appendChild(svgEl("circle", {
+        cx: cx, cy: cy, r: r, fill: pal[2], opacity: opts.discOpacity || "0.92",
+        mask: "url(#" + uid + "m)"
       }));
-      svg.appendChild(cres);
     } else {
-      svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: r, fill: pal[2], opacity: "0.9" }));
-      svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: r * 1.9, fill: pal[2], opacity: "0.13" }));
+      svg.appendChild(svgEl("circle", {
+        cx: cx, cy: cy, r: r, fill: pal[2], opacity: opts.discOpacity || "0.9" }));
+      svg.appendChild(svgEl("circle", {
+        cx: cx, cy: cy, r: r * (opts.glow || 1.9), fill: pal[2], opacity: "0.13" }));
     }
+    return { pal: pal, cx: cx, cy: cy, r: r };
+  }
 
-    // Two horizon bands. Their crest positions come from the seeded PRNG, so
-    // the silhouette is different for every raga but stable for each one.
-    for (let layer = 0; layer < 2; layer++) {
-      const base = H * (0.68 + layer * 0.15);
-      const amp = (5 + rand() * 9) * (1 - layer * 0.35);
-      let dPath = "M0," + H + " L0," + base.toFixed(1);
+  function horizon(svg, pal, rand, layers, baseFrac, ampScale) {
+    for (let layer = 0; layer < layers; layer++) {
+      const base = H * (baseFrac + layer * 0.15);
+      const amp = (5 + rand() * 9) * (1 - layer * 0.35) * (ampScale || 1);
+      let d = "M0," + H + " L0," + base.toFixed(1);
       const steps = 4;
       for (let i = 1; i <= steps; i++) {
         const x = (W / steps) * i;
         const y = base - amp * Math.sin(rand() * Math.PI * 2 + i);
-        const cxq = x - W / (steps * 2);
-        dPath += " Q" + cxq.toFixed(1) + "," + (y - amp * 0.6).toFixed(1) +
-                 " " + x.toFixed(1) + "," + y.toFixed(1);
+        d += " Q" + (x - W / (steps * 2)).toFixed(1) + "," + (y - amp * 0.6).toFixed(1) +
+             " " + x.toFixed(1) + "," + y.toFixed(1);
       }
-      dPath += " L" + W + "," + H + " Z";
+      d += " L" + W + "," + H + " Z";
       svg.appendChild(svgEl("path", {
-        d: dPath, fill: layer === 0 ? pal[0] : "#0d0d10",
+        d: d, fill: layer === 0 ? pal[0] : "#0d0d10",
         opacity: layer === 0 ? "0.55" : "0.78"
       }));
     }
+  }
 
-    // A scatter of notes, denser for ragas with more recordings.
-    const dots = 3 + Math.min(6, Math.floor(g.tracks.length / 6));
-    for (let i = 0; i < dots; i++) {
+  function scatter(svg, pal, rand, n, maxY) {
+    for (let i = 0; i < n; i++) {
       svg.appendChild(svgEl("circle", {
-        cx: (rand() * W).toFixed(1), cy: (rand() * H * 0.6).toFixed(1),
+        cx: (rand() * W).toFixed(1), cy: (rand() * (maxY || H * 0.6)).toFixed(1),
         r: (0.6 + rand() * 1.1).toFixed(2), fill: pal[2],
         opacity: (0.25 + rand() * 0.45).toFixed(2)
       }));
     }
+  }
+
+  // Each character gets its own marks drawn over the sky.
+  const CHARACTER_ART = {
+    // Rays fanning out of the disc, and a temple arch on the skyline.
+    dawn: function (svg, defs, uid, ctx, rand) {
+      const g = svgEl("g", { opacity: "0.5" });
+      for (let i = 0; i < 9; i++) {
+        const ang = (Math.PI / 8) * i + Math.PI;
+        g.appendChild(svgEl("line", {
+          x1: ctx.cx, y1: ctx.cy,
+          x2: (ctx.cx + Math.cos(ang) * W).toFixed(1),
+          y2: (ctx.cy + Math.sin(ang) * W).toFixed(1),
+          stroke: ctx.pal[2], "stroke-width": "0.7", opacity: (0.5 - i * 0.04).toFixed(2)
+        }));
+      }
+      svg.appendChild(g);
+      horizon(svg, ctx.pal, rand, 2, 0.72, 0.7);
+      const ax = 18 + rand() * (W - 36), ay = H * 0.9, aw = 9 + rand() * 5;
+      svg.appendChild(svgEl("path", {
+        d: "M" + (ax - aw) + "," + ay + " L" + (ax - aw) + "," + (ay - 9) +
+           " Q" + ax + "," + (ay - 22) + " " + (ax + aw) + "," + (ay - 9) +
+           " L" + (ax + aw) + "," + ay + " Z",
+        fill: "#0d0d10", opacity: "0.9"
+      }));
+    },
+    // A heavy monolith and a darkened sky: nothing bright is admitted.
+    grave: function (svg, defs, uid, ctx, rand) {
+      svg.appendChild(svgEl("rect", {
+        x: 0, y: 0, width: W, height: H, fill: "#0d0d10", opacity: "0.3" }));
+      horizon(svg, ctx.pal, rand, 2, 0.6, 1.25);
+      const mx = 20 + rand() * (W - 40), mw = 7 + rand() * 4, mh = 26 + rand() * 14;
+      svg.appendChild(svgEl("rect", {
+        x: (mx - mw / 2).toFixed(1), y: (H - mh).toFixed(1),
+        width: mw.toFixed(1), height: mh.toFixed(1),
+        fill: "#0d0d10", opacity: "0.92", rx: "1"
+      }));
+      scatter(svg, ctx.pal, rand, 3, H * 0.35);
+    },
+    // Cloud masses and slanting rain.
+    monsoon: function (svg, defs, uid, ctx, rand) {
+      const cloud = svgEl("g", { opacity: "0.55" });
+      for (let i = 0; i < 4; i++) {
+        const cxp = rand() * W, cyp = 8 + rand() * 14;
+        cloud.appendChild(svgEl("ellipse", {
+          cx: cxp.toFixed(1), cy: cyp.toFixed(1),
+          rx: (10 + rand() * 12).toFixed(1), ry: (4 + rand() * 4).toFixed(1),
+          fill: "#0d0d10"
+        }));
+      }
+      svg.appendChild(cloud);
+      const rain = svgEl("g", { opacity: "0.45" });
+      for (let i = 0; i < 16; i++) {
+        const x = rand() * W, y = 14 + rand() * (H * 0.55);
+        rain.appendChild(svgEl("line", {
+          x1: x.toFixed(1), y1: y.toFixed(1),
+          x2: (x - 3).toFixed(1), y2: (y + 8).toFixed(1),
+          stroke: ctx.pal[2], "stroke-width": "0.6"
+        }));
+      }
+      svg.appendChild(rain);
+      horizon(svg, ctx.pal, rand, 2, 0.74, 0.6);
+    },
+    // Petals adrift.
+    spring: function (svg, defs, uid, ctx, rand) {
+      horizon(svg, ctx.pal, rand, 2, 0.74, 0.8);
+      for (let i = 0; i < 12; i++) {
+        const x = rand() * W, y = rand() * H * 0.8, rot = rand() * 360;
+        svg.appendChild(svgEl("ellipse", {
+          cx: x.toFixed(1), cy: y.toFixed(1),
+          rx: (1.6 + rand() * 1.4).toFixed(1), ry: (0.7 + rand() * 0.5).toFixed(1),
+          fill: ctx.pal[2], opacity: (0.35 + rand() * 0.4).toFixed(2),
+          transform: "rotate(" + rot.toFixed(0) + " " + x.toFixed(1) + " " + y.toFixed(1) + ")"
+        }));
+      }
+    },
+    // Almost empty, with one tall vertical: the tonic pulled from under you.
+    ascetic: function (svg, defs, uid, ctx, rand) {
+      const x = 24 + rand() * (W - 48);
+      svg.appendChild(svgEl("line", {
+        x1: x.toFixed(1), y1: H, x2: x.toFixed(1), y2: (H * 0.16).toFixed(1),
+        stroke: "#0d0d10", "stroke-width": (2 + rand() * 1.5).toFixed(1), opacity: "0.85"
+      }));
+      svg.appendChild(svgEl("line", {
+        x1: 0, y1: (H * 0.82).toFixed(1), x2: W, y2: (H * 0.82).toFixed(1),
+        stroke: "#0d0d10", "stroke-width": "0.8", opacity: "0.55"
+      }));
+      svg.appendChild(svgEl("rect", {
+        x: 0, y: (H * 0.82).toFixed(1), width: W, height: H * 0.18,
+        fill: "#0d0d10", opacity: "0.8"
+      }));
+      scatter(svg, ctx.pal, rand, 2, H * 0.4);
+    },
+    // Bouncing dots and a ribbon — folk-adjacent and unserious.
+    playful: function (svg, defs, uid, ctx, rand) {
+      horizon(svg, ctx.pal, rand, 1, 0.8, 0.5);
+      const y0 = H * 0.55, amp = 6 + rand() * 5;
+      let d = "M0," + y0.toFixed(1);
+      for (let i = 1; i <= 4; i++) {
+        const x = (W / 4) * i;
+        d += " Q" + (x - W / 8).toFixed(1) + "," +
+             (y0 + (i % 2 ? -amp : amp)).toFixed(1) + " " + x.toFixed(1) + "," + y0.toFixed(1);
+      }
+      svg.appendChild(svgEl("path", {
+        d: d, fill: "none", stroke: ctx.pal[2], "stroke-width": "1.4", opacity: "0.6"
+      }));
+      for (let i = 0; i < 6; i++) {
+        svg.appendChild(svgEl("circle", {
+          cx: (10 + i * 19 + rand() * 6).toFixed(1),
+          cy: (y0 - amp - 4 - rand() * 10).toFixed(1),
+          r: (1.3 + rand() * 1.2).toFixed(1), fill: ctx.pal[2],
+          opacity: (0.4 + rand() * 0.4).toFixed(2)
+        }));
+      }
+    },
+    // Crisp peaks, full daylight.
+    bright: function (svg, defs, uid, ctx, rand) {
+      const n = 3;
+      for (let i = 0; i < n; i++) {
+        const px = (W / n) * i + rand() * 18, pw = 22 + rand() * 20;
+        const ph = 18 + rand() * 20;
+        svg.appendChild(svgEl("path", {
+          d: "M" + (px - pw / 2).toFixed(1) + "," + H + " L" + px.toFixed(1) + "," +
+             (H - ph).toFixed(1) + " L" + (px + pw / 2).toFixed(1) + "," + H + " Z",
+          fill: i === n - 1 ? "#0d0d10" : ctx.pal[0],
+          opacity: i === n - 1 ? "0.82" : "0.6"
+        }));
+      }
+      scatter(svg, ctx.pal, rand, 4, H * 0.45);
+    },
+    // Soft arcs and a wide glow.
+    romantic: function (svg, defs, uid, ctx, rand) {
+      for (let i = 0; i < 3; i++) {
+        const y = H * (0.42 + i * 0.1), amp = 7 - i * 1.6;
+        let d = "M0," + y.toFixed(1);
+        for (let k = 1; k <= 3; k++) {
+          const x = (W / 3) * k;
+          d += " Q" + (x - W / 6).toFixed(1) + "," + (y - amp).toFixed(1) +
+               " " + x.toFixed(1) + "," + y.toFixed(1);
+        }
+        svg.appendChild(svgEl("path", {
+          d: d, fill: "none", stroke: ctx.pal[2], "stroke-width": (1.4 - i * 0.3).toFixed(1),
+          opacity: (0.4 - i * 0.09).toFixed(2)
+        }));
+      }
+      horizon(svg, ctx.pal, rand, 2, 0.72, 0.85);
+      scatter(svg, ctx.pal, rand, 5, H * 0.4);
+    },
+    // One long unresolved diagonal.
+    yearning: function (svg, defs, uid, ctx, rand) {
+      horizon(svg, ctx.pal, rand, 2, 0.7, 0.9);
+      const y1 = H * (0.2 + rand() * 0.2);
+      svg.appendChild(svgEl("line", {
+        x1: -4, y1: y1.toFixed(1), x2: W + 4, y2: (y1 + 14 + rand() * 10).toFixed(1),
+        stroke: ctx.pal[2], "stroke-width": "1.2", opacity: "0.5"
+      }));
+      svg.appendChild(svgEl("line", {
+        x1: -4, y1: (y1 + 5).toFixed(1), x2: W + 4, y2: (y1 + 22 + rand() * 8).toFixed(1),
+        stroke: ctx.pal[2], "stroke-width": "0.6", opacity: "0.3"
+      }));
+      scatter(svg, ctx.pal, rand, 4, H * 0.5);
+    }
+  };
+
+  function makeArt(seedStr, prahar, character, extraDots, cls) {
+    const rand = rng(seedFrom(seedStr));
+    const svg = svgEl("svg", {
+      viewBox: "0 0 " + W + " " + H, class: cls,
+      preserveAspectRatio: "xMidYMid slice", "aria-hidden": "true", focusable: "false"
+    });
+    const uid = "a" + seedFrom(seedStr).toString(36);
+    const defs = svgEl("defs", {});
+    svg.appendChild(defs);
+    const ctx = skyBase(svg, defs, uid, prahar, rand, {});
+    (CHARACTER_ART[character] || CHARACTER_ART.romantic)(svg, defs, uid, ctx, rand);
+    if (extraDots) scatter(svg, ctx.pal, rand, extraDots, H * 0.55);
     return svg;
   }
+
+  function ragaArt(g) {
+    return makeArt(g.name, g.prahar, characterOf(g.name, g.prahar),
+      Math.min(5, Math.floor(g.tracks.length / 10)), "raga-art");
+  }
+
+  function praharArt(p) {
+    // A prahar is drawn in the character of the raga family that names it.
+    return makeArt(p.label + " " + p.familyRaga, p.id,
+      characterOf(p.familyRaga, p.id), 0, "raga-art prahar-art");
+  }
+
 
   function renderGrid() {
     els.grid.innerHTML = "";
     els.grid.classList.toggle("grid-artists", section === "artist");
-    els.grid.classList.toggle("grid-ragas", section === "raga");
+    els.grid.classList.toggle("grid-ragas", section === "raga" || section === "prahar");
     let shown = 0;
 
     if (section === "kabir") {
@@ -796,8 +1032,10 @@
         p.label + ", " + p.time + ", raga " + p.familyRaga + ", " +
           p.options.length + " classical performances, " + p.filmy.length + " filmy songs",
         function () { choose("prahar", p); });
-      c.appendChild(line("card-time", p.time));
+      c.classList.add("card-raga-tile", "card-prahar-tile");
+      c.appendChild(praharArt(p));
       c.appendChild(line("card-raga", p.familyRaga));
+      c.appendChild(line("card-time", p.time));
       c.appendChild(line("card-artist",
         p.options.length + " classical · " + p.filmy.length + " filmy"));
       els.grid.appendChild(c);

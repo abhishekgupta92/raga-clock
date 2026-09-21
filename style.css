@@ -555,8 +555,10 @@ footer a {
 }
 
 .card-artist-tile .card-raga {
-  font-size: 13.5px;
-  line-height: 1.3;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--text);
   overflow-wrap: anywhere;
 }
 
@@ -571,8 +573,9 @@ footer a {
 }
 
 @media (max-width: 480px) {
-  .grid.grid-artists { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+  .grid.grid-artists { grid-template-columns: repeat(auto-fill, minmax(126px, 1fr)); }
   .avatar { width: 60px; height: 60px; }
+  .card-artist-tile .card-raga { font-size: 14px; }
   .avatar-mono { font-size: 19px; }
 }
 
@@ -654,3 +657,22 @@ footer a {
   .card-raga-tile .card-raga { font-size: 16.5px; }
   .grid-search { flex: 1 1 100%; }
 }
+
+/* Prahar tiles are wider than raga tiles — there are only eight, and each
+   carries a time range and two pool counts under the artwork. */
+.grid.grid-ragas .card-prahar-tile { grid-column: span 1; }
+
+.card-prahar-tile .card-time {
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.card-prahar-tile .card-artist {
+  margin: 4px 12px 0;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.card-prahar-tile .raga-art { height: 72px; }

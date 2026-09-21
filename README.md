@@ -70,12 +70,30 @@ Every raga in the catalogue gets a tile — **95 of them** — ordered by how ma
 recordings there are, and drawing from the classical and filmy pools together.
 Picking one plays a random recording of that raga regardless of the hour.
 
-The tile artwork is **generated, not fetched**: a sky in the palette of the
-prahar the raga belongs to, a sun or moon at the height that hour implies, and a
-horizon whose silhouette is seeded from the raga's own name. The same raga
-therefore always draws the same picture, and no image files ship with the app.
-Dawn ragas get peach and indigo, dusk ragas burnt orange, late-night ragas a
-crescent on near-black.
+The tile artwork is **generated, not fetched** — no image files ship with the
+app, and the same raga always draws the same picture because everything is
+seeded from its own name.
+
+Two things decide what you see. The **palette** comes from the raga's prahar:
+peach and indigo at dawn, amber in the morning, burnt orange at dusk, a crescent
+on near-black after midnight. The **composition** comes from the raga's
+character, and each character is drawn differently:
+
+| Character | Drawn as | Ragas |
+|---|---|---|
+| `dawn` | rays fanning from the sun, temple arch on the skyline | Bhairav, Bhairavi, Ahir Bhairav, Lalit, Ramkali |
+| `grave` | a heavy monolith, sky darkened, almost nothing bright | Malkauns, Darbari Kanada, Todi, Adana, Multani |
+| `ascetic` | one stark vertical over an empty plain | Marwa, Puriya, Shri, Puriya Dhanashri, Sohni |
+| `monsoon` | cloud masses and slanting rain | Megh, Miyan ki Malhar, Gaud Malhar, Desh |
+| `romantic` | soft arcs and a wide glow | Yaman, Bihag, Kedar, Bageshri, Rageshri |
+| `bright` | crisp peaks in full daylight | Bilawal, Shankara, Bhupali, the Sarangs |
+| `playful` | a bouncing ribbon and scattered notes | Khamaj, Piloo, Jhinjhoti, Kafi, Pahadi |
+| `spring` | petals adrift | Basant, Bahar |
+| `yearning` | one long unresolved diagonal | Bhimpalasi, Madhuvanti, Charukeshi, Jog |
+
+A raga not named in that map falls back to something reasonable for its hour.
+The eight **Prahar** tiles use the same engine, drawn in the character of the
+raga family that names them.
 
 ## Artists
 
