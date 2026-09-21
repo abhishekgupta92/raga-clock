@@ -228,6 +228,30 @@ python3 audit.py --prune    # also remove the dead entries
 
 Its first run found 11 dead recordings that had been sitting in the catalogue.
 
+It runs **every Monday** on GitHub Actions
+(`.github/workflows/audit.yml`), and can also be started by hand from the
+Actions tab. When it finds something it opens an issue titled *"Link audit:
+dead recordings"* listing each one with a link and a reason, refreshing that
+same issue on later runs rather than filing a new one each week — and closes it
+once the catalogue is clean again. The full report is kept as a build artifact
+for 90 days.
+
+It only reports; it never prunes on its own. Removing entries stays a decision
+you make by running `--prune` locally.
+
+Two safeguards matter, because an unattended checker that deletes things is
+only as good as its worst day:
+
+- **Only 401 / 403 / 404 / 410 count as dead.** A 429 (rate limiting — likely
+  when 600-odd requests come from a shared CI address) or a YouTube 5xx is
+  retried with backoff and then reported as *inconclusive*, never as dead.
+- **A mass failure is refused, not obeyed.** If more than a tenth of the
+  catalogue looks dead in one run, that is far more likely to be throttling
+  than a real cull, so the script exits without touching anything.
+
+Note that GitHub disables scheduled workflows in a repository with no activity
+for 60 days; a single push, or one manual run, re-enables it.
+
 ## Run it locally
 
 Open `index.html` directly in a browser, or serve the folder:

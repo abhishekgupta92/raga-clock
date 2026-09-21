@@ -8,8 +8,12 @@ invisibly. Run this occasionally and prune what it finds.
 
     python3 audit.py            # report only
     python3 audit.py --prune    # also rewrite data.js / kabir.js without them
+    python3 audit.py --json     # additionally write audit-report.json
+
+Exit codes: 0 clean, 1 dead entries found, 2 refused to act (looks like
+throttling rather than real rot).
 """
-import json, re, sys, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 UA = "raga-clock-audit/1.0 (+https://github.com/abhishekgupta92/raga-clock)"
@@ -46,19 +50,33 @@ def entries():
             yield "kabir.js", t["videoId"], f"{t['title']} — {t['artist']}"
 
 
-def check(vid):
+# Only these mean the recording is genuinely unusable: embedding switched off,
+# or the video removed. Everything else — rate limiting, YouTube 5xx, a socket
+# timeout — says nothing about the video and must never cause a prune. That
+# distinction matters most when this runs unattended on a shared CI address,
+# which is exactly where 429s show up.
+DEAD_CODES = {401, 403, 404, 410}
+
+
+def check(vid, tries=4):
     url = "https://www.youtube.com/oembed?" + urllib.parse.urlencode(
         {"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    try:
-        with urllib.request.urlopen(req, timeout=20):
-            return vid, None
-    except urllib.error.HTTPError as e:
-        # 401/403 = embedding disabled, 404 = gone. Both are unplayable here.
-        return vid, f"HTTP {e.code}"
-    except Exception as e:
-        # A transient network error is not proof the video is dead.
-        return vid, f"unreachable ({type(e).__name__})"
+    last = "unknown"
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=25):
+                return vid, None
+        except urllib.error.HTTPError as e:
+            if e.code in DEAD_CODES:
+                return vid, f"HTTP {e.code}"
+            # 429 / 5xx: back off and try again before giving up as unknown.
+            last = f"HTTP {e.code}"
+            time.sleep(2 ** attempt + 1)
+        except Exception as e:
+            last = f"unreachable ({type(e).__name__})"
+            time.sleep(1 + attempt)
+    return vid, "INCONCLUSIVE " + last
 
 
 def main():
@@ -70,8 +88,9 @@ def main():
     with ThreadPoolExecutor(max_workers=6) as ex:
         results = dict(ex.map(check, ids))
 
-    dead = {v: r for v, r in results.items() if r and r.startswith("HTTP")}
-    flaky = {v: r for v, r in results.items() if r and not r.startswith("HTTP")}
+    dead = {v: r for v, r in results.items()
+            if r and r.startswith("HTTP") and not r.startswith("INCONCLUSIVE")}
+    flaky = {v: r for v, r in results.items() if r and v not in dead}
 
     for v, reason in sorted(dead.items(), key=lambda kv: kv[1]):
         print(f"  DEAD   {v}  {reason:<10} {label[v][:60]}")
@@ -80,6 +99,25 @@ def main():
 
     print(f"\n{len(ids) - len(dead) - len(flaky)} live, {len(dead)} dead, "
           f"{len(flaky)} inconclusive")
+
+    if "--json" in sys.argv:
+        report = {
+            "checked": len(ids),
+            "dead": [{"videoId": v, "reason": r, "label": label[v]}
+                     for v, r in sorted(dead.items())],
+            "inconclusive": [{"videoId": v, "reason": r} for v, r in flaky.items()],
+        }
+        with open("audit-report.json", "w") as fh:
+            json.dump(report, fh, indent=2, ensure_ascii=False)
+        print("wrote audit-report.json")
+
+    # If a large share of the catalogue looks dead at once, that is far more
+    # likely to be YouTube throttling this address than a real cull. Refuse to
+    # prune rather than quietly gut the file.
+    if dead and len(dead) > max(25, len(ids) // 10):
+        print(f"\nREFUSING TO PRUNE: {len(dead)} of {len(ids)} look dead, which "
+              f"suggests throttling rather than genuine rot. Re-run later.")
+        return 2
 
     if "--prune" not in sys.argv:
         if dead:

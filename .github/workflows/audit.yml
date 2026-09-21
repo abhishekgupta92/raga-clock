@@ -1,0 +1,94 @@
+name: Link audit
+
+# Recordings get taken down or have embedding switched off, and the player
+# hides that at runtime by skipping to another pick — so rot only surfaces if
+# something goes looking for it.
+on:
+  schedule:
+    # Mondays, 06:15 UTC. Deliberately not on the hour: GitHub queues scheduled
+    # jobs and the top of the hour is the most contended slot.
+    - cron: "15 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # audit.py exits 0 clean / 1 dead found / 2 refused because the results
+      # look like throttling. Only 2 is a problem worth failing on, so the
+      # others are swallowed here and acted on below.
+      - name: Check every videoId
+        id: audit
+        run: |
+          set -o pipefail
+          python3 audit.py --json 2>&1 | tee audit-output.txt
+          code=${PIPESTATUS[0]}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 2 ]; then
+            echo "::warning::Audit refused to trust its own results (looks throttled)."
+          fi
+          exit 0
+
+      - name: Build the issue body
+        if: steps.audit.outputs.code == '1'
+        run: python3 .github/scripts/issue_body.py
+
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: |
+            audit-report.json
+            audit-output.txt
+            issue-body.md
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: File or refresh the issue
+        if: steps.audit.outputs.code == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Link audit: dead recordings"
+        run: |
+          set -euo pipefail
+          existing=$(gh issue list --state open --search "$TITLE in:title" \
+                      --json number,title \
+                      --jq "map(select(.title == \"$TITLE\")) | .[0].number // empty")
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file issue-body.md
+            echo "refreshed issue #$existing"
+          else
+            gh issue create --title "$TITLE" --body-file issue-body.md
+          fi
+
+      # A previously-open report should not linger once the catalogue is clean.
+      - name: Close the issue when nothing is dead
+        if: steps.audit.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Link audit: dead recordings"
+        run: |
+          set -euo pipefail
+          existing=$(gh issue list --state open --search "$TITLE in:title" \
+                      --json number,title \
+                      --jq "map(select(.title == \"$TITLE\")) | .[0].number // empty")
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Every recording plays again as of $(date -u '+%Y-%m-%d'). Closing."
+            gh issue close "$existing"
+          fi
