@@ -1,6 +1,6 @@
 # Raga Clock
 
-A tiny static web app. One catalogue of 589 verified YouTube recordings,
+A tiny static web app. One catalogue of 578 verified YouTube recordings,
 four ways of getting into it — chosen from the menu at the top:
 
 - **Prahar** — plays the Hindustani classical raga traditionally associated with
@@ -41,7 +41,7 @@ No build step, no dependencies, no backend — just `index.html`, `style.css`,
   Honours `prefers-reduced-motion`.
 - A live countdown shows how long until the next prahar begins, and pressing
   the **S** key shuffles without touching the mouse.
-- A **Classical / Little Filmy** toggle: "Little Filmy" swaps the classical
+- A **Classical / Filmy & more** toggle: "Filmy & more" swaps the classical
   performance for a Bollywood song built on one of that prahar's ragas (e.g.
   *Man Tarpat Hari Darshan Ko Aaj* in Malkauns for Late Night, *Ehsan Tera
   Hoga Mujh Par* in Yaman for Evening). Same time-of-day logic, filmy flavour.
@@ -53,16 +53,16 @@ a pool of `options`, and one is picked at random each time:
 
 | Time slot | Raga family | Pool size |
 |---|---|---|
-| 4:00 AM – 7:00 AM | Bhairav | 66 |
+| 4:00 AM – 7:00 AM | Bhairav | 65 |
 | 7:00 AM – 10:00 AM | Ahir Bhairav | 58 |
 | 10:00 AM – 1:00 PM | Bilawal | 27 |
-| 1:00 PM – 4:00 PM | Bhimpalasi | 44 |
-| 4:00 PM – 7:00 PM | Puriya Dhanashri | 35 |
-| 7:00 PM – 10:00 PM | Yaman | 73 |
-| 10:00 PM – 1:00 AM | Kedar | 41 |
-| 1:00 AM – 4:00 AM | Malkauns | 71 |
+| 1:00 PM – 4:00 PM | Bhimpalasi | 41 |
+| 4:00 PM – 7:00 PM | Puriya Dhanashri | 34 |
+| 7:00 PM – 10:00 PM | Yaman | 70 |
+| 10:00 PM – 1:00 AM | Kedar | 40 |
+| 1:00 AM – 4:00 AM | Malkauns | 69 |
 
-**Total: 415 verified performances** across all 8 praharas.
+**Total: 404 verified performances** across all 8 praharas.
 
 ## Raga
 
@@ -119,9 +119,9 @@ gaps are artists for whom Wikipedia has no free image at all.
 Both the Raga and Artists lists have a search box. Artists match on name *and*
 gharana/discipline, so typing `kirana` finds the Kirana singers.
 
-## Little Filmy mode
+## Filmy & more
 
-Toggle **Little Filmy** and each prahar plays something other than a straight
+Toggle **Filmy & more** and each prahar plays something other than a straight
 raga recital — mapped to the prahar by the raga it is built on where there is
 one. Mostly that means Hindustani-classical-based *Bollywood* songs, from Baiju
 Bawra to A.R. Rahman. It also holds the pieces that have no raga home of their
@@ -205,6 +205,28 @@ Each view also lists its whole pool under **All N recordings in this pool** —
 previously a 73-deep prahar could only be explored by shuffling and hoping.
 Rows lead with whatever distinguishes them: the performer inside a raga, the
 piece (and its prahar) inside an artist.
+
+## Saving what you hear
+
+Everything here is discovery by shuffle, so a **Save** button and a **Saved &
+recently played** list sit with the player. The last 30 picks are kept
+automatically and saved ones are pinned above them; clicking any row returns to
+that exact recording. Both live in `localStorage`, so they are per-browser and
+never leave the device.
+
+## Keeping the catalogue alive
+
+Videos get taken down or have embedding switched off, and the player hides this
+at runtime — an unplayable pick triggers `onError` and it quietly swaps in
+another — so rot accumulates invisibly. `audit.py` checks every `videoId`
+against oEmbed and reports what is gone:
+
+```bash
+python3 audit.py            # report only
+python3 audit.py --prune    # also remove the dead entries
+```
+
+Its first run found 11 dead recordings that had been sitting in the catalogue.
 
 ## Run it locally
 

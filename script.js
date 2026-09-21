@@ -20,6 +20,9 @@
     modeToggle: document.getElementById("mode-toggle"),
     clockFoot: document.getElementById("clock-foot"),
     browseTitle: document.getElementById("browse-title"),
+    keep: document.getElementById("keep"),
+    keepSummary: document.getElementById("keep-summary"),
+    keepList: document.getElementById("keep-list"),
     pool: document.getElementById("pool"),
     poolSummary: document.getElementById("pool-summary"),
     poolList: document.getElementById("pool-list"),
@@ -80,7 +83,7 @@
   } catch (e) {}
 
   let following = true;      // prahar view: track the wall clock
-  let filmy = true;          // prahar view: Classical vs Little Filmy
+  let filmy = true;          // prahar view: Classical vs Filmy & more
   try {
     const m = localStorage.getItem("ragaClockMode");
     if (m === "classical") filmy = false;
@@ -253,6 +256,97 @@
     if (els.themeColorMeta && style.accent) {
       els.themeColorMeta.setAttribute("content", style.accent);
     }
+  }
+
+  // ------------------------------------------------------- saved & recent --
+  // Everything here is discovery by shuffle, so without this anything you
+  // heard was gone the moment you hit Shuffle again. Both lists are per-browser
+  // (localStorage) and store only enough to rebuild the link.
+  const HISTORY_CAP = 30;
+
+  function readList(key) {
+    try {
+      const raw = localStorage.getItem(key);
+      const v = raw ? JSON.parse(raw) : [];
+      return Object.prototype.toString.call(v) === "[object Array]" ? v : [];
+    } catch (e) { return []; }
+  }
+
+  function writeList(key, list) {
+    try { localStorage.setItem(key, JSON.stringify(list)); } catch (e) {}
+  }
+
+  let history_ = readList("ragaClockHistory");
+  let faves = readList("ragaClockFaves");
+
+  function entryFor(pick) {
+    const d = describe(pick);
+    return {
+      v: pick.videoId, t: d.title, c: d.credit,
+      s: section, k: selectionKey()
+    };
+  }
+
+  function remember(pick) {
+    if (!pick || !pick.videoId) return;
+    const e = entryFor(pick);
+    history_ = [e].concat(history_.filter(function (x) { return x.v !== e.v; }))
+      .slice(0, HISTORY_CAP);
+    writeList("ragaClockHistory", history_);
+  }
+
+  function isFave(videoId) {
+    return faves.some(function (x) { return x.v === videoId; });
+  }
+
+  function toggleFave() {
+    const pick = currentPick;
+    if (!pick || !pick.videoId) return;
+    if (isFave(pick.videoId)) {
+      faves = faves.filter(function (x) { return x.v !== pick.videoId; });
+    } else {
+      faves = [entryFor(pick)].concat(faves);
+    }
+    writeList("ragaClockFaves", faves);
+    render();
+  }
+
+  function openEntry(e) {
+    location.hash = "#/" + e.s + "/" + encodeURIComponent(e.k) + "/" + e.v;
+    if (applyHash()) render();
+  }
+
+  function renderKeep() {
+    if (!els.keepList) return;
+    els.keepList.innerHTML = "";
+    const rows = faves.map(function (x) { return { e: x, fave: true }; })
+      .concat(history_
+        .filter(function (x) { return !isFave(x.v); })
+        .map(function (x) { return { e: x, fave: false }; }));
+
+    els.keep.style.display = rows.length ? "" : "none";
+    els.keepSummary.textContent = faves.length
+      ? faves.length + " saved · " + history_.length + " recently played"
+      : history_.length + " recently played";
+
+    rows.forEach(function (row) {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pool-item" +
+        (currentPick && row.e.v === currentPick.videoId ? " playing" : "");
+      const lead = document.createElement("span");
+      lead.className = "pool-title";
+      lead.textContent = (row.fave ? "★ " : "") + row.e.t;
+      const sub = document.createElement("span");
+      sub.className = "pool-credit";
+      sub.textContent = row.e.c;
+      b.appendChild(lead);
+      if (row.e.c) b.appendChild(sub);
+      b.onclick = function () { openEntry(row.e); };
+      li.appendChild(b);
+      els.keepList.appendChild(li);
+    });
   }
 
   // ------------------------------------------------------------------ url --
@@ -602,6 +696,16 @@
     };
     els.actions.appendChild(shuffleBtn);
 
+    const faveBtn = document.createElement("button");
+    faveBtn.type = "button";
+    faveBtn.className = "btn-secondary btn-fave" + (isFave(pick.videoId) ? " on" : "");
+    faveBtn.textContent = isFave(pick.videoId) ? "★ Saved" : "☆ Save";
+    faveBtn.setAttribute("aria-pressed", String(isFave(pick.videoId)));
+    faveBtn.setAttribute("aria-label",
+      isFave(pick.videoId) ? "Remove this recording from saved" : "Save this recording");
+    faveBtn.onclick = toggleFave;
+    els.actions.appendChild(faveBtn);
+
     if (!isAndroid) {
       els.playerShell.style.display = "block";
       if (!document.getElementById("yt-player-frame")) {
@@ -610,7 +714,9 @@
       syncPlayer();
     }
 
+    remember(pick);
     renderGrid();
+    renderKeep();
     renderPool();
     renderFollowNote();
     syncUrl();

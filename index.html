@@ -52,7 +52,7 @@
       <div class="clock-card" aria-live="polite" aria-atomic="true">
         <div class="mode-toggle" id="mode-toggle" role="group" aria-label="Playback mode">
           <button class="mode-btn active" id="mode-classical" type="button" aria-pressed="true">Classical</button>
-          <button class="mode-btn" id="mode-filmy" type="button" aria-pressed="false">Little Filmy</button>
+          <button class="mode-btn" id="mode-filmy" type="button" aria-pressed="false">Filmy &amp; more</button>
         </div>
         <div class="prahar-label" id="prahar-label">—</div>
         <div class="time-range" id="time-range">—</div>
@@ -63,6 +63,10 @@
         <div class="actions" id="actions"></div>
         <div class="player-shell" id="player-shell"></div>
         <div class="follow-note" id="follow-note"></div>
+        <details class="pool" id="keep">
+          <summary id="keep-summary">Saved &amp; recently played</summary>
+          <ol class="pool-list" id="keep-list"></ol>
+        </details>
         <details class="pool" id="pool">
           <summary id="pool-summary">All recordings in this pool</summary>
           <ol class="pool-list" id="pool-list"></ol>

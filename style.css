@@ -756,3 +756,9 @@ footer a {
 .pool-title { font-size: 13.5px; font-weight: 600; }
 .pool-credit { font-size: 11.5px; color: var(--muted); }
 .pool-item.playing .pool-title { color: var(--accent); }
+
+/* Save button sits with Shuffle; lights up when the pick is saved. */
+.btn-fave.on {
+  color: var(--accent);
+  border-color: var(--accent);
+}

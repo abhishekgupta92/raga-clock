@@ -131,14 +131,6 @@ const PRAHARS = [
         "mood": "Soulful and grounded — a Kabir composition in Bhairavi that feels like dawn's quiet surrender."
       },
       {
-        "raga": "Vibhas",
-        "artist": "Manjiri Asnare Kelkar",
-        "videoId": "2AvT3piOSkE",
-        "gender": "female",
-        "views": "12K",
-        "mood": "Delicate and understated — the rarer dawn raga Vibhas rendered with Jaipur-Atrauli restraint."
-      },
-      {
         "raga": "Bhairavi",
         "artist": "Roopa Panesar (sitar)",
         "videoId": "IbwZOj9r7qo",
@@ -1684,14 +1676,6 @@ const PRAHARS = [
     "options": [
       {
         "raga": "Bhimpalasi",
-        "artist": "Ustad Shahid Parvez Khan (sitar)",
-        "videoId": "ZZYscSfriVA",
-        "gender": "male",
-        "views": "130K",
-        "mood": "The pangs of longing for a distant lover — the classic afternoon raga."
-      },
-      {
-        "raga": "Bhimpalasi",
         "artist": "Kaushiki Chakraborty",
         "videoId": "uEqYzdz3Zvg",
         "gender": "female",
@@ -1737,14 +1721,6 @@ const PRAHARS = [
         "gender": "male",
         "views": "80K",
         "mood": "Patdeep's ache of longing and devotion, sung with aching clarity."
-      },
-      {
-        "raga": "Bhimpalasi",
-        "artist": "Kaushiki Chakraborty",
-        "videoId": "7KgIZYk6MUM",
-        "gender": "female",
-        "views": "80K",
-        "mood": "The pangs of longing for a distant lover — the classic afternoon raga, sung with aching warmth."
       },
       {
         "raga": "Bhimpalasi",
@@ -1801,14 +1777,6 @@ const PRAHARS = [
         "gender": "female",
         "views": "25K",
         "mood": "Bittersweet and introspective, like watching shadows lengthen with a heart full of memory."
-      },
-      {
-        "raga": "Dhani",
-        "artist": "Malini Rajurkar",
-        "videoId": "gbiNh5KJi8o",
-        "gender": "female",
-        "views": "10K",
-        "mood": "A lighter, playful cousin of Bhimpalasi — the teasing warmth of a lazy afternoon daydream."
       },
       {
         "raga": "Madhuvanti",
@@ -2286,14 +2254,6 @@ const PRAHARS = [
       },
       {
         "raga": "Puriya Dhanashri",
-        "artist": "Rahul Deshpande",
-        "videoId": "P0_bT3Pyb2Q",
-        "gender": "male",
-        "views": "25K",
-        "mood": "Grave and yearning, each syllable drawn out like the last stretch of fading daylight."
-      },
-      {
-        "raga": "Puriya Dhanashri",
         "artist": "Pandit Hariprasad Chaurasia (flute)",
         "videoId": "2jIDgpjZTy8",
         "gender": "male",
@@ -2563,22 +2523,6 @@ const PRAHARS = [
       {
         "raga": "Yaman Kalyan",
         "artist": "Kaushiki Chakraborty",
-        "videoId": "VsJiCb8GxjY",
-        "gender": "female",
-        "views": "80K",
-        "mood": "Serene and radiant — Yaman Kalyan unfolds like the first hush of evening light."
-      },
-      {
-        "raga": "Yaman",
-        "artist": "Kaushiki Chakraborty",
-        "videoId": "IgnKWMBPL2A",
-        "gender": "female",
-        "views": "120K",
-        "mood": "Tender and glowing — a devotional bandish that opens the evening's heart."
-      },
-      {
-        "raga": "Yaman Kalyan",
-        "artist": "Kaushiki Chakraborty",
         "videoId": "ZQkFdORNkbM",
         "gender": "female",
         "views": "60K",
@@ -2599,14 +2543,6 @@ const PRAHARS = [
         "gender": "female",
         "views": "35K",
         "mood": "Sweet and gently romantic, a lighter cousin of Yaman for the early evening glow."
-      },
-      {
-        "raga": "Yaman",
-        "artist": "Veena Sahasrabuddhe",
-        "videoId": "HHifPpJrDTE",
-        "gender": "female",
-        "views": "40K",
-        "mood": "Warm and majestic — a Gwalior-style Yaman rich with devotional serenity."
       },
       {
         "raga": "Bhupali",
@@ -3563,14 +3499,6 @@ const PRAHARS = [
         "mood": "Deeply devotional, her voice bends each note like an offering to Shiva."
       },
       {
-        "raga": "Kedar",
-        "artist": "Malini Rajurkar",
-        "videoId": "_MBw6Qi2kFU",
-        "gender": "female",
-        "views": "25K",
-        "mood": "Stately and sweet, delivered with the grounded warmth of the Gwalior gharana."
-      },
-      {
         "raga": "Desh",
         "artist": "Meeta Pandit",
         "videoId": "YUguojXNTxo",
@@ -4125,14 +4053,6 @@ const PRAHARS = [
         "mood": "Chandrakauns glows like moonlight on still water, hypnotic and faintly haunted."
       },
       {
-        "raga": "Bageshri",
-        "artist": "Malini Rajurkar",
-        "videoId": "eD1X4WyUYr0",
-        "gender": "female",
-        "views": "35K",
-        "mood": "Warm, plaintive Bageshri lingers in the stillness before dawn's first hint of light."
-      },
-      {
         "raga": "Malkauns",
         "artist": "Girija Devi",
         "videoId": "LQciemcQ3Uw",
@@ -4203,14 +4123,6 @@ const PRAHARS = [
         "gender": "male",
         "views": "250K",
         "mood": "The sarod's deep meend voices Darbari's majestic, unhurried sorrow in the dead of night."
-      },
-      {
-        "raga": "Chandrakauns",
-        "artist": "Pandit Hariprasad Chaurasia (flute)",
-        "videoId": "S1cRSCOVW7E",
-        "gender": "male",
-        "views": "400K",
-        "mood": "The bansuri's breath turns Chandrakauns into moonlight made audible."
       },
       {
         "raga": "Darbari Kanada",
