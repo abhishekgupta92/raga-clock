@@ -177,6 +177,46 @@ const PRAHARS = [
         "gender": "male",
         "views": "120K",
         "mood": "Lalit's aching pre-dawn twilight, poised between night and morning."
+      },
+      {
+        "raga": "Bhairav",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "3m63XbhE-rc",
+        "gender": "male",
+        "views": "40K",
+        "mood": "The brothers open Dover Lane 2019 with Bhairav — grave, unhurried, exactly at dawn."
+      },
+      {
+        "raga": "Vibhas",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "vBPYPhu7Gm8",
+        "gender": "male",
+        "views": "20K",
+        "mood": "A rarer first-light raga, sung in Bangalore with the stillness Vibhas asks for."
+      },
+      {
+        "raga": "Ramkali",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "Q02ZR_LNyUY",
+        "gender": "male",
+        "views": "15K",
+        "mood": "Ramkali at daybreak — Bhairav's restless cousin, tightening as the sky turns."
+      },
+      {
+        "raga": "Bhatiyar",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "ZMt77uS-vTE",
+        "gender": "male",
+        "views": "25K",
+        "mood": "Bhatiyar in the last dark hour, the raga sung before the sun has quite committed."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Pt. Sajan Mishra & Swaransh Mishra",
+        "videoId": "n1a6WP5huYA",
+        "gender": "male",
+        "views": "18K",
+        "mood": "Sajan Mishra with his son Swaransh — Bhairavi as the traditional closing benediction."
       }
     ],
     "filmy": [
@@ -577,6 +617,22 @@ const PRAHARS = [
         "gender": "male",
         "views": "40K",
         "mood": "Bilaskhani Todi — Todi's grave beauty softened with Asavari, mid-morning."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "9roJd2ADRzg",
+        "gender": "male",
+        "views": "30K",
+        "mood": "Full-length Todi from the Baroda baithak — the mid-morning raga at its most austere."
+      },
+      {
+        "raga": "Bilaskhani Todi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "tCIK4uyklFo",
+        "gender": "male",
+        "views": "35K",
+        "mood": "'Kanha Re' in Bilaskhani Todi, a restored archival recording, plaintive and soft-edged."
       }
     ],
     "filmy": [
@@ -846,6 +902,38 @@ const PRAHARS = [
         "gender": "male",
         "views": "70K",
         "mood": "Shuddh Sarang's bright, thirsty midday climb toward noon."
+      },
+      {
+        "raga": "Gaud Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "GSq3mZgn71w",
+        "gender": "male",
+        "views": "22K",
+        "mood": "Gaud Sarang's zig-zag phrases in duet — late-morning brightness with a curl in it."
+      },
+      {
+        "raga": "Shuddh Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "XDCf5jpS2KU",
+        "gender": "male",
+        "views": "20K",
+        "mood": "'Ab mori baat maan le' — Shuddh Sarang pressing toward noon."
+      },
+      {
+        "raga": "Shuddh Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "j0FTmlZRe1s",
+        "gender": "male",
+        "views": "14K",
+        "mood": "A second Shuddh Sarang, broader and more expansive in the alaap."
+      },
+      {
+        "raga": "Shankara",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "_BO2kkfJMvk",
+        "gender": "male",
+        "views": "18K",
+        "mood": "Shankara sung wide and heroic, the way the Benares brothers liked it."
       }
     ],
     "filmy": [
@@ -1096,6 +1184,102 @@ const PRAHARS = [
         "gender": "male",
         "views": "110K",
         "mood": "Nikhil Banerjee's Patdeep on sitar — warm, restless afternoon."
+      },
+      {
+        "raga": "Bhimpalasi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "W_L5z376nG4",
+        "gender": "male",
+        "views": "45K",
+        "mood": "The Komal Nishad Bhimpalasi — long, patient afternoon alaap from the brothers."
+      },
+      {
+        "raga": "Bhimpalasi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "4kWSpxIh5bM",
+        "gender": "male",
+        "views": "28K",
+        "mood": "Bhimpalasi in duet, the raga of the drowsy hours after lunch."
+      },
+      {
+        "raga": "Bhimpalasi",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "UF9SNOdzWJc",
+        "gender": "male",
+        "views": "16K",
+        "mood": "'Pritam ki paati' — Bhimpalasi as a letter from a lover, mid-afternoon."
+      },
+      {
+        "raga": "Dhani",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "65KjzkY2ut8",
+        "gender": "male",
+        "views": "20K",
+        "mood": "Bhimpalasi giving way to Dhani and a Guru Nanak bhajan to close."
+      },
+      {
+        "raga": "Madhuvanti",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "f0RCB9vU0vo",
+        "gender": "male",
+        "views": "24K",
+        "mood": "Madhuvanti's sharp madhyam aching through the late afternoon."
+      },
+      {
+        "raga": "Madhuvanti",
+        "artist": "Pt. Sajan Mishra & Swaransh Mishra",
+        "videoId": "DJuVDc1M1aE",
+        "gender": "male",
+        "views": "15K",
+        "mood": "Sajan Mishra and Swaransh in Madhuvanti — the Benares line continuing."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "EDlj5ScIvvY",
+        "gender": "male",
+        "views": "26K",
+        "mood": "Multani as the afternoon tips toward dusk, komal notes weighted and slow."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Pt. Rajan Mishra",
+        "videoId": "3sWjti9w7LU",
+        "gender": "male",
+        "views": "20K",
+        "mood": "Rajan Mishra solo in Multani, from the Sangeet Sartaj sessions."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Pt. Rajan Mishra",
+        "videoId": "zQpc3FQ5LvQ",
+        "gender": "male",
+        "views": "17K",
+        "mood": "A studio Multani from Music Today's Afternoon Ragas series."
+      },
+      {
+        "raga": "Brindavani Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "LOm4eIdiljU",
+        "gender": "male",
+        "views": "32K",
+        "mood": "Brindavani Sarang in teentaal, live at Saptak — bright and midday-lit."
+      },
+      {
+        "raga": "Brindavani Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "631uBD0OfOc",
+        "gender": "male",
+        "views": "19K",
+        "mood": "'Langraiyya hum sang na karo' — the Sarang bandish everyone knows, in duet."
+      },
+      {
+        "raga": "Brindavani Sarang",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "OEUb8mQbaVY",
+        "gender": "male",
+        "views": "14K",
+        "mood": "Another Vrindavani Sarang from the Baroda concert, unhurried and open."
       }
     ],
     "filmy": [
@@ -1426,6 +1610,22 @@ const PRAHARS = [
         "gender": "male",
         "views": "25K",
         "mood": "A drut Puriya (Marwa thaat) — the charged stillness just after sunset."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "APxaR7fRh1s",
+        "gender": "male",
+        "views": "30K",
+        "mood": "Marwa at sundown — the raga that removes the ground from under the tonic."
+      },
+      {
+        "raga": "Puriya Dhanashri",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "71ugiBrI-Og",
+        "gender": "male",
+        "views": "22K",
+        "mood": "Puriya Dhanashri at the sandhi hour, sung in the Sarod Ghar's small room."
       }
     ],
     "filmy": [
@@ -1686,6 +1886,30 @@ const PRAHARS = [
         "gender": "male",
         "views": "200K",
         "mood": "Vilayat Khan's singing sitar Yaman — the quintessential evening raga."
+      },
+      {
+        "raga": "Jhinjhoti",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "T0mXtyi1Gsg",
+        "gender": "male",
+        "views": "25K",
+        "mood": "Jhinjhoti's folk-warm phrases, the easy end of an evening concert."
+      },
+      {
+        "raga": "Jhinjhoti",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "zL86IEvBEf8",
+        "gender": "male",
+        "views": "16K",
+        "mood": "A second Jhinjhoti, lighter and more conversational between the brothers."
+      },
+      {
+        "raga": "Desh",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "euI_-dlj-sQ",
+        "gender": "male",
+        "views": "28K",
+        "mood": "Desh in the early evening — monsoon raga, sung with open-throated ease."
       }
     ],
     "filmy": [
@@ -2142,6 +2366,38 @@ const PRAHARS = [
         "gender": "male",
         "views": "30K",
         "mood": "Jaijaiwanti's tender, conversational sway deep in the night."
+      },
+      {
+        "raga": "Chhayanat",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "n8X-8UXTOF8",
+        "gender": "male",
+        "views": "24K",
+        "mood": "Chhayanat with Sukhvinder Singh Pinky on tabla — stately, night-lit, playful."
+      },
+      {
+        "raga": "Jaijaiwanti",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "dUae_oYWk0c",
+        "gender": "male",
+        "views": "18K",
+        "mood": "'Aiso naval ladli Radha' — a drut Jaijaiwanti bandish in teental."
+      },
+      {
+        "raga": "Rageshri",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "LJfn82ysxzc",
+        "gender": "male",
+        "views": "15K",
+        "mood": "Gorakh Kalyan folding into Rageshri, deep into the night's first watch."
+      },
+      {
+        "raga": "Nand",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "p6OzX7vkqpc",
+        "gender": "male",
+        "views": "17K",
+        "mood": "Durga giving way to Nand — the brothers pairing two night ragas in one sitting."
       }
     ],
     "filmy": [
@@ -2615,6 +2871,30 @@ const PRAHARS = [
         "gender": "male",
         "views": "35K",
         "mood": "Kaunsi Kanada — Malkauns meets Kanada in the stillest small hours."
+      },
+      {
+        "raga": "Bageshri",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "AyoAMY8vewI",
+        "gender": "male",
+        "views": "35K",
+        "mood": "Bageshri in the small hours, the raga of waiting for someone who isn't coming."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "Dhu4wYhI5ow",
+        "gender": "male",
+        "views": "40K",
+        "mood": "Darbari from the Bhairav Se Bhairavi Tak concert in Varanasi — slow, regal, nocturnal."
+      },
+      {
+        "raga": "Jogkauns",
+        "artist": "Pt. Rajan & Sajan Mishra",
+        "videoId": "LAlRWbCS9uQ",
+        "gender": "male",
+        "views": "20K",
+        "mood": "Jogkauns from 'Divine Voices of Benares' — a modern kauns for the deepest hour."
       }
     ],
     "filmy": [

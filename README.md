@@ -47,23 +47,23 @@ a pool of `options`, and one is picked at random each time:
 
 | Time slot | Raga family | Pool size |
 |---|---|---|
-| 4:00–7:00 AM | Bhairav | 17 |
-| 7:00–10:00 AM | Ahir Bhairav | 24 |
-| 10:00 AM–1:00 PM | Bilawal | 21 |
-| 1:00–4:00 PM | Bhimpalasi | 21 |
-| 4:00–7:00 PM | Puriya Dhanashri | 21 |
-| 7:00–10:00 PM | Yaman | 21 |
-| 10:00 PM–1:00 AM | Kedar | 21 |
-| 1:00–4:00 AM | Malkauns | 31 |
+| 4:00 AM – 7:00 AM | Bhairav | 24 |
+| 7:00 AM – 10:00 AM | Ahir Bhairav | 29 |
+| 10:00 AM – 1:00 PM | Bilawal | 27 |
+| 1:00 PM – 4:00 PM | Bhimpalasi | 36 |
+| 4:00 PM – 7:00 PM | Puriya Dhanashri | 27 |
+| 7:00 PM – 10:00 PM | Yaman | 26 |
+| 10:00 PM – 1:00 AM | Kedar | 29 |
+| 1:00 AM – 4:00 AM | Malkauns | 38 |
 
-**Total: 177 verified performances** across all 8 praharas.
+**Total: 236 verified performances** across all 8 praharas.
 
 ## Little Filmy mode
 
 Toggle **Little Filmy** and each prahar plays a Hindustani-classical-based
 *Bollywood* song instead — mapped to the prahar by the raga the song is built
 on. `data.js` gives every prahar a `filmy` pool of `{ song, film, year, artist,
-raga, videoId, mood }` objects (currently 22 verified songs, all eras from
+raga, videoId, mood }` objects (currently 120 verified songs, all eras from
 Baiju Bawra to A.R. Rahman). Like the classical pools, it can grow — just add
 more verified entries to a prahar's `filmy` array. A prahar with no filmy songs
 yet falls back to Classical automatically.
