@@ -217,6 +217,342 @@ const PRAHARS = [
         "gender": "male",
         "views": "18K",
         "mood": "Sajan Mishra with his son Swaransh — Bhairavi as the traditional closing benediction."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ajoy Chakrabarty",
+        "videoId": "PL5bTHFLCbo",
+        "gender": "male",
+        "views": "331K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Arati Ankalikar-Tikekar",
+        "videoId": "-GlRSm__PjU",
+        "gender": "female",
+        "views": "14K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Agra / Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Bade Ghulam Ali Khan",
+        "videoId": "YbZWV15k2MI",
+        "gender": "male",
+        "views": "997K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Jangla Bhairavi",
+        "artist": "Bade Ghulam Ali Khan",
+        "videoId": "wX0hDA6u2Kw",
+        "gender": "male",
+        "views": "273K",
+        "mood": "A brisk, festive Bhairavi, closer to celebration than farewell. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Begum Akhtar",
+        "videoId": "DDpKShAFwaA",
+        "gender": "female",
+        "views": "2.1M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Begum Akhtar",
+        "videoId": "B6noCddu-7g",
+        "gender": "female",
+        "views": "1.3M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Begum Parveen Sultana",
+        "videoId": "n17Id8Cjzqs",
+        "gender": "female",
+        "views": "188K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Begum Parveen Sultana",
+        "videoId": "XD9TSbEQpwU",
+        "gender": "female",
+        "views": "151K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Bhimsen Joshi",
+        "videoId": "4rs7dG-0WcE",
+        "gender": "male",
+        "views": "12.1M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Devaki Pandit",
+        "videoId": "jfEXYvSmpks",
+        "gender": "female",
+        "views": "126K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Jogiya",
+        "artist": "Gangubai Hangal",
+        "videoId": "OGqLBpoj_DQ",
+        "gender": "female",
+        "views": "73K",
+        "mood": "The mendicant's raga, sung as the light comes up. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhairav",
+        "artist": "Gangubai Hangal",
+        "videoId": "JwqucNCXlAA",
+        "gender": "female",
+        "views": "14K",
+        "mood": "Solemn and devotional, the classic raga to greet sunrise. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Girija Devi",
+        "videoId": "8fW3b4OF6tk",
+        "gender": "female",
+        "views": "213K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Girija Devi",
+        "videoId": "Cc1pjRZ9ztc",
+        "gender": "female",
+        "views": "156K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Hirabai Barodekar",
+        "videoId": "TEsLpBxWrcM",
+        "gender": "female",
+        "views": "13K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Kala Ramnath",
+        "videoId": "aVpRokrWUWU",
+        "gender": "female",
+        "views": "151K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On violin."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Kaushiki Chakraborty",
+        "videoId": "-FuW2ZcgOmA",
+        "gender": "female",
+        "views": "13.2M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Kesarbai Kerkar",
+        "videoId": "IX5cjrXMhec",
+        "gender": "female",
+        "views": "443K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Kesarbai Kerkar",
+        "videoId": "yWWQJ5SCrWM",
+        "gender": "female",
+        "views": "89K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "M. Venkatesh Kumar",
+        "videoId": "7uSg_dpobD8",
+        "gender": "male",
+        "views": "646K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Gwalior-Kirana gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Mallikarjun Mansur",
+        "videoId": "s7rX67tNeD8",
+        "gender": "male",
+        "views": "52K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Lalit",
+        "artist": "Mogubai Kurdikar",
+        "videoId": "mOjbnYhfUHk",
+        "gender": "female",
+        "views": "4K",
+        "mood": "Two madhyams pulling against each other in the last dark before dawn. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "N. Rajam",
+        "videoId": "ivV7cX8z-EQ",
+        "gender": "female",
+        "views": "98K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On violin, in the gayaki ang."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Nikhil Banerjee",
+        "videoId": "6UKoLTO8UyU",
+        "gender": "male",
+        "views": "221K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On sitar."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Omkarnath Thakur",
+        "videoId": "gApWs6LO0Ww",
+        "gender": "male",
+        "views": "234K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Mishra Bhairavi",
+        "artist": "Pandit Ram Narayan",
+        "videoId": "7TWsIvJYiPs",
+        "gender": "male",
+        "views": "165K",
+        "mood": "Bhairavi with borrowed notes, looser and more songlike. On sarangi."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Pandit Ram Narayan",
+        "videoId": "X7fy-RZaHIk",
+        "gender": "male",
+        "views": "23K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On sarangi."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Prabha Atre",
+        "videoId": "sRNg-v1Dg_4",
+        "gender": "female",
+        "views": "1.2M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Rajan & Sajan Mishra",
+        "videoId": "IrfDg0cmMIg",
+        "gender": "male",
+        "views": "240K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Sung as a duet."
+      },
+      {
+        "raga": "Sindhi Bhairavi",
+        "artist": "Ravi Shankar",
+        "videoId": "OVRZ64FBOcE",
+        "gender": "male",
+        "views": "180K",
+        "mood": "A folk-leaning Bhairavi, warm and unguarded. On sitar."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Shobha Gurtu",
+        "videoId": "l0Y_zLtv6wE",
+        "gender": "female",
+        "views": "60K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Shruti Sadolikar",
+        "videoId": "ax43IZgtNXo",
+        "gender": "female",
+        "views": "6K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Siddheshwari Devi",
+        "videoId": "F8mgnKDChhA",
+        "gender": "female",
+        "views": "16K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Siddheshwari Devi",
+        "videoId": "69gR5eIUwG8",
+        "gender": "female",
+        "views": "3K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ulhas Kashalkar",
+        "videoId": "Ov1bygYy2CQ",
+        "gender": "male",
+        "views": "116K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Gwalior-Agra-Jaipur gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ustad Ali Akbar Khan",
+        "videoId": "AvA-vog4srU",
+        "gender": "male",
+        "views": "309K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On sarod."
+      },
+      {
+        "raga": "Sindhi Bhairavi",
+        "artist": "Ustad Ali Akbar Khan",
+        "videoId": "B6GcXBy1P3A",
+        "gender": "male",
+        "views": "62K",
+        "mood": "A folk-leaning Bhairavi, warm and unguarded. On sarod."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ustad Amjad Ali Khan",
+        "videoId": "23DVkaIaa_M",
+        "gender": "male",
+        "views": "234K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On sarod."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ustad Bismillah Khan",
+        "videoId": "HPW--T34ELQ",
+        "gender": "male",
+        "views": "5.4M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On shehnai."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ustad Rashid Khan",
+        "videoId": "DtMK9lTru74",
+        "gender": "male",
+        "views": "6M",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Rampur-Sahaswan gharana."
+      },
+      {
+        "raga": "Bhairavi",
+        "artist": "Ustad Vilayat Khan",
+        "videoId": "hRVGUBYIiRU",
+        "gender": "male",
+        "views": "749K",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. On sitar."
+      },
+      {
+        "raga": "Bhankar",
+        "artist": "Ustad Vilayat Khan",
+        "videoId": "Qim2av-SRwU",
+        "gender": "male",
+        "views": "148K",
+        "mood": "A rare dawn raga, austere and little heard. On sitar."
       }
     ],
     "filmy": [
@@ -390,6 +726,120 @@ const PRAHARS = [
         "raga": "Bhairav",
         "videoId": "8gCpXojxo_4",
         "mood": "Laxmikant-Pyarelal's Bhairav — a bright, playful morning of young romance."
+      },
+      {
+        "song": "Abhang",
+        "artist": "Arati Ankalikar-Tikekar",
+        "videoId": "fsZpoMBxWhM",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Agra / Jaipur-Atrauli gharana.",
+        "raga": "Bhairavi"
+      },
+      {
+        "song": "Marathi Abhang",
+        "artist": "Devaki Pandit",
+        "videoId": "OeE6xk1Z2Zw",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana.",
+        "raga": "Bhairavi"
+      },
+      {
+        "song": "Avagha Rang Ek Jhala",
+        "artist": "Kishori Amonkar",
+        "videoId": "y0FjfEL6Cak",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Jaipur-Atrauli gharana.",
+        "raga": "Bhairavi"
+      },
+      {
+        "song": "Meera bhajan in Bhairavi",
+        "artist": "Ashwini Bhide-Deshpande",
+        "videoId": "UXKrTuXOnDI",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Jaipur-Atrauli gharana.",
+        "raga": "Bhairavi"
+      },
+      {
+        "song": "Humein Tumse Pyar Kitna",
+        "artist": "Begum Parveen Sultana",
+        "videoId": "w-BbWJx05hg",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Patiala gharana.",
+        "raga": "Bhairavi"
+      },
+      {
+        "song": "Indrayani Kathi",
+        "artist": "Bhimsen Joshi",
+        "videoId": "I_QZVQ-3EG8",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Kirana gharana."
+      },
+      {
+        "song": "Jo Bhaje Hari Ko Sada",
+        "artist": "Bhimsen Joshi",
+        "videoId": "EqlYN2hHYtY",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Kirana gharana."
+      },
+      {
+        "song": "Jab Jankinath Sahay",
+        "artist": "D. V. Paluskar",
+        "videoId": "jpD-WR2hc5w",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Gwalior gharana."
+      },
+      {
+        "song": "Barse Badariya Sawan Ki",
+        "artist": "Devaki Pandit",
+        "videoId": "AUIK9LFHJFY",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "song": "Babul Mora",
+        "artist": "Kaushiki Chakraborty",
+        "videoId": "kRRVvgFNd54",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Patiala gharana."
+      },
+      {
+        "song": "Bolava Vitthal",
+        "artist": "Kishori Amonkar",
+        "videoId": "60xmh6lLIEQ",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "song": "Payoji Maine Ram Ratan Dhan Paayo",
+        "artist": "M. Venkatesh Kumar",
+        "videoId": "STMk3vvbVMM",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Gwalior-Kirana gharana."
+      },
+      {
+        "song": "Govind Damodar Madhaveti",
+        "artist": "Pandit Jasraj",
+        "videoId": "NVE2qeBYvb4",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Mewati gharana."
+      },
+      {
+        "song": "Om Namo Bhagavate Vasudevaya",
+        "artist": "Pandit Jasraj",
+        "videoId": "tujcCI6MLD0",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Mewati gharana."
+      },
+      {
+        "song": "Mero Allah Meherban",
+        "artist": "Pandit Jasraj",
+        "videoId": "Rrg3iH37Gvg",
+        "mood": "An early-morning piece, sung as the light arrives. Khayal, Mewati gharana."
+      },
+      {
+        "song": "Ab Kripa Karo Shri Ram",
+        "artist": "Rajan & Sajan Mishra",
+        "videoId": "UqXStkfDsq0",
+        "mood": "An early-morning piece, sung as the light arrives. Sung as a duet."
+      },
+      {
+        "song": "Mangal Dhwani",
+        "artist": "Ustad Bismillah Khan",
+        "videoId": "-1BnrjyIoMs",
+        "mood": "An early-morning piece, sung as the light arrives. On shehnai."
+      },
+      {
+        "song": "Allah Hi Raham",
+        "artist": "Ustad Rashid Khan",
+        "videoId": "WgIBgC3a4Vs",
+        "mood": "The raga that traditionally closes a concert — tender, resigned, all twelve notes in play. Khayal, Rampur-Sahaswan gharana.",
+        "raga": "Bhairavi"
       }
     ]
   },
@@ -633,6 +1083,238 @@ const PRAHARS = [
         "gender": "male",
         "views": "35K",
         "mood": "'Kanha Re' in Bilaskhani Todi, a restored archival recording, plaintive and soft-edged."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Ajoy Chakrabarty",
+        "videoId": "UmIP9wjVO7A",
+        "gender": "male",
+        "views": "168K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Ajoy Chakrabarty",
+        "videoId": "42kk7AbA9NI",
+        "gender": "male",
+        "views": "147K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Arati Ankalikar-Tikekar",
+        "videoId": "KTJ2TCUv-fg",
+        "gender": "female",
+        "views": "41K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Agra / Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Arati Ankalikar-Tikekar",
+        "videoId": "E3od5CvZUZQ",
+        "gender": "female",
+        "views": "8K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Agra / Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Ashwini Bhide-Deshpande",
+        "videoId": "3xSsJ9GC6lQ",
+        "gender": "female",
+        "views": "265K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Ashwini Bhide-Deshpande",
+        "videoId": "BxNYA-2uNVc",
+        "gender": "female",
+        "views": "170K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Miyan Ki Todi",
+        "artist": "Bhimsen Joshi",
+        "videoId": "FBD5lVdyMss",
+        "gender": "male",
+        "views": "618K",
+        "mood": "Todi at its most classical and most demanding. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Desi",
+        "artist": "D. V. Paluskar",
+        "videoId": "SZaevf3ssHg",
+        "gender": "male",
+        "views": "92K",
+        "mood": "A morning raga with an Asavari shadow over it. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Gangubai Hangal",
+        "videoId": "qV_vlpjZFb8",
+        "gender": "female",
+        "views": "38K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Hariprasad Chaurasia",
+        "videoId": "9GlMrtTfSD0",
+        "gender": "male",
+        "views": "672K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. On bansuri."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Kaushiki Chakraborty",
+        "videoId": "Romd0o4x6V4",
+        "gender": "female",
+        "views": "132K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Kesarbai Kerkar",
+        "videoId": "Tap0Z-ul2II",
+        "gender": "female",
+        "views": "12K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Kishori Amonkar",
+        "videoId": "0uKxkzfcF8c",
+        "gender": "female",
+        "views": "57K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Miyan Ki Todi",
+        "artist": "M. Venkatesh Kumar",
+        "videoId": "wQhkNikrWuw",
+        "gender": "male",
+        "views": "133K",
+        "mood": "Todi at its most classical and most demanding. Khayal, Gwalior-Kirana gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Mallikarjun Mansur",
+        "videoId": "wYnXdKHyxHM",
+        "gender": "male",
+        "views": "54K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Mallikarjun Mansur",
+        "videoId": "SOUUrQRWP20",
+        "gender": "male",
+        "views": "26K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Manjiri Asanare-Kelkar",
+        "videoId": "zabqh-UEpUY",
+        "gender": "female",
+        "views": "6K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Manjiri Asanare-Kelkar",
+        "videoId": "L6I_DlehbcU",
+        "gender": "female",
+        "views": "1K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Miyan Ki Todi",
+        "artist": "N. Rajam",
+        "videoId": "ajtglYDxIxs",
+        "gender": "female",
+        "views": "102K",
+        "mood": "Todi at its most classical and most demanding. On violin, in the gayaki ang."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Omkarnath Thakur",
+        "videoId": "kfixXONN_0o",
+        "gender": "male",
+        "views": "6K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Padma Talwalkar",
+        "videoId": "Y9Amq1VCqFo",
+        "gender": "female",
+        "views": "50K",
+        "mood": "A mid-morning raga, plain-spoken and steady. Khayal, Gwalior / Jaipur gharana."
+      },
+      {
+        "raga": "Jaunpuri",
+        "artist": "Pandit Ram Narayan",
+        "videoId": "QPFfTbvOKUw",
+        "gender": "male",
+        "views": "11K",
+        "mood": "A mid-morning raga, plain-spoken and steady. On sarangi."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Pandit Ram Narayan",
+        "videoId": "Y_WThAVl7BI",
+        "gender": "male",
+        "views": "10K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. On sarangi."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Rajan & Sajan Mishra",
+        "videoId": "F2-GaZTeX_c",
+        "gender": "male",
+        "views": "131K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Sung as a duet."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Shahid Parvez",
+        "videoId": "oajvzGmVX2c",
+        "gender": "male",
+        "views": "226K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. On sitar."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Shruti Sadolikar",
+        "videoId": "SYrd0yC_bA0",
+        "gender": "female",
+        "views": "9K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Miyan Ki Todi",
+        "artist": "Ulhas Kashalkar",
+        "videoId": "Dp83Ib9MKtk",
+        "gender": "male",
+        "views": "31K",
+        "mood": "Todi at its most classical and most demanding. Khayal, Gwalior-Agra-Jaipur gharana."
+      },
+      {
+        "raga": "Todi",
+        "artist": "Ustad Vilayat Khan",
+        "videoId": "kITVzkbAJsE",
+        "gender": "male",
+        "views": "804K",
+        "mood": "The great morning raga — severe, unsettling, impossible to sing casually. On sitar."
+      },
+      {
+        "raga": "Ahir Bhairav",
+        "artist": "Veena Sahasrabuddhe",
+        "videoId": "wM125Su0VgM",
+        "gender": "female",
+        "views": "65K",
+        "mood": "Morning gravity with a sweetness Bhairav never allows itself. Khayal, Gwalior gharana."
       }
     ],
     "filmy": [
@@ -981,6 +1663,13 @@ const PRAHARS = [
         "raga": "Alhaiya Bilawal",
         "videoId": "MB_1iDS6_vY",
         "mood": "Madan Mohan's first-prahar Alhaiya Bilawal — dawn done, the day begun."
+      },
+      {
+        "song": "Meera & Kabir in Shuddh Sarang",
+        "artist": "Veena Sahasrabuddhe",
+        "videoId": "8W3jFs8rxXA",
+        "mood": "A piece for the last watch of the night. Khayal, Gwalior gharana.",
+        "raga": "Shuddh Sarang"
       }
     ]
   },
@@ -1280,6 +1969,70 @@ const PRAHARS = [
         "gender": "male",
         "views": "14K",
         "mood": "Another Vrindavani Sarang from the Baroda concert, unhurried and open."
+      },
+      {
+        "raga": "Sindhura",
+        "artist": "Bade Ghulam Ali Khan",
+        "videoId": "ZWmEGaOwuYE",
+        "gender": "male",
+        "views": "578K",
+        "mood": "An afternoon raga that never strays far from folk song. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Mishra Piloo",
+        "artist": "Girija Devi",
+        "videoId": "yw6NdsbRV58",
+        "gender": "female",
+        "views": "458K",
+        "mood": "Piloo opened up further, with notes borrowed freely. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Hirabai Barodekar",
+        "videoId": "EkfR7yhpdtU",
+        "gender": "female",
+        "views": "5K",
+        "mood": "Afternoon tipping toward dusk, komal notes weighted and slow. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Madhuvanti",
+        "artist": "Kala Ramnath",
+        "videoId": "pdF4FvuDUVM",
+        "gender": "female",
+        "views": "21K",
+        "mood": "A sharp madhyam aching through the late afternoon. On violin."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Mogubai Kurdikar",
+        "videoId": "gjP3AH0mU5Q",
+        "gender": "female",
+        "views": "3K",
+        "mood": "Afternoon tipping toward dusk, komal notes weighted and slow. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Mishra Piloo",
+        "artist": "Ravi Shankar",
+        "videoId": "gD7x8s3gvOY",
+        "gender": "male",
+        "views": "100K",
+        "mood": "Piloo opened up further, with notes borrowed freely. On sitar."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Ulhas Kashalkar",
+        "videoId": "XQ08AUh7MU0",
+        "gender": "male",
+        "views": "44K",
+        "mood": "Afternoon tipping toward dusk, komal notes weighted and slow. Khayal, Gwalior-Agra-Jaipur gharana."
+      },
+      {
+        "raga": "Multani",
+        "artist": "Veena Sahasrabuddhe",
+        "videoId": "bv6Q9G9w0VA",
+        "gender": "female",
+        "views": "145K",
+        "mood": "Afternoon tipping toward dusk, komal notes weighted and slow. Khayal, Gwalior gharana."
       }
     ],
     "filmy": [
@@ -1626,6 +2379,70 @@ const PRAHARS = [
         "gender": "male",
         "views": "22K",
         "mood": "Puriya Dhanashri at the sandhi hour, sung in the Sarod Ghar's small room."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Gangubai Hangal",
+        "videoId": "aKqYlsXHMiQ",
+        "gender": "female",
+        "views": "17K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Hirabai Barodekar",
+        "videoId": "Rtyzg__-UNY",
+        "gender": "female",
+        "views": "27K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Shri",
+        "artist": "Nikhil Banerjee",
+        "videoId": "bM9B9jal_Ao",
+        "gender": "male",
+        "views": "280K",
+        "mood": "A piece for the sandhi hour, as the sun goes down. On sitar."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Nikhil Banerjee",
+        "videoId": "l9VP_SBx5e0",
+        "gender": "male",
+        "views": "102K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. On sitar."
+      },
+      {
+        "raga": "Puriya Dhanashri",
+        "artist": "Shahid Parvez",
+        "videoId": "jPIl2G88w_A",
+        "gender": "male",
+        "views": "90K",
+        "mood": "The sandhi hour — sunset, with the ground shifting underfoot. On sitar."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Shruti Sadolikar",
+        "videoId": "RyUj17pL7NI",
+        "gender": "female",
+        "views": "21K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Ustad Ali Akbar Khan",
+        "videoId": "UNPRAgVxM9A",
+        "gender": "male",
+        "views": "93K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. On sarod."
+      },
+      {
+        "raga": "Marwa",
+        "artist": "Ustad Amir Khan",
+        "videoId": "vlUvz333vUc",
+        "gender": "male",
+        "views": "133K",
+        "mood": "The raga that removes the tonic from under you as the sun goes down. Khayal, Indore gharana."
       }
     ],
     "filmy": [
@@ -1910,6 +2727,382 @@ const PRAHARS = [
         "gender": "male",
         "views": "28K",
         "mood": "Desh in the early evening — monsoon raga, sung with open-throated ease."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ajoy Chakrabarty",
+        "videoId": "DRYEl182_D4",
+        "gender": "male",
+        "views": "260K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Charukeshi",
+        "artist": "Anoushka Shankar",
+        "videoId": "1Mt1tdVfs7g",
+        "gender": "female",
+        "views": "43K",
+        "mood": "Carnatic-born, half bright and half grieving, for the evening. On sitar."
+      },
+      {
+        "raga": "Madhyamavati",
+        "artist": "Bhimsen Joshi",
+        "videoId": "_tdYY6lUw9g",
+        "gender": "male",
+        "views": "9.6M",
+        "mood": "A Carnatic raga used to close, unhurried and settled. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Gangubai Hangal",
+        "videoId": "JaJeupmwBJQ",
+        "gender": "female",
+        "views": "242K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Bhupali",
+        "artist": "Gundecha Brothers",
+        "videoId": "vxnHajMaocY",
+        "gender": "male",
+        "views": "482K",
+        "mood": "Five notes, nothing wasted, early evening calm. Sung dhrupad."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Gundecha Brothers",
+        "videoId": "RfF5-fMcdM0",
+        "gender": "male",
+        "views": "60K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Sung dhrupad."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Hariprasad Chaurasia",
+        "videoId": "3kBuDppKJMQ",
+        "gender": "male",
+        "views": "1.2M",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On bansuri."
+      },
+      {
+        "raga": "Hansadhwani",
+        "artist": "Hariprasad Chaurasia",
+        "videoId": "4VloVAPloX8",
+        "gender": "male",
+        "views": "868K",
+        "mood": "An evening piece. On bansuri."
+      },
+      {
+        "raga": "Pahadi",
+        "artist": "Hariprasad Chaurasia",
+        "videoId": "cNQnieRpZxo",
+        "gender": "male",
+        "views": "367K",
+        "mood": "Hill folk melody dressed as a raga, evening-light. On bansuri."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Hirabai Barodekar",
+        "videoId": "RxKPaQCNttA",
+        "gender": "female",
+        "views": "44K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Shuddh Kalyan",
+        "artist": "Kala Ramnath",
+        "videoId": "Y4HBNL7IcBM",
+        "gender": "female",
+        "views": "90K",
+        "mood": "An evening piece. On violin."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Kala Ramnath",
+        "videoId": "SkICjDDwswI",
+        "gender": "female",
+        "views": "57K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On violin."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Kaushiki Chakraborty",
+        "videoId": "YeOcx1ox5gQ",
+        "gender": "female",
+        "views": "2.1M",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Shuddh Kalyan",
+        "artist": "Kesarbai Kerkar",
+        "videoId": "O31fpGYbMSQ",
+        "gender": "female",
+        "views": "22K",
+        "mood": "An evening piece. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhupali",
+        "artist": "Kishori Amonkar",
+        "videoId": "ipauyMfVYso",
+        "gender": "female",
+        "views": "1.7M",
+        "mood": "Five notes, nothing wasted, early evening calm. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Hansadhwani",
+        "artist": "Kishori Amonkar",
+        "videoId": "jdqvV9MVf2A",
+        "gender": "female",
+        "views": "26K",
+        "mood": "An evening piece. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Bhupali",
+        "artist": "Kumar Gandharva",
+        "videoId": "bRuEg0dmbgI",
+        "gender": "male",
+        "views": "230K",
+        "mood": "Five notes, nothing wasted, early evening calm. Khayal, Gwalior / independent gharana."
+      },
+      {
+        "raga": "Desh",
+        "artist": "M. Venkatesh Kumar",
+        "videoId": "E8CFmo7tRWA",
+        "gender": "male",
+        "views": "131K",
+        "mood": "Monsoon raga, sung open-throated in the early evening. Khayal, Gwalior-Kirana gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "M. Venkatesh Kumar",
+        "videoId": "xBzok2OFAVg",
+        "gender": "male",
+        "views": "128K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior-Kirana gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Malini Rajurkar",
+        "videoId": "viYGhyqSyOU",
+        "gender": "female",
+        "views": "116K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Desh",
+        "artist": "Malini Rajurkar",
+        "videoId": "P8SXa4ea56s",
+        "gender": "female",
+        "views": "85K",
+        "mood": "Monsoon raga, sung open-throated in the early evening. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Bhupali",
+        "artist": "Mallikarjun Mansur",
+        "videoId": "qEPnRZOI6dA",
+        "gender": "male",
+        "views": "74K",
+        "mood": "Five notes, nothing wasted, early evening calm. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Shuddh Kalyan",
+        "artist": "Manjiri Asanare-Kelkar",
+        "videoId": "0Jygs6tHXoY",
+        "gender": "female",
+        "views": "1K",
+        "mood": "An evening piece. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Mogubai Kurdikar",
+        "videoId": "w5idEgrOs10",
+        "gender": "female",
+        "views": "32K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Shuddh Kalyan",
+        "artist": "Mogubai Kurdikar",
+        "videoId": "9_s9bANwIUM",
+        "gender": "female",
+        "views": "1K",
+        "mood": "An evening piece. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "N. Rajam",
+        "videoId": "Rx63aRwdCRY",
+        "gender": "female",
+        "views": "138K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On violin, in the gayaki ang."
+      },
+      {
+        "raga": "Desh",
+        "artist": "Omkarnath Thakur",
+        "videoId": "-5BJSmf-a74",
+        "gender": "male",
+        "views": "96K",
+        "mood": "Monsoon raga, sung open-throated in the early evening. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Omkarnath Thakur",
+        "videoId": "aiMF_9Dzep8",
+        "gender": "male",
+        "views": "8K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Shuddh Kalyan",
+        "artist": "Padma Talwalkar",
+        "videoId": "NtxXdRTgwl0",
+        "gender": "female",
+        "views": "19K",
+        "mood": "An evening piece. Khayal, Gwalior / Jaipur gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Padma Talwalkar",
+        "videoId": "G5hkd7XJWcg",
+        "gender": "female",
+        "views": "10K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior / Jaipur gharana."
+      },
+      {
+        "raga": "Kalavati",
+        "artist": "Prabha Atre",
+        "videoId": "AwEQqcszjHc",
+        "gender": "female",
+        "views": "217K",
+        "mood": "Evening, pentatonic, with a sweetness that arrives quickly. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Rajan & Sajan Mishra",
+        "videoId": "FIudr8h-WmQ",
+        "gender": "male",
+        "views": "352K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Sung as a duet."
+      },
+      {
+        "raga": "Charukeshi",
+        "artist": "Ravi Shankar",
+        "videoId": "Xb_SaMg7zwE",
+        "gender": "male",
+        "views": "161K",
+        "mood": "Carnatic-born, half bright and half grieving, for the evening. On sitar."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Shahid Parvez",
+        "videoId": "ed4SIvGjqNI",
+        "gender": "male",
+        "views": "3.6M",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On sitar."
+      },
+      {
+        "raga": "Pahadi",
+        "artist": "Shivkumar Sharma",
+        "videoId": "EL4_hAoMHd0",
+        "gender": "male",
+        "views": "205K",
+        "mood": "Hill folk melody dressed as a raga, evening-light. On santoor."
+      },
+      {
+        "raga": "Charukeshi",
+        "artist": "Shivkumar Sharma",
+        "videoId": "u8nd7EcrXxk",
+        "gender": "male",
+        "views": "54K",
+        "mood": "Carnatic-born, half bright and half grieving, for the evening. On santoor."
+      },
+      {
+        "raga": "Mishra Kafi",
+        "artist": "Shobha Gurtu",
+        "videoId": "iDpvcq8M8M8",
+        "gender": "female",
+        "views": "162K",
+        "mood": "Kafi with borrowed notes, loosened toward thumri. Semi-classical."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Shruti Sadolikar",
+        "videoId": "TkJ_hHVWxhY",
+        "gender": "female",
+        "views": "70K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Khamaj",
+        "artist": "Siddheshwari Devi",
+        "videoId": "zraiQjitSO8",
+        "gender": "female",
+        "views": "34K",
+        "mood": "Light-classical evening, made for thumri and unserious love. Semi-classical, in the Banaras manner."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ulhas Kashalkar",
+        "videoId": "XO9Bh2HzHvo",
+        "gender": "male",
+        "views": "69K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior-Agra-Jaipur gharana."
+      },
+      {
+        "raga": "Desh",
+        "artist": "Ustad Amjad Ali Khan",
+        "videoId": "3utGH37HzCk",
+        "gender": "male",
+        "views": "1.9M",
+        "mood": "Monsoon raga, sung open-throated in the early evening. On sarod."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ustad Amjad Ali Khan",
+        "videoId": "7dprJBRkXuk",
+        "gender": "male",
+        "views": "53K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On sarod."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ustad Bismillah Khan",
+        "videoId": "7nXYYuorTm4",
+        "gender": "male",
+        "views": "2.2M",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On shehnai."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ustad Sultan Khan",
+        "videoId": "7wYXEY4htDA",
+        "gender": "male",
+        "views": "766K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On sarangi."
+      },
+      {
+        "raga": "Charukeshi",
+        "artist": "Ustad Sultan Khan",
+        "videoId": "Th8e6xxyg5E",
+        "gender": "male",
+        "views": "239K",
+        "mood": "Carnatic-born, half bright and half grieving, for the evening. On sarangi."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Ustad Vilayat Khan",
+        "videoId": "tGBKs7swowk",
+        "gender": "male",
+        "views": "383K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. On sitar."
+      },
+      {
+        "raga": "Yaman",
+        "artist": "Veena Sahasrabuddhe",
+        "videoId": "5PD4ODLm1jI",
+        "gender": "female",
+        "views": "72K",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Gwalior gharana."
       }
     ],
     "filmy": [
@@ -2155,6 +3348,136 @@ const PRAHARS = [
         "raga": "Khamaj",
         "videoId": "ru_5PA8cwkE",
         "mood": "Shankar-Ehsaan-Loy's Khamaj — a modern evening reckoning of the heart."
+      },
+      {
+        "song": "Raghupati Raghav Raja Ram",
+        "artist": "D. V. Paluskar",
+        "videoId": "MoeC0JEEt9U",
+        "mood": "An evening piece. Khayal, Gwalior gharana.",
+        "raga": "Mishra Gara"
+      },
+      {
+        "song": "Payoji Maine",
+        "artist": "D. V. Paluskar",
+        "videoId": "Fi6N5NQ7pTs",
+        "mood": "Light-classical evening, made for thumri and unserious love. Khayal, Gwalior gharana.",
+        "raga": "Khamaj"
+      },
+      {
+        "song": "Payoji Maine",
+        "artist": "N. Rajam",
+        "videoId": "KBRNcJ6pPcU",
+        "mood": "Light-classical evening, made for thumri and unserious love. On violin, in the gayaki ang.",
+        "raga": "Khamaj"
+      },
+      {
+        "song": "Voice of the Moon",
+        "artist": "Anoushka Shankar",
+        "videoId": "RzoO756PvL8",
+        "mood": "An evening piece. On sitar."
+      },
+      {
+        "song": "Traveller",
+        "artist": "Anoushka Shankar",
+        "videoId": "_PfRSr0F9eM",
+        "mood": "An evening piece. On sitar."
+      },
+      {
+        "song": "Chaiti Chait Maas",
+        "artist": "Girija Devi",
+        "videoId": "YVxmP-4dbJY",
+        "mood": "An evening piece. Semi-classical, in the Banaras manner."
+      },
+      {
+        "song": "Rang Na Daro Shyamji",
+        "artist": "Malini Rajurkar",
+        "videoId": "7g5Ukf-4kRQ",
+        "mood": "An evening piece. Khayal, Gwalior gharana."
+      },
+      {
+        "song": "Jamuna Kinare Mora Gaon",
+        "artist": "Prabha Atre",
+        "videoId": "aPj8nRdJ3B8",
+        "mood": "An evening piece. Khayal, Kirana gharana."
+      },
+      {
+        "song": "Bangla Dhun Concert for Bangladesh",
+        "artist": "Ravi Shankar",
+        "videoId": "PLY0CmWJunA",
+        "mood": "An evening piece. On sitar."
+      },
+      {
+        "song": "Call of the Valley",
+        "artist": "Shivkumar Sharma",
+        "videoId": "GnNLI86E8DY",
+        "mood": "An evening piece. On santoor."
+      },
+      {
+        "song": "Rangi Saari Gulabi",
+        "artist": "Shobha Gurtu",
+        "videoId": "GauwBsPkXjw",
+        "mood": "An evening piece. Semi-classical."
+      },
+      {
+        "song": "Saiyan Rooth Gaye",
+        "artist": "Shobha Gurtu",
+        "videoId": "RAQK9yoBsVY",
+        "mood": "An evening piece. Semi-classical."
+      },
+      {
+        "song": "Ab Na Balam",
+        "artist": "Shobha Gurtu",
+        "videoId": "D7WyPIGvPvk",
+        "mood": "An evening piece. Semi-classical."
+      },
+      {
+        "song": "Ali More Angana",
+        "artist": "Shubha Mudgal",
+        "videoId": "rcrvGb94i1s",
+        "mood": "An evening piece. Khayal."
+      },
+      {
+        "song": "Seekho Na Naino Ki Bhasha",
+        "artist": "Shubha Mudgal",
+        "videoId": "48tjkNH5sx8",
+        "mood": "An evening piece. Khayal."
+      },
+      {
+        "song": "Chait Ki Nindiya Re",
+        "artist": "Siddheshwari Devi",
+        "videoId": "V8oFCjNNw_Y",
+        "mood": "An evening piece. Semi-classical, in the Banaras manner."
+      },
+      {
+        "song": "Gunj Uthi Shehnai",
+        "artist": "Ustad Bismillah Khan",
+        "videoId": "ZpsYEprcNuY",
+        "mood": "An evening piece. On shehnai."
+      },
+      {
+        "song": "Aaoge Jab Tum Saajna",
+        "artist": "Ustad Rashid Khan",
+        "videoId": "CNZMIhckaA0",
+        "mood": "The first raga taught and the last mastered — evening, expansive, in no hurry. Khayal, Rampur-Sahaswan gharana.",
+        "raga": "Yaman"
+      },
+      {
+        "song": "Piya Basanti",
+        "artist": "Ustad Sultan Khan",
+        "videoId": "XFT2niDEy28",
+        "mood": "An evening piece. On sarangi."
+      },
+      {
+        "song": "Making Music",
+        "artist": "Zakir Hussain",
+        "videoId": "6RsuVUB44rU",
+        "mood": "An evening piece. On tabla."
+      },
+      {
+        "song": "Lotus Feet Remember Shakti",
+        "artist": "Zakir Hussain",
+        "videoId": "HDyfFNJGRDA",
+        "mood": "An evening piece. On tabla."
       }
     ]
   },
@@ -2398,6 +3721,102 @@ const PRAHARS = [
         "gender": "male",
         "views": "17K",
         "mood": "Durga giving way to Nand — the brothers pairing two night ragas in one sitting."
+      },
+      {
+        "raga": "Maru Bihag",
+        "artist": "Begum Parveen Sultana",
+        "videoId": "_95HTB_K5aI",
+        "gender": "female",
+        "views": "8K",
+        "mood": "Bihag with a sharpened fourth, more yearning than its parent. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Gaud Malhar",
+        "artist": "D. V. Paluskar",
+        "videoId": "9phevxRX7j0",
+        "gender": "male",
+        "views": "52K",
+        "mood": "A gentler Malhar, the rain further off. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Nand",
+        "artist": "Devaki Pandit",
+        "videoId": "3h71gxA2tu4",
+        "gender": "female",
+        "views": "18K",
+        "mood": "A night raga that keeps circling the same sweet phrase. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Maru Bihag",
+        "artist": "Kesarbai Kerkar",
+        "videoId": "f5I7ixfduo4",
+        "gender": "female",
+        "views": "29K",
+        "mood": "Bihag with a sharpened fourth, more yearning than its parent. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Megh",
+        "artist": "Nikhil Banerjee",
+        "videoId": "Vy1eHhrwzYs",
+        "gender": "male",
+        "views": "175K",
+        "mood": "Monsoon raga — clouds gathering, sung deep into the night. On sitar."
+      },
+      {
+        "raga": "Miyan Ki Malhar",
+        "artist": "Pandit Jasraj",
+        "videoId": "YBA58q6Ut-g",
+        "gender": "male",
+        "views": "236K",
+        "mood": "Tansen's rain raga, heavy and unmistakable. Khayal, Mewati gharana."
+      },
+      {
+        "raga": "Maru Bihag",
+        "artist": "Prabha Atre",
+        "videoId": "fKmSE252OUo",
+        "gender": "female",
+        "views": "515K",
+        "mood": "Bihag with a sharpened fourth, more yearning than its parent. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Maru Bihag",
+        "artist": "Prabha Atre",
+        "videoId": "1zNuemR7KeA",
+        "gender": "female",
+        "views": "420K",
+        "mood": "Bihag with a sharpened fourth, more yearning than its parent. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Gaud Malhar",
+        "artist": "Ulhas Kashalkar",
+        "videoId": "5lloqtryEpE",
+        "gender": "male",
+        "views": "39K",
+        "mood": "A gentler Malhar, the rain further off. Khayal, Gwalior-Agra-Jaipur gharana."
+      },
+      {
+        "raga": "Megh",
+        "artist": "Ustad Amir Khan",
+        "videoId": "HhsXCB6T0e0",
+        "gender": "male",
+        "views": "114K",
+        "mood": "Monsoon raga — clouds gathering, sung deep into the night. Khayal, Indore gharana."
+      },
+      {
+        "raga": "Durga",
+        "artist": "Ustad Amjad Ali Khan",
+        "videoId": "vMxoKJkQhdA",
+        "gender": "male",
+        "views": "196K",
+        "mood": "Five notes, no thirds to soften it, clean and nocturnal. On sarod."
+      },
+      {
+        "raga": "Megh",
+        "artist": "Ustad Rashid Khan",
+        "videoId": "wsq27ntWHnQ",
+        "gender": "male",
+        "views": "943K",
+        "mood": "Monsoon raga — clouds gathering, sung deep into the night. Khayal, Rampur-Sahaswan gharana."
       }
     ],
     "filmy": [
@@ -2580,6 +3999,55 @@ const PRAHARS = [
         "raga": "Mishra Kedar",
         "videoId": "bHQC1hAuVjc",
         "mood": "Khayyam's Mishra Kedar — a tender, hesitant night of new acquaintance."
+      },
+      {
+        "song": "Mere Humnafas Mere Humnawa",
+        "artist": "Begum Akhtar",
+        "videoId": "XYgG6SiX7ZE",
+        "mood": "A night piece. Semi-classical."
+      },
+      {
+        "song": "Ae Mohabbat Tere Anjam Pe Rona Aaya",
+        "artist": "Begum Akhtar",
+        "videoId": "AQ0iWPWV-O0",
+        "mood": "A night piece. Semi-classical."
+      },
+      {
+        "song": "Kajri Barsan Lagi",
+        "artist": "Girija Devi",
+        "videoId": "hSlthw4PRms",
+        "mood": "A night piece. Semi-classical, in the Banaras manner."
+      },
+      {
+        "song": "Ab Ke Sawan",
+        "artist": "Shubha Mudgal",
+        "videoId": "WLzDlKSMKY0",
+        "mood": "A night piece. Khayal.",
+        "raga": "Malhar"
+      },
+      {
+        "song": "Kajri",
+        "artist": "Siddheshwari Devi",
+        "videoId": "kZorvjFzcXM",
+        "mood": "A night piece. Semi-classical, in the Banaras manner."
+      },
+      {
+        "song": "Tabla Solo Teentaal",
+        "artist": "Zakir Hussain",
+        "videoId": "ZtRPB8xHP8M",
+        "mood": "A night piece. On tabla."
+      },
+      {
+        "song": "Tabla duet Alla Rakha",
+        "artist": "Zakir Hussain",
+        "videoId": "ALZpNazAVts",
+        "mood": "A night piece. On tabla."
+      },
+      {
+        "song": "Tabla Solo Rupak",
+        "artist": "Zakir Hussain",
+        "videoId": "kxSjqlGZgR8",
+        "mood": "A night piece. On tabla."
       }
     ]
   },
@@ -2895,6 +4363,270 @@ const PRAHARS = [
         "gender": "male",
         "views": "20K",
         "mood": "Jogkauns from 'Divine Voices of Benares' — a modern kauns for the deepest hour."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Ajoy Chakrabarty",
+        "videoId": "UXiYq9LY9po",
+        "gender": "male",
+        "views": "211K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Anoushka Shankar",
+        "videoId": "3mwQvdi0Fik",
+        "gender": "female",
+        "views": "489K",
+        "mood": "Night, built on a major and minor third refusing to resolve. On sitar."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Arati Ankalikar-Tikekar",
+        "videoId": "x_G7X6M7W9Q",
+        "gender": "female",
+        "views": "25K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Agra / Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Bade Ghulam Ali Khan",
+        "videoId": "sisG8crGoEQ",
+        "gender": "male",
+        "views": "416K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Devaki Pandit",
+        "videoId": "FYt8pLLmNkQ",
+        "gender": "female",
+        "views": "4K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Adana",
+        "artist": "Gundecha Brothers",
+        "videoId": "8Zn3gpG8crI",
+        "gender": "male",
+        "views": "845K",
+        "mood": "Darbari's quick cousin, late night with the tempo up. Sung dhrupad."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Gundecha Brothers",
+        "videoId": "J5jLKaMJ-74",
+        "gender": "male",
+        "views": "104K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Sung dhrupad."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Hariprasad Chaurasia",
+        "videoId": "0O-wwqD9v0w",
+        "gender": "male",
+        "views": "500K",
+        "mood": "Night, built on a major and minor third refusing to resolve. On bansuri."
+      },
+      {
+        "raga": "Bageshri",
+        "artist": "Hirabai Barodekar",
+        "videoId": "6kr92NaW0r8",
+        "gender": "female",
+        "views": "8K",
+        "mood": "The small hours, waiting for someone who isn't coming. Khayal, Kirana gharana."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Kala Ramnath",
+        "videoId": "BvanDqxY8UE",
+        "gender": "female",
+        "views": "22K",
+        "mood": "Night, built on a major and minor third refusing to resolve. On violin."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Kaushiki Chakraborty",
+        "videoId": "jkNlOUF6OLE",
+        "gender": "female",
+        "views": "703K",
+        "mood": "Night, built on a major and minor third refusing to resolve. Khayal, Patiala gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Malini Rajurkar",
+        "videoId": "4LLGQvUDtdM",
+        "gender": "female",
+        "views": "113K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Mallikarjun Mansur",
+        "videoId": "XEtlmFA4AqA",
+        "gender": "male",
+        "views": "148K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Manjiri Asanare-Kelkar",
+        "videoId": "EU-QG-s0q5Q",
+        "gender": "female",
+        "views": "5K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Sampurna Malkauns",
+        "artist": "Mogubai Kurdikar",
+        "videoId": "4ajigelQUlw",
+        "gender": "female",
+        "views": "2K",
+        "mood": "Malkauns opened out to the full scale, rarer and less severe. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "N. Rajam",
+        "videoId": "Yzzlw2K5GCo",
+        "gender": "female",
+        "views": "237K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. On violin, in the gayaki ang."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Nikhil Banerjee",
+        "videoId": "ssO9fHiDJrg",
+        "gender": "male",
+        "views": "448K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. On sitar."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Omkarnath Thakur",
+        "videoId": "Ia1X6S5rims",
+        "gender": "male",
+        "views": "55K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Gwalior gharana."
+      },
+      {
+        "raga": "Adana",
+        "artist": "Pandit Jasraj",
+        "videoId": "4j4brANIdE8",
+        "gender": "male",
+        "views": "3.6M",
+        "mood": "Darbari's quick cousin, late night with the tempo up. Khayal, Mewati gharana."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Rajan & Sajan Mishra",
+        "videoId": "g8Su1mShMKc",
+        "gender": "male",
+        "views": "84K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Sung as a duet."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Ravi Shankar",
+        "videoId": "aNKTWhcw5nI",
+        "gender": "male",
+        "views": "196K",
+        "mood": "Night, built on a major and minor third refusing to resolve. On sitar."
+      },
+      {
+        "raga": "Kirwani",
+        "artist": "Shahid Parvez",
+        "videoId": "iWgsMe52m1Y",
+        "gender": "male",
+        "views": "281K",
+        "mood": "A late-night raga with a Western minor's shape. On sitar."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Shahid Parvez",
+        "videoId": "_wxgfhJpW4g",
+        "gender": "male",
+        "views": "178K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. On sitar."
+      },
+      {
+        "raga": "Kirwani",
+        "artist": "Shivkumar Sharma",
+        "videoId": "IAU69jFtJtU",
+        "gender": "male",
+        "views": "1.3M",
+        "mood": "A late-night raga with a Western minor's shape. On santoor."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Shruti Sadolikar",
+        "videoId": "ty_syiJH-f8",
+        "gender": "female",
+        "views": "10K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Jaipur-Atrauli gharana."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Ustad Ali Akbar Khan",
+        "videoId": "lssXO3Qp3o0",
+        "gender": "male",
+        "views": "129K",
+        "mood": "Slow, regal, nocturnal — the raga of the court at its most serious. On sarod."
+      },
+      {
+        "raga": "Chandranandan",
+        "artist": "Ustad Ali Akbar Khan",
+        "videoId": "_CtXORtvvYM",
+        "gender": "male",
+        "views": "87K",
+        "mood": "Ali Akbar Khan's own raga, moonlit and Kanada-shadowed. On sarod."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Ustad Amir Khan",
+        "videoId": "vMidQAtLxLU",
+        "gender": "male",
+        "views": "258K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. Khayal, Indore gharana."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Ustad Amir Khan",
+        "videoId": "e70Py6kgEsc",
+        "gender": "male",
+        "views": "106K",
+        "mood": "Slow, regal, nocturnal — the raga of the court at its most serious. Khayal, Indore gharana."
+      },
+      {
+        "raga": "Bageshri",
+        "artist": "Ustad Amjad Ali Khan",
+        "videoId": "z4CogWM1Tis",
+        "gender": "male",
+        "views": "146K",
+        "mood": "The small hours, waiting for someone who isn't coming. On sarod."
+      },
+      {
+        "raga": "Malkauns",
+        "artist": "Ustad Sultan Khan",
+        "videoId": "xnW3SW3Rl-g",
+        "gender": "male",
+        "views": "76K",
+        "mood": "The deepest night raga — five notes, all komal, nothing bright admitted. On sarangi."
+      },
+      {
+        "raga": "Jog",
+        "artist": "Ustad Sultan Khan",
+        "videoId": "OEP2pa1pnaw",
+        "gender": "male",
+        "views": "64K",
+        "mood": "Night, built on a major and minor third refusing to resolve. On sarangi."
+      },
+      {
+        "raga": "Darbari Kanada",
+        "artist": "Ustad Vilayat Khan",
+        "videoId": "mrfZ8TzY294",
+        "gender": "male",
+        "views": "353K",
+        "mood": "Slow, regal, nocturnal — the raga of the court at its most serious. On sitar."
       }
     ],
     "filmy": [
@@ -3086,6 +4818,43 @@ const PRAHARS = [
         "raga": "Malkauns",
         "videoId": "cQ7vIY-fcW8",
         "mood": "Ravi's Malkauns — a black monsoon night, heavy and yearning."
+      },
+      {
+        "song": "Kabir bhajan in Charukeshi",
+        "artist": "Gundecha Brothers",
+        "videoId": "G3K_8zv36Q4",
+        "mood": "A piece for the last watch of the night. Sung dhrupad.",
+        "raga": "Charukeshi"
+      },
+      {
+        "song": "Sunta Hai Guru Gyani",
+        "artist": "Kumar Gandharva",
+        "videoId": "ordi4e72nVY",
+        "mood": "A piece for the last watch of the night. Khayal, Gwalior / independent gharana."
+      },
+      {
+        "song": "Nirbhay Nirgun",
+        "artist": "Kumar Gandharva",
+        "videoId": "V1tXJu-1O8U",
+        "mood": "A piece for the last watch of the night. Khayal, Gwalior / independent gharana."
+      },
+      {
+        "song": "Ram Niranjan Nyara Re",
+        "artist": "Kumar Gandharva",
+        "videoId": "Hr8ama4aXHY",
+        "mood": "A piece for the last watch of the night. Khayal, Gwalior / independent gharana."
+      },
+      {
+        "song": "Ud Jayega Hans Akela",
+        "artist": "Kumar Gandharva",
+        "videoId": "X8n-G1ZJUSE",
+        "mood": "A piece for the last watch of the night. Khayal, Gwalior / independent gharana."
+      },
+      {
+        "song": "Lalon",
+        "artist": "Shubha Mudgal",
+        "videoId": "J1k7l0oK988",
+        "mood": "A piece for the last watch of the night. Khayal."
       }
     ]
   }

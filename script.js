@@ -347,8 +347,12 @@
     els.timeRange.textContent = p.time;
     if (filmy && pick.song) {
       els.ragaName.textContent = pick.song;
-      els.artist.textContent = pick.artist + " · " + pick.film + " (" + pick.year + ")";
-      els.mood.textContent = "Inspired by Raga " + pick.raga + ". " + pick.mood;
+      els.artist.textContent = pick.film
+        ? pick.artist + " · " + pick.film + " (" + pick.year + ")"
+        : pick.artist;
+      els.mood.textContent = pick.raga
+        ? "Inspired by Raga " + pick.raga + ". " + pick.mood
+        : pick.mood;
     } else {
       els.ragaName.textContent = "Raga " + pick.raga;
       els.artist.textContent = pick.artist;
@@ -376,10 +380,12 @@
       return "Kabir right now: " + pick.title + " — " + pick.artist +
         " (" + kabirStyle.label + ")";
     }
-    return filmy && pick.song
-      ? "Right now on Raga Clock (Filmy): " + pick.song + " (" + pick.film +
-          ") — inspired by Raga " + pick.raga
-      : "Right now on Raga Clock: Raga " + pick.raga + " by " + pick.artist;
+    if (filmy && pick.song) {
+      return "Right now on Raga Clock: " + pick.song +
+        (pick.film ? " (" + pick.film + ")" : " — " + pick.artist) +
+        (pick.raga ? " — inspired by Raga " + pick.raga : "");
+    }
+    return "Right now on Raga Clock: Raga " + pick.raga + " by " + pick.artist;
   }
 
   function render() {

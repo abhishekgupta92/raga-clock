@@ -43,26 +43,32 @@ a pool of `options`, and one is picked at random each time:
 
 | Time slot | Raga family | Pool size |
 |---|---|---|
-| 4:00 AM – 7:00 AM | Bhairav | 24 |
-| 7:00 AM – 10:00 AM | Ahir Bhairav | 29 |
+| 4:00 AM – 7:00 AM | Bhairav | 66 |
+| 7:00 AM – 10:00 AM | Ahir Bhairav | 58 |
 | 10:00 AM – 1:00 PM | Bilawal | 27 |
-| 1:00 PM – 4:00 PM | Bhimpalasi | 36 |
-| 4:00 PM – 7:00 PM | Puriya Dhanashri | 27 |
-| 7:00 PM – 10:00 PM | Yaman | 26 |
-| 10:00 PM – 1:00 AM | Kedar | 29 |
-| 1:00 AM – 4:00 AM | Malkauns | 38 |
+| 1:00 PM – 4:00 PM | Bhimpalasi | 44 |
+| 4:00 PM – 7:00 PM | Puriya Dhanashri | 35 |
+| 7:00 PM – 10:00 PM | Yaman | 73 |
+| 10:00 PM – 1:00 AM | Kedar | 41 |
+| 1:00 AM – 4:00 AM | Malkauns | 71 |
 
-**Total: 236 verified performances** across all 8 praharas.
+**Total: 415 verified performances** across all 8 praharas.
 
 ## Little Filmy mode
 
-Toggle **Little Filmy** and each prahar plays a Hindustani-classical-based
-*Bollywood* song instead — mapped to the prahar by the raga the song is built
-on. `data.js` gives every prahar a `filmy` pool of `{ song, film, year, artist,
-raga, videoId, mood }` objects (currently 120 verified songs, all eras from
-Baiju Bawra to A.R. Rahman). Like the classical pools, it can grow — just add
-more verified entries to a prahar's `filmy` array. A prahar with no filmy songs
-yet falls back to Classical automatically.
+Toggle **Little Filmy** and each prahar plays something other than a straight
+raga recital — mapped to the prahar by the raga it is built on where there is
+one. Mostly that means Hindustani-classical-based *Bollywood* songs, from Baiju
+Bawra to A.R. Rahman. It also holds the pieces that have no raga home of their
+own: bhajans and abhangs, thumris, chaiti and kajri, ghazals, tabla solos and
+fusion.
+
+`data.js` gives every prahar a `filmy` pool of `{ song, film, year, artist,
+raga, videoId, mood }` objects, currently **174** of them. `film`, `year` and
+`raga` are optional — an entry without a film simply shows the artist, and one
+with no raga drops the "inspired by" line. Like the classical pools it can grow;
+just add more verified entries to a prahar's `filmy` array. A prahar with no
+filmy songs yet falls back to Classical automatically.
 
 Pool sizes vary because not every raga family has that many distinct,
 verifiable, named-artist performances actually indexed on YouTube — every
